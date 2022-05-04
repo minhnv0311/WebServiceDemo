@@ -1,0 +1,218 @@
+﻿<!-- BEGIN PAGE HEADER-->
+<link href="assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet" />
+<link href="assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" />
+<link href="assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" />
+<style>
+    .checkbox {
+        padding-left: 20px;
+    }
+
+    label {
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+</style>
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a ui-sref="dashboard">Trang chủ</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">{{getPageBar( $stateParams.param.ParentMenu)}}</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li class="bold">
+            <a ui-sref="formtools">{{getPageBar( $stateParams.param.FCode)}}</a>
+
+        </li>
+    </ul>
+</div>
+<!-- END PAGE HEADER-->
+<style>
+    .portlet.light {
+        padding: 5px 5px 2px;
+        background-color: #fff;
+    }
+</style>
+<link href="assets/admin/pages/css/todo.css" rel="stylesheet" type="text/css" />
+<div class="row" ng-controller="FAQController">
+
+    <div class="col-md-12" style="padding-left:2px;" ng-show="ViewType == 'LIST_FAQ'">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption" data-toggle="collapse" data-target=".todo-project-list-content">
+                    <span class="caption-subject font-green bold uppercase">{{ ListTitle }}</span>
+                    <span class="caption-helper visible-sm-inline-block visible-xs-inline-block">click to view project list</span>
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="EditFAQ(null)">
+                        <i class="fa fa-plus"></i>&nbsp; Thêm mới
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="row">
+                    <div class="col-md-8">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-icon input-icon-sm right">
+                            <i class="fa fa-search"></i>
+                            <input type="text" ng-model="Paging.SearchKey" ng-change="Search()" ng-model-options="{ updateOn: 'change blur'}" class="form-control input-sm" placeholder="Nhập từ khóa tìm kiếm">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="table-scrollable">
+                            <!-- BEGIN FORM-->
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="1%"> # </th>
+                                        <th width="1%"> # </th>
+                                        <th width="1%"> # </th>
+                                        <th width="5%"> Hình ảnh </th>
+                                        <th width="20%"> Tiêu đề bài viết </th>
+                                        <!--<th> Nội dung tóm tắt</th>-->
+                                        <th width="1%" nowrap> Ngày tạo </th>
+                                        <th width="1%" nowrap> Trạng thái </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX" ng-repeat="FAQ in ListFAQ">
+                                        <td class="text-center">{{ShowIndex($index+1,Paging.PageNumber,Paging.PageSize)}}</td>
+                                        <th align="center" width="1%"> <a ng-click="DeleteNew(FAQ)"> <i title="Xóa tin bài" class="fa fa-trash font-red"></i> </a></th>
+                                        <td align="center" width="1%"><a ng-click="EditFAQ(FAQ)"> <i title="Sửa tin bài" class="fa fa-edit"></i> </a></td>
+                                        <td>
+                                            <img ng-show="FAQ.Image != null && new.Image != ''" ng-src="{{ FAQ.Image }}" width="60" height="40" />
+
+                                        </td>
+                                        <td align="left">  <p ng-bind-html="FAQ.FName"></p> </td>
+                                        <!--<td align="left">{{ FAQ.SortContent | removeHTMLTags }} </td>-->
+                                        <td nowrap> {{ FAQ.FCreateTime | date:'dd/MM/yyyy HH:mm:ss' }} </td>
+                                        <td align="left" nowrap> <span class="label-sm {{ getStatus(FAQ.FStatus).class }}">{{ getStatus(FAQ.FStatus).text }} </span> </td>
+                                    </tr>
+                                    <tr ng-show="ListFAQ.length == 0 || ListFAQ == null">
+                                        <td colspan="20">
+                                            <div class="alert alert-danger">
+                                                <strong>Thông báo!</strong> Không có bài đăng tin tức
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- END FORM-->
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div ng-show="ListFAQ.length > 0" class="dataTables_info" id="sample_2_info" role="status" aria-live="polite">{{DisplayInfoPagination(Paging.PageNumber,Paging.PageSize,Paging.Total)}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <ul class="pull-right pagination-sm" ng-show="Paging.Total > Paging.PageSize"
+                            boundary-links="true"
+                            previous-text="Trang trước" next-text="Trang sau" first-text="Trang đầu" last-text="Trang cuối"
+                            force-ellipses="true"
+                            max-size="10"
+                            ng-change="pageChanged()"
+                            uib-pagination total-items="Paging.Total" ng-model="Paging.PageNumber" items-per-page="Paging.PageSize"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PORTLET-->
+    </div>
+
+    <div class="col-md-12" style="padding-left:2px;" ng-show="ViewType == 'EDIT_FAQ'">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption" data-toggle="collapse" data-target=".todo-project-list-content">
+                    <span class="caption-subject font-green bold uppercase">Soạn thảo MCC hỏi đáp</span>
+                </div>
+                <div class="actions">
+                    <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="SaveFAQ()">
+                        <i class="fa fa-save"></i>&nbsp; Cập nhật
+                    </a>
+
+                    <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="MenuListFAQ()">
+                        <i class="fa fa-undo"></i>&nbsp; Quay lại
+                    </a>
+                </div>
+            </div>
+
+            <div class="portlet-body form">
+                <form name="NewForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group " ng-class="{'has-success': !NewForm.FName.$touched || !NewForm.FName.$invalid,'has-error': NewForm.FName.$touched && NewForm.FName.$invalid}">
+                                <label class="bold control-label">Câu hỏi<span class="text-danger">*</span></label>
+                                <input type="text" required name="FName" ng-model="item.FName" class="form-control input" style="font-size:13px;font-family:Arial;color:black" placeholder="Nhập câu hỏi" maxlength="300">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <span class="help-block" ng-show="NewForm.FName.$touched && NewForm.FName.$invalid">Nhập câu hỏi</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="fa-pull-right">{{300 - item.FName.length}}/300</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bold control-label">Thứ tự hiển thị <span class="text-danger">*</span></label>
+                                <input ng-model="item.FIndex" class="form-control" type="number" placeholder="Nhập thứ tự hiển thị">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <span class="help-block" ng-show="NewForm.FIndex.$touched && NewForm.FIndex.$invalid">Nhập thứ tự hiển thị</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group">
+                    <label class="bold">Nhập câu trả lời</label>
+                    <div name="summernote" id="summernote_Content">
+                    </div>
+                </div>
+
+            </div>
+            <!--<div class="portlet-title">
+                <div class="actions fixed-bottom text-right">
+                    <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="SaveFAQ()">
+                        <i class="fa fa-save"></i>&nbsp; Cập nhật
+                    </a>
+                    <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="MenuListFAQ()">
+                        <i class="fa fa-undo"></i>&nbsp; Quay lại
+                    </a>
+                </div>
+            </div>-->
+        </div>
+        <!-- END PORTLET-->
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+
+
+        if (jQuery().datepicker) {
+            $('.date-picker').datepicker({
+                rtl: App.isRTL(),
+                format: 'dd/mm/yyyy',
+                orientation: "right",
+                autoclose: true
+            });
+
+        }
+    });
+
+
+</script>

@@ -1,0 +1,154 @@
+﻿<div class="modal-header bg-color">
+    <h3 class="modal-title">Cập nhật dữ liệu</h3>
+</div>
+<div class="modal-body form">
+
+    <div class="form-body form-horizontal">
+        <div class="form-group" style="display:none">
+            <label class="control-label col-md-2">Mã</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" disabled="disabled" ng-model="itemCompany.Id" name="Id">
+            </div>
+            <label class="control-label col-md-2">Địa chỉ</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" ng-model="itemCompany.Address" placeholder="Địa chỉ công ty" name="FCode">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Mã đơn vị <span style="color:red">*</span></label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" class="form-control green-haze"
+                           ng-model-options="{updateOn: 'change'}" ng-disabled="read"
+                           ng-change="ValidOnlyCode(itemCompany.FCode)"
+                           ng-model="itemCompany.FCode" id="FCode" placeholder="Mã Khối/phòng ban" name="FCode">
+                    <span class="input-group-btn">
+                        <button class="btn green-haze btn-outline sbold" ng-disabled="read" type="button" ng-click="AutoID('COM');itemCompany.FCode = objAutoID.FName;">Tạo mã</button>
+                    </span>
+                </div>
+            </div>
+
+            <label class="control-label col-md-2">Tỉnh/thành phố</label>
+            <div class="col-md-4">
+                <div class="input-group select2-bootstrap-prepend">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" data-select2-open="single-prepend-text">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <select ng-model="itemCompany.Provin" ng-change="ProvinChange(itemCompany.Provin,'0','0')" id="single-prepend-text" class="form-control select2">
+                        <option ng-repeat="m in Provin" value="{{m.FCode}}">{{ m.FName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2">Tên đơn vị <span style="color:red">*</span></label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" ng-model="itemCompany.FName" id="FName" name="FName">
+            </div>
+            <label class="control-label col-md-2">Quận/Huyện</label>
+            <div class="col-md-4">
+                <div class="input-group select2-bootstrap-prepend">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" data-select2-open="single-prepend-text">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <select ng-model="itemCompany.District" ng-change="ProvinChange(itemCompany.Provin,itemCompany.District,'0')" id="single-prepend-text" class="form-control select2">
+                        <option ng-repeat="m in District" value="{{m.FCode}}">{{ m.FName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Mô tả đơn vị</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" ng-model="itemCompany.FDescription" name="FName">
+            </div>
+            <label class="control-label col-md-2">Xã/Phường</label>
+            <div class="col-md-4">
+                <div class="input-group select2-bootstrap-prepend">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" data-select2-open="single-prepend-text">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                    <select ng-model="itemCompany.Ward" id="single-prepend-text" class="form-control select2">
+                        <option ng-repeat="m in Ward" value="{{m.FCode}}">{{ m.FName }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Số điện thoại</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" ng-model="itemCompany.Mobile" name="FName">
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Fax</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" ng-model="itemCompany.Fax" name="FName">
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Email</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" ng-model="itemCompany.Email" name="FName">
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn green-haze btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode)" ng-click="SaveModal()"> Cập nhật </button>
+    <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        //ComponentsDateTimePickers.init();
+        $.fn.select2.defaults.set("theme", "bootstrap");
+
+        var placeholder = "Select a State";
+
+        $(".select2, .select2-multiple").select2({
+            placeholder: placeholder,
+            width: null
+        });
+
+        $(".select2-allow-clear").select2({
+            allowClear: true,
+            placeholder: placeholder,
+            width: null
+        });
+
+        $("button[data-select2-open]").click(function () {
+            $("#" + $(this).data("select2-open")).select2("open");
+        });
+
+
+        //if (jQuery().datepicker) {
+        //    $('.date-picker').datepicker({
+        //        rtl: App.isRTL(),
+        //        orientation: "left",
+        //        autoclose: true
+        //    });
+        //    //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+        //}
+
+    });
+
+
+</script>

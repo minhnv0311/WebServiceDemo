@@ -1,0 +1,242 @@
+ #region Load thông tin gridview thành phần
+            Database.LIEN_THONG.HOSO_LT objHSLT = new Database.LIEN_THONG.HOSO_LT(oSession);
+            if (objHSLT.KiemTraHoSoGuiLienThong(FCode.Text))
+            {
+                var THU_TUC = oSession.Query<Database.DanhMuc.THU_TUC>();
+                var HOSO_THUTUC = oSession.Query<Database.HO_SO.HOSO_THUTUC>();
+                var HoSoTuTucs = from hstt in HOSO_THUTUC
+                                 join tt in THU_TUC on hstt.MaThuTuc equals tt.FCode
+                                 where (hstt.MaHoSo == oHoSo.FCode && ((!string.IsNullOrEmpty(oHoSo.MaNhomTP) && hstt.MaNhom.Contains(";" + oHoSo.MaNhomTP + ";")) || (string.IsNullOrEmpty(oHoSo.MaNhomTP))) && hstt.DaNop == true)
+                                 select new
+                                 {
+                                     hstt.FCode,
+                                     hstt.FName,
+                                     hstt.DaNop,
+                                     hstt.BanGoc,
+                                     hstt.BanSao,
+                                     hstt.BanPhoTo,
+                                     CoDinhKem = (!string.IsNullOrEmpty(hstt.MaDinhKem)) ? true : false,
+                                     CoBieuMau = (!string.IsNullOrEmpty(tt.DuongDanFormNhap) && tt.BieuMau == true) ? true : false,
+                                     UrlFileBieuMau = tt.DuongDanFormNhap + "&MaThuTuc=" + hstt.FCode
+                                 };
+                gridThanhPhanHoSo.DataSource = HoSoTuTucs;
+                gridThanhPhanHoSo.DataBind();
+            }
+            else
+            {
+                ArrayList arr = new ArrayList();
+                ArrayList listObj = new ArrayList();
+                Database.LIEN_THONG.THANHPHAN_LT objThanhPhanLT = new Database.LIEN_THONG.THANHPHAN_LT(oSession);
+                GroupOperator cri = new GroupOperator(GroupOperatorType.And);
+              
+                cri.Operands.Add(new BinaryOperator("MaHoSo", FCode.Text, BinaryOperatorType.Equal));
+                XPCollection oColl = new XPCollection(objThanhPhanLT.Session, objThanhPhanLT.GetType(), cri);
+                if (oColl != null)
+                {
+                    cri.Operands.Add(new BinaryOperator("DaNop", "True", BinaryOperatorType.Equal));
+                    oColl.Sorting.Add(new SortProperty("FIndex", SortingDirection.Ascending));
+                }
+                foreach (Database.LIEN_THONG.THANHPHAN_LT item in oColl)
+                {
+                    ObjectNewThanhPhanLT obj = new ObjectNewThanhPhanLT();
+                    obj.DaNop = item.DaNop;
+                    obj.BanGoc = item.BanGoc;
+                    obj.BanSao = item.BanSao;
+                    obj.BanPhoTo = item.BanPhoTo;
+                    obj.MaDinhKem = item.MaDinhKem;
+                    obj.FCode = item.FCode;
+                    obj.FName = item.FName;
+                    listObj.Add(obj);
+                }
+
+                //Database.LIEN_THONG.HOSO_LT objHSLT_1 = new Database.LIEN_THONG.HOSO_LT(oSession);
+                //Database.LIEN_THONG.HOSO_LT ObjHSLT_1 = (Database.LIEN_THONG.HOSO_LT)objHSLT_1.GetObjectByFieldName("FCode", FCode.Text);
+                //if (ObjHSLT_1 != null)
+                //{
+                //    string[] list = objHSLT_1.MaKetQua.Split(';');
+                //    if (list.Count() != 0)
+                //    {
+                //        foreach (string s in list)
+                //        {
+                //            if (!string.IsNullOrEmpty(s))
+                //            {
+                //                arr.Add(s);
+                //            }
+                //        }
+                //    }
+                //}
+                if (arr.Count != 0)
+                {
+                    Array List = arr.ToArray().Distinct().ToArray();
+                    int i = 1;
+                    foreach (var item in List)
+                    {
+                        ObjectNewThanhPhanLT obj = new ObjectNewThanhPhanLT();
+                        obj.DaNop = true;
+                        obj.BanGoc = 0;
+                        obj.BanSao = 0;
+                        obj.BanPhoTo = 0;
+                        obj.MaDinhKem = item.ToString();
+                        obj.FCode = item.ToString();
+                        obj.FName = "Kết quả xứ lý của đơn vị gửi - " + i;
+                        listObj.Add(obj);
+                        i++;
+                    }
+                }
+                if (listObj.Count != 0)
+                {
+                    ThanhPhanHSLT.Visible = true;
+                    // KetQuaNhan.Visible = true;
+                    gridThanhPhanHoSoLT.DataSource = listObj;
+                    gridThanhPhanHoSoLT.DataBind();
+                }
+
+                foreach (GridViewRow row in gridThanhPhanHoSoLT.Rows)
+                {
+                    CheckBox cbtest = (CheckBox)row.FindControl("cbChon"); cbtest.Checked = true;
+                }
+            }
+         
+            #endregion
+			
+			
+			
+			
+			#region Hoàn thêm 
+    protected void gridThanhPhanHoSoLT_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        if (e.CommandName == "TaiFileLT")
+        {
+            //string FCode = e.CommandArgument.ToString();
+            //Database.LIEN_THONG.THANHPHAN_LT objThanhPhanLT = new Database.LIEN_THONG.THANHPHAN_LT(oSession);
+            //Database.LIEN_THONG.THANHPHAN_LT ObjThanhPhanLT = (Database.LIEN_THONG.THANHPHAN_LT)objThanhPhanLT.GetObjectByFieldName("FCode", FCode);
+            //if (ObjThanhPhanLT != null)
+            {
+                Commons.DownloadFile(e.CommandArgument.ToString());
+            }
+        }
+    }
+    protected void gridThanhPhanHoSoLT_DataBound(object sender, EventArgs e)
+    {
+        foreach (GridViewRow row in gridThanhPhanHoSoLT.Rows)
+        {
+            LinkButton linkButton = (LinkButton)row.FindControl("lbtTaiFileLT");
+            var scriptManager = ScriptManager.GetCurrent(this.Page);
+            if (scriptManager != null)
+            {
+                scriptManager.RegisterPostBackControl(linkButton);
+            }
+        }
+
+    }
+    private bool KiemTraFileDinhKem(object MaThanhPhan, string LienThong)
+    {
+        string MTP = "";
+        if (MaThanhPhan != null) MTP = MaThanhPhan.ToString();
+        if (string.IsNullOrEmpty(LienThong))
+        {
+            Database.HO_SO.HOSO_THUTUC objHoSo_ThuTuc = new Database.HO_SO.HOSO_THUTUC(oSession);
+            Database.HO_SO.HOSO_THUTUC ObjHoSo_ThuTuc = (Database.HO_SO.HOSO_THUTUC)objHoSo_ThuTuc.GetObjectByFieldName("FCode", MTP);
+            if (ObjHoSo_ThuTuc != null)
+            {
+                if (!string.IsNullOrEmpty(ObjHoSo_ThuTuc.MaDinhKem))
+                { return true; }
+            }
+        }
+        else
+        {
+            Database.DanhMuc.DINH_KEM obj_DinhKem = new Database.DanhMuc.DINH_KEM(Commons.oSession());
+            Database.DanhMuc.DINH_KEM Obj_DK = (Database.DanhMuc.DINH_KEM)obj_DinhKem.GetObjectByFieldName("FCode", MTP);
+            if (Obj_DK != null)
+            {
+                { return true; }
+            }
+        }
+        return false;
+    }
+    public bool formatCheckLabel(object FCode, string LienThong)
+    {
+        if (KiemTraFileDinhKem(FCode, LienThong))
+        { return false; }
+        return true;
+    }
+    // Ẩn hiện link tải file
+    public bool formatCheckLink(object FCode, string LienThong)
+    {
+        if (KiemTraFileDinhKem(FCode, LienThong))
+        { return true; }
+        return false;
+    }
+    #endregion
+	
+	
+	
+	   <asp:Panel runat="server" ID="ThanhPhanHSLT" Visible="false">
+                                    <div class="form-group">
+                                        <label class="col-md-1 control-label"></label>
+                                        <div class="col-md-11">
+                                            <asp:GridView runat="server" AutoGenerateColumns="False" ID="gridThanhPhanHoSoLT" DataKeyNames="FCode" CssClass="table table-bordered responsive" ClientIDMode="Static" OnRowCommand="gridThanhPhanHoSoLT_RowCommand" Font-Bold="false" OnDataBound="gridThanhPhanHoSoLT_DataBound">
+                                                <HeaderStyle BackColor="#eeeeee" />
+                                                <Columns>
+                                                    <asp:TemplateField HeaderText="STT" ItemStyle-HorizontalAlign="Center">
+                                                        <ItemTemplate>
+                                                            <%#Container.DataItemIndex+1 %>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="4%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                                                        <HeaderTemplate>
+                                                            <asp:Label ID="Label1" Text="Đã nộp" runat="server" />
+                                                        </HeaderTemplate>
+                                                        <HeaderStyle HorizontalAlign="Center" Width="7%" Wrap="false" />
+                                                        <ItemTemplate>
+                                                            <asp:CheckBox ID="cbChon" runat="server" Enabled="false" />
+                                                        </ItemTemplate>
+                                                        <ItemStyle HorizontalAlign="Center" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Tên thành phần (Liên thông)">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="Label15" Text='<%# Eval("FName") %>' runat="server" Visible='<%# formatCheckLabel(Eval("MaDinhKem"),"LT") %>' />
+                                                            <asp:LinkButton ID="lbtTaiFileLT" name='<%# Commons.GetFileInLog(Eval("MaDinhKem")) %>' OnClientClick="return ViewFilePDF(this.name);" Text='<%# Eval("FName") %>' runat="server" Visible='<%# formatCheckLink(Eval("MaDinhKem"),"LT") %>' CommandName="TaiFileLT" CommandArgument='<%# Eval("MaDinhKem") %>' CausesValidation="false" />
+                                                        </ItemTemplate>
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Biểu mẫu" Visible="false">
+                                                        <ItemTemplate>
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="8%" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Bản chính">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="BanGoc" Text='<%# Eval("BanGoc") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="6%" HorizontalAlign="Center" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Bản sao">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="BanSao" Text='<%# Eval("BanSao") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="6%" HorizontalAlign="Center" Wrap="false" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField HeaderText="Bản photo">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="BanPhoTo" Text='<%# Eval("BanPhoTo") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="6%" HorizontalAlign="Center" Wrap="false" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="MaDinhKem" Text='<%# Eval("MaDinhKem") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="6%" HorizontalAlign="Center" Wrap="false" />
+                                                    </asp:TemplateField>
+                                                    <asp:TemplateField Visible="false">
+                                                        <ItemTemplate>
+                                                            <asp:Label ID="FName" Text='<%# Eval("FName") %>' runat="server" />
+                                                        </ItemTemplate>
+                                                        <ItemStyle Width="0%" HorizontalAlign="Center" Wrap="false" />
+                                                    </asp:TemplateField>
+                                                </Columns>
+                                            </asp:GridView>
+                                        </div>
+                                    </div>
+                                </asp:Panel>

@@ -1,0 +1,108 @@
+﻿<div class="modal-header bg-color">
+    <h3 class="modal-title">Cập nhật dữ liệu</h3>
+</div>
+<div class="modal-body form" ng-init="OnLoad();">
+    <div class="form-body form-horizontal">
+        <div class="form-group" style="display:none">
+            <label class="control-label col-md-3">Mã</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" disabled="disabled" ng-model="item.Id" name="Id">
+            </div>
+        </div>
+
+        <div class="form-group {{itemPerError.ModelState.FCode[1]}}">
+            <label class="control-label col-md-3">Mã tài liệu <span style="color:red">*</span></label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                           ng-model-options="{updateOn: 'change'}" ng-disabled="Type == 'VIEW' || Type == 'EDIT'"
+                           ng-change="ValidOnlyCode(item.FCode)"
+                           ng-model="item.FCode" id="FCode" name="FCode">
+                    <span class="input-group-btn">
+                        <button class="btn green-haze btn-outline sbold" ng-disabled="Type == 'VIEW' || Type == 'EDIT'" type="button" ng-click="AutoID('TL'); item.FCode = objAutoID.FName;">Tạo mã</button>
+                    </span>
+                </div>
+                <!--<input type="text" class="form-control" ng-model="item.FCode" id="FCode" name="FCode">-->
+                <span class="help-block"> {{ itemPerError.ModelState.FCode[0] }} </span>
+            </div>
+
+        </div>
+
+        <div class="form-group {{itemPerError.ModelState.FName[1]}}">
+            <label class="control-label col-md-3">Tên tài liệu <span style="color:red">*</span></label>
+            <div class="col-md-6">
+                <textarea type="text" class="form-control" ng-model="item.FName" id="FName" name="FName" ng-disabled="Type == 'VIEW'" rows="3"></textarea>
+                <span class="help-block"> {{ itemPerError.ModelState.FName[0] }} </span>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Cơ quan xin cấp phép </label>
+            <div class="col-md-6">
+                <select ng-model="item.CoQuanXinCapPhep" class="form-control select2" ng-disabled="Type == 'VIEW'">
+                    <option value="">-- Chọn --</option>
+                    <option ng-repeat="u in lstCoQuan" value="{{u.FCode}}">{{u.FName}}</option>
+                </select>
+            </div>
+            <div class="col-md-2"><button class="btn green-haze btn-outline sbold" ng-hide="Type == 'VIEW'" type="button" ng-click="openEditItem('','CoQuanXinCapPhep')">Thêm cơ quan</button></div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-3">Ngày cấp phép </div>
+            <div class="col-md-6">
+                <div class="input-group date date-picker">
+                    <input type="text" class="form-control input-sm " ng-model="item.NgayCapPhep" date ng-disabled="Type == 'VIEW'">
+                    <span class="input-group-btn">
+                        <button class="btn input-sm default" type="button">
+                            <i class="fa fa-calendar"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Khuôn khổ </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="item.KhuonKho" name="KhuonKho" ng-disabled="Type == 'VIEW'">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Số trang </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="item.SoTrang" name="SoTrang" ng-disabled="Type == 'VIEW'">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Cơ sở in </label>
+            <div class="col-md-6">
+                <select ng-model="item.CoSoIn" class="form-control select2" ng-disabled="Type == 'VIEW'">
+                    <option value="">-- Chọn --</option>
+                    <option ng-repeat="u in lstCoSoIn" value="{{u.FCode}}">{{u.FName}}</option>
+                </select>
+            </div>
+            <div class="col-md-2"><button class="btn green-haze btn-outline sbold" ng-hide="Type == 'VIEW'" type="button" ng-click="openEditItem('','CoSoIn')">Thêm cơ sở in</button></div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-3">Đơn đề nghị</div>
+            <div class="col-md-6" style="margin-top: 6px">
+                <input type="file" ng-hide="Type=='VIEW'" ng-files="getTheFiles1($files)" multiple style="margin: 0px 0px 5px 0px" />
+                <input class="hidden" ng-model="DonDeNghi" />
+                <input class="hidden" ng-model="item.DonDeNghi" />
+                <div ng-repeat="x in lstDonDeNghi"><button class="btn input-sm grey-cascade" ng-click="DownloadFile(x)" style="padding: 0px 5px 0px 5px; margin-top: 0px; margin-right: 5px; margin-bottom: 5px; height: 22px; "><i class="fa fa-file"></i> {{x.substr(19)}}</button> &nbsp;<i class="fa fa-close" style="cursor:pointer" title="Xóa" ng-click="DeleteFileDonDeNghi(x)"></i></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-3">Giấy phép</div>
+            <div class="col-md-6" style="margin-top: 6px">
+                <input type="file" ng-hide="Type=='VIEW'" ng-files="getTheFiles2($files)" multiple style="margin: 0px 0px 5px 0px" />
+                <input class="hidden" ng-model="GiayPhep" />
+                <input class="hidden" ng-model="item.GiayPhep" />
+                <div ng-repeat="x in lstGiayPhep"><button class="btn input-sm grey-cascade" ng-click="DownloadFile(x)" style="padding: 0px 5px 0px 5px; margin-top: 0px; margin-right: 5px; margin-bottom: 5px; height: 22px; "><i class="fa fa-file"></i> {{x.substr(19)}}</button> &nbsp;<i class="fa fa-close" style="cursor:pointer" title="Xóa" ng-click="DeleteFileGiayPhep(x)"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn green-haze btn-outline sbold" ng-hide="Type=='VIEW'" ng-click="SaveModal()"> Cập nhật </button>
+    <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+</div>

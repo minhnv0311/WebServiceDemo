@@ -1,0 +1,372 @@
+﻿<div ng-controller="CategoryStorageController">
+    <div class="vmagazine-lite-breadcrumb-wrapper">
+
+        <div class="vmagazine-lite-bread-home">
+            <div class="vmagazine-lite-bread-wrapp">
+                <div class="breadcrumb-title">
+                    <h1 class="page-title" ng-show="month != ''">{{'month' | translate}}: <span>{{Name}}{{year}}</span></h1>
+                    <h1 class="page-title" ng-hide="month != ''">{{'year' | translate}}: <span>{{year}}</span></h1>
+                </div>
+                <div class="vmagazine-lite-breadcrumb">
+                    <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
+                        <ul ng-show="month != ''" class="trail-items"><li class="trail-item trail-begin"><a ng-href="#/"><span>HOME</span></a></li><li class="trail-item"><a ng-href="#{{lang}}/storage/{{year}}/"><span>{{year}}</span></a></li><li class="trail-item trail-end current"><span>{{Name}}</span></li></ul>
+                        <ul ng-hide="month != ''" class="trail-items"><li class="trail-item trail-begin"><a ng-href="#/"><span>HOME</span></a></li><li class="trail-item trail-end current"><span>{{year}}</span></li></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="vmagazine-lite-container">
+        <div id="primary" class="content-area vmagazine-lite-content">
+            <main id="main" class="site-main" role="main">
+
+                <div class="today" style="width: 100%; padding-bottom: 15px; background-color: #fff; border-bottom: 1px solid #ddd; margin-bottom: 15px"><span>{{DayInWeek}}, </span><span id="current-time"></span></div>
+
+                <article ng-repeat="n in News" id="post-{{n.Id}}" class="post-6445 post type-post status-publish format-standard has-post-thumbnail hentry category-bien-ban category-du-an category-giam-sat-thuc-dia category-hiv-aids category-hop-ccm category-hop-tieu-ban category-hop-uy-ban-giam-sat">
+
+                    <div class="rows-post archive-wrapper">
+                        <div class="image-left column entry-thumb">
+                            <a class="thumb-zoom" ng-href="#/{{lang}}/view/{{n.Id}}">
+                                <img ng-src="{{n.Image}}" alt="{{n.FName}}" />
+                                <div class="image-overlay"></div>
+                            </a>
+                        </div><!-- .entry-thumb -->
+                        <div class="content-right column list-left-wrap">
+                            <div class="entry-header">
+                                <div class="time-post entry-meta">
+                                    <span class="posted-on"><i class="fa fa-clock-o"></i>{{n.FCreateTime | date:'dd/MM/yyyy'}}</span><span class="comments"><i class="fa fa-comments"></i>{{n.FIndex}}</span>
+                                </div><!-- .entry-meta -->
+                            </div><!-- .entry-header.layout1-header -->
+                            <div class="post-title-wrap">
+                                <h2 class="h2-title entry-title">
+                                    <a ng-href="#/{{lang}}/view/{{n.Id}}/">
+                                        {{n.FName}}
+                                    </a>
+                                </h2>
+                            </div>
+                            <div class="entry-content">
+                                <p class="p-content">{{n.SortContent.substr(0, 200)}}</p>
+                                <a class="vmagazine-lite-archive-more button-more" ng-href="#/{{lang}}/view/{{n.Id}}/">
+                                    {{'Read More' | translate}}
+                                </a>
+                            </div><!-- .entry-content -->
+                        </div><!-- .list-left-wrap -->
+                    </div><!-- .archive-btm-wrapper -->
+                </article><!-- #post-## -->
+            </main><!-- #main -->
+            <div class="archive-bottom-wrapper">
+
+                <nav class="navigation pagination" role="navigation" aria-label="Bài viết">
+                    <h2 class="screen-reader-text">Điều hướng bài viết</h2>
+
+                    <div class="nav-links">
+                        <a class="prev page-numbers" ng-click="change(pageNumber - 1)" ng-show="pageNumber > 1">Trước</a>
+                        <a class="page-numbers" ng-click="change(pageNumber - 2)" ng-show="pageNumber > 2">{{pageNumber - 2}}</a>
+                        <a class="page-numbers" ng-click="change(pageNumber - 1)" ng-show="pageNumber > 1">{{pageNumber - 1}}</a>
+                        <span aria-current="page" class="page-numbers current" ng-show="Total > 1">{{pageNumber}}</span>
+                        <a class="page-numbers" ng-click="change(pageNumber + 1)" ng-show="pageNumber < Total">{{pageNumber + 1}}</a>
+                        <a class="page-numbers" ng-click="change(pageNumber + 2)" ng-show="pageNumber < Total - 1">{{pageNumber + 2}}</a>
+                        <a class="next page-numbers" ng-click="change(pageNumber + 1)" ng-show="pageNumber < Total">Tiếp theo</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="archive-bottom-wrapper">
+
+
+            </div>
+
+        </div><!-- #primary -->
+
+        <aside id="secondary" class="widget-area vmagazine-lite-sidebar" role="complementary">
+            <div class="theiaStickySidebar">
+                <div id="search-1" class="widget widget_search">
+                    <form method="get" class="search-form">
+                        <label>
+                            <span class="screen-reader-text">Search for:</span>
+                            <input type="search" autocomplete="off" class="search-field" placeholder="{{'search' | translate}} ..." ng-model="SearchKey" name="s">
+                        </label>
+                        <a ng-href="#/{{lang}}/search/{{SearchKey}}"><input type="submit" class="search-submit" value="Search"></a>
+
+                    </form>
+
+                </div>
+                <div id="recent-posts-1" class="widget widget_recent_entries">
+                    <h4 class="widget-title"><span class="title-bg">{{'new-post' | translate}}</span></h4>
+                    <ul>
+                        <li ng-repeat="h in HotNews">
+                            <a href="">{{h.FName}}</a>
+                        </li>
+                    </ul>
+
+                </div><div id="recent-comments-1" class="widget widget_recent_comments"><h4 class="widget-title"><span class="title-bg">Phản hồi gần đây</span></h4><ul id="recentcomments"></ul></div>
+                <div id="archives-1" class="widget widget_archive">
+                    <h4 class="widget-title"><span class="title-bg">{{'storage' | translate}}</span></h4>
+                    <ul>
+                        <li ng-repeat="storage in Storage"><a ng-href="#/{{lang}}/storage/{{storage.yyyy}}/{{storage.MM}}">{{storage.MMMM}}{{storage.yyyy}}</a></li>
+                    </ul>
+
+                </div>
+                <div id="categories-1" class="widget widget_categories">
+                    <h4 class="widget-title"><span class="title-bg">{{'categories' | translate}}</span></h4>
+                    <ul>
+                        <li ng-repeat="mnb in MenuBar" class="cat-item cat-item-{{mnb.Id}}" ng-show="mnb.IsNews != true">
+                            <a ng-href="#/{{lang}}/{{mnb.Url}}">{{mnb.FName}}</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div id="meta-1" class="widget widget_meta">
+                    <h4 class="widget-title"><span class="title-bg">Meta</span></h4>
+                    <ul>
+                        <li><a href="/login.html">{{'login' | translate}}</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </aside><!-- #secondary -->
+    </div><!-- .vmagazine-lite-container -->
+    <div class="row-footer" style="background-color: #fff; max-width: 1180px; margin: 0 auto">
+        <div class="column-footer footer1">
+            <div class="row d-flex justify-content-center">
+                <embed ng-src="{{ Logo.Image | trustAsResourceUrl }}" style="height: 120px" title="">
+            </div>
+        </div>
+        <div class="column-footer footer2">
+            <p class="footer-p">{{ 'Copyright' | translate }}</p>
+            <p class="footer-p">{{ 'Add-tel' | translate }}</p>
+            <p class="footer-p">EMAIL: <a href="mailto:CCMVIETNAM@GMAIL.COM" class="email-a"> CCMVIETNAM@GMAIL.COM</a></p>
+        </div>
+        <div class="column-footer footer3">
+            <span style="color: #006ae8; ">
+                <a href="#" title="Facebook">
+                    <i class="fa fa-facebook-square fa-3x"></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px;">
+                <a href="#" title="Instagram">
+                    <i class="fa fa-instagram fa-3x" style="background: -webkit-linear-gradient(#7222ba, #d48c3b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; "></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px; color: #0270ad;">
+                <a href="#" title="Linkedin">
+                    <i class="fa fa-linkedin-square fa-3x"></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px; color: red;">
+                <a href="#" title="Google+">
+                    <i class="fa fa-google-plus-square fa-3x"></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px; color: #00a7e6;">
+                <a href="#" title="Twitter">
+                    <i class="fa fa-twitter-square fa-3x" style="width: 25px"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column-footer {
+        float: left;
+        padding: 35px;
+        height: 180px; /* Should be removed. Only for demonstration */
+    }
+
+    .footer1 {
+        text-align: center;
+        width: 20%;
+    }
+
+    .footer2 {
+        width: 50%;
+        padding-left: 0;
+        padding-top: 50px
+    }
+
+    .footer3 {
+        text-align: center;
+        padding-top: 65px;
+        width: 30%;
+    }
+    /* Clear floats after the columns */
+    .row-footer:after {
+        content: "";
+        display: table;
+        clear: both;
+        margin-bottom: 30px;
+    }
+
+    .email-a {
+        color: red;
+    }
+
+    .footer-p {
+        font-size: 70%;
+        margin-bottom: 15px;
+        color: #312682;
+        font-weight: bold;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+        .column-footer {
+            width: 100%;
+        }
+
+        .footer2 {
+            text-align: center;
+            height: auto;
+            padding: 0;
+        }
+
+        .footer3 {
+            height: auto;
+            padding: 20px;
+        }
+    }
+</style>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        padding: 0;
+    }
+
+    .image-left {
+        text-align: center;
+        width: 36%;
+        margin-bottom: 0px !important;
+    }
+
+    .content-right {
+        width: 64%;
+        padding-left: 15px;
+    }
+    /* Clear floats after the columns */
+    .rows-post:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .button-more {
+        border: 1px solid #0066bf;
+        padding: 10px;
+        background-color: #0066bf;
+        color: #fff;
+    }
+
+        .button-more:hover {
+            border: 1px solid #0066bf;
+            padding: 10px;
+            background-color: #fff;
+            color: #0066bf;
+        }
+
+    .time-post {
+        margin-bottom: 5px !important;
+    }
+
+    .p-content {
+        margin-bottom: 16px !important;
+    }
+
+    .h2-title {
+        font-size: 1.1em;
+    }
+
+    .archive-wrapper {
+        display: block;
+        width: 100%;
+        float: left;
+        margin-bottom: 1.25rem;
+        border-bottom: solid 1px #ddd;
+        padding-bottom: 1.25rem;
+    }
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 1000px) {
+        .column {
+            width: 100%;
+        }
+
+        .content-right {
+            padding-left: 0;
+        }
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $('.mobile-navigation,.mob-search-form').removeClass("on");
+        $('body').removeClass('mob-menu-enabled');
+        $('body').removeClass('mob-search-enabled');
+        //vmagazineFocusForce('button.btn-transparent-toggle.nav-toggle');
+    });
+</script>
+<script>
+    var curDate = new Date();
+
+    // Ngày hiện tại
+    var curDay = curDate.getDate();
+
+    // Tháng hiện tại
+    var curMonth = curDate.getMonth() + 1;
+
+    // Năm hiện tại
+    var curYear = curDate.getFullYear();
+
+    // Gán vào thẻ HTML
+    document.getElementById('current-time').innerHTML = curDay + "/" + curMonth + "/" + curYear;
+</script>
+<script type='text/javascript' id='apss-frontend-mainjs-js-extra'>
+    /* <![CDATA[ */
+    var frontend_ajax_object = { "ajax_url": "http:\/\/litanamedia.work\/wp-admin\/admin-ajax.php", "ajax_nonce": "8f91b375de" };
+    var frontend_js_object = { "whatsapp_hide": "0", "viber_hide": "0", "sms_hide": "0", "messenger_hide": "0", "hide_popup_overlay": "0" };
+    /* ]]> */
+</script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/frontend3.js" id='apss-frontend-mainjs-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/frontend4.js" id='apsc-frontend-script-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/regenerator-runtime.min.js" id='regenerator-runtime-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/wp-polyfill.min.js" id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+    /* <![CDATA[ */
+    var wpcf7 = { "api": { "root": "http:\/\/litanamedia.work\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+    /* ]]> */
+</script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/index.js" id='contact-form-7-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/slick.min.js" id='jquery-slickslider-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/lightslider.js" id='jquery-lightslider-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/jquery.lazy.min.js" id='jquery-lazy-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/iframe-api.js" id='youtube-api-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/scripts.js" id='vmagazine-ea-script-js'></script>
+<script type='text/javascript' id='vmagazine-ea-ajax-js-extra'>
+    /* <![CDATA[ */
+    var vmea_ajax_script = { "ajaxurl": "http:\/\/litanamedia.work\/wp-admin\/admin-ajax.php" };
+    /* ]]> */
+</script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/vmea-ajax.js" id='vmagazine-ea-ajax-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/jquery.mCustomScrollbar.js" id='jquery-mCustomScrollbar-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/jquery.fitvids.js" id='jquery-fitvids-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/navigation.js" id='vmagazine-lite-navigation-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/skip-link-focus-fix.js" id='vmagazine-lite-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/wow.js" id='jquery-wow-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/jquery.prettyPhoto.js" id='jquery-prettyphoto-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/theia-sticky-sidebar.js" id='jquery-theia-sticky-sidebar-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/slick1.min.js" id='jquery-slick-js'></script>
+<script type='text/javascript' id='vmagazine-lite-custom-script-js-extra'>
+    /* <![CDATA[ */
+    var vmagazine_lite_ajax_script = { "mode": "enable", "ajax_search": "hide", "ajaxurl": "http:\/\/litanamedia.work\/wp-admin\/admin-ajax.php", "fileUrl": "http:\/\/litanamedia.work\/wp-content\/themes\/vmagazine-lite", "lazy": "enable", "controls": "default-layout" };
+/* ]]> */
+</script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/vmagazine-lite-custom.js" id='vmagazine-lite-custom-script-js'></script>
+<script type='text/javascript' src="/frontend_2/js/ccmvn/www-embed-player.js" id='wp-embed-js'></script>

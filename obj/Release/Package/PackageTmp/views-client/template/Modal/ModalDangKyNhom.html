@@ -1,0 +1,61 @@
+﻿<style>
+
+    .page-header-fixed::-webkit-scrollbar {
+        width: 7px;
+        display: none;
+    }
+</style>
+
+<div>
+
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4 ng-show="item.Id!=null && type!='chitiet'"> <label class=" uppercase font-green"><i class="fa fa-list"></i> Chỉnh sửa thông tin ưu đãi đăng ký theo nhóm</label></h4>
+            <h4 ng-show="item.Id==null"> <label class=" uppercase font-green"> <i class="fa fa-list"></i> Thêm mới thông tin ưu đãi đăng ký theo nhóm</label></h4>
+            <h4 ng-show="item.Id!=null && type=='chitiet'"> <label class=" uppercase font-green"> <i class="fa fa-list"></i> Xem chi tiết thông tin ưu đãi đăng ký theo nhóm</label></h4>
+        </div>
+    </div>
+
+    <div class="modal-body form" ng-init="OnLoad()">
+        <div class="portlet-body form-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet box light">
+                        <div class="portlet-body form form-horizontal">
+                            <br />
+                            
+                            <div class="form-group">
+                                <div class="col-md-2">Mô tả</div>
+                                <div class="col-md-10">
+                                    <textarea ng-disabled="type=='chitiet'" rows="3" type="text" class="form-control input-sm" ng-model="item.FName"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-2">Ưu đãi</div>
+                                <div class="col-md-10">
+                                    <input ng-disabled="type=='chitiet'" type="text" class="form-control input-sm " ng-model="item.FDescription" id="FName" name="FName">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="modal-footer form">
+        <div class="portlet-body form-body">
+            <div style="margin-top:10px;margin-bottom:10px" class="row">
+                <div class="col-md-12">
+                    <button class="btn input-sm btn-success" ng-click="SaveModal()"><i class="fa fa-save"></i>  Lưu </button>
+                    <button class="btn input-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Thoát </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,52 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin liên hệ</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+            <div class="row" style="margin-top: 15px; font-size: 15px">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Tên: &nbsp; {{item.FName}}</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Số điện thoại: &nbsp; {{item.PhoneNumber}}</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Email: &nbsp; {{item.Email}}</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Địa chỉ: {{item.Title}}</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Nội dung:</label>
+                        <p>{{item.Content}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-show="item.FIndex == 1" ng-click="MakeUnRead()"><i class="fa fa-check"></i> Đánh dấu là chưa đọc </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+</script>

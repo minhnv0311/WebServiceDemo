@@ -1,0 +1,201 @@
+﻿<!-- BEGIN HEADER INNER -->
+<style>
+    .scroller {
+        padding: 0 12px 0 0;
+        margin: 0;
+        /* overflow: scroll; */
+        overflow-y: scroll;
+    }
+</style>
+<div class="page-header-inner">
+    <!-- BEGIN LOGO -->
+    <div class="row">
+        <div class="col-md-8" style="vertical-align: middle;">
+            <a ui-sref="dashboard">
+                <img src="assets/layouts/layout/img/cropped-cropped-1200px-Logo_Bo_Y_te.svg_.png" alt="logo" style="margin-bottom: 4px; margin-left: 8px; width: 26px" class="logo-default" />
+                <label class="control-label uppercase" style="margin-top: 12px; font-size: 18px; cursor: pointer; font-weight: 600; color: white">&nbsp; BAN ĐIỀU PHỐI QUỐC GIA QUỸ TOÀN CẦU VIỆT NAM <!--{{DonViTitle}}--></label>
+            </a>
+            <div class="menu-toggler sidebar-toggler hide">
+            </div>
+        </div>
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span></span>
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu" ng-init="GetNotificationTTDX()">
+            <ul class="nav navbar-nav pull-right">
+
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <i class="icon-bell"></i>
+                        <span class="badge badge-default" ng-show="Notification.length != 0 || Notification_DV.length != 0 || Notification_UserByInspect.length != 0 || MessReceived != 0 || Notification_OrgLead.length!=0"> {{Notification.length + Notification_DV.length + Notification_UserByInspect.length + MessReceived + Notification_OrgLead.length}} </span>
+                    </a>
+                    <ul class="dropdown-menu" ng-show="Notification.length != 0 || Notification_DV.length != 0 || Notification_UserByInspect.length != 0 || MessReceived != 0 || Notification_OrgLead.length!=0">
+                        <li>
+                            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                <li ng-show="MessReceived != 0">
+                                    <a ng-click="LinkToMenu('MESS')">
+                                        <span class="details">
+                                            <span class="label label-sm label-icon label-success">
+                                                <i class="fa fa-bell"></i>
+                                            </span> Bạn có <b>{{MessReceived}}</b> thông báo chưa đọc
+                                        </span>
+                                    </a>
+                                </li>
+                                <li ng-repeat="u in Notification" ng-show="CheckDisplay=='1'">
+                                    <a ng-click="LinkToMenu('KHCD')">
+                                        <span class="details">
+                                            <span class="label label-sm label-icon label-success">
+                                                <i class="fa fa-plus"></i>
+                                            </span>Có <b class="text-danger">{{u.NumberOfInspects}}</b> kế hoạch chờ duyệt -  <b>{{u.FName}}</b>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li ng-repeat="u in Notification_OrgLead">
+                                    <a ng-click="LinkToMenu(u.type)">
+                                        <span class="details">
+                                            <span class="label label-sm label-icon label-success">
+                                                <i class="fa fa-bell"></i>
+                                            </span>  Đơn vị của bạn đã được chọn là chủ trì: <b>{{u.FName}}</b> ({{u.FCreateTime | date : 'dd/MM/yyyy HH:mm:ss'}})
+                                        </span>
+                                    </a>
+                                </li>
+                                <li ng-repeat="u in Notification_DV">
+                                    <a ng-click="LinkToMenu(u.type)">
+                                        <span class="details">
+                                            <span class="label label-sm label-icon " ng-class="{'label-success':u.type=='DDKH','label-warning':u.type=='KDKH'}">
+                                                <i ng-class="{'fa-check':u.type=='DDKH','fa-undo':u.type=='KDKH'}" class="fa "></i>
+                                            </span>  Có <b class="text-danger">{{u.NumberOfInspects}}</b> {{u.FName}}
+                                        </span>
+                                    </a>
+                                </li>
+                                <!--<li ng-repeat="u in Notification_UserByInspect">
+                        <a ng-click="LinkToInspection(u.FCode)">
+                            <span class="details">
+                                <span class="label label-sm label-icon label-success">
+                                    <i class="fa fa-plus"></i>
+                                </span> Bạn đã được thêm vào: <b>{{u.F_Inspection}}</b> ({{u.FCreateTime | date : 'dd/MM/yyyy HH:mm:ss'}})
+
+                            </span>
+                        </a>
+                    </li>-->
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar" ng-show="CheckDisplay=='1'">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <i class="fa fa-inbox"></i>
+                        <span class="badge badge-default" ng-show="NotificationTTDX.length >0"> {{NotificationTTDX.length}} </span>
+                    </a>
+                    <ul class="dropdown-menu" ng-show="NotificationTTDX.length >0">
+                        <li>
+                            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+
+                                <li ng-repeat="u in NotificationTTDX">
+                                    <a ng-click="CheckReadNotiTTDX(u.FCode)">
+                                        <span class="details">
+                                            <span class="label label-sm label-icon label-success">
+                                                <i class="fa fa-plus"></i>
+                                            </span>
+                                            <b>{{u.DVCT}}</b> vừa thêm <b class="text-danger">{{u.InsName}}</b> thuộc <b>{{u.Loai}}</b>
+                                        </span>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- END LANGUAGE BAR -->
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <img alt="" src="../../Avatar/{{mySplit(user.Avatar,1)}}" ng-show="mySplit(user.Avatar,1)!='undefined'" />
+                        <!--<img alt="" class="img-circle" src="../../Avatar/{{mySplit(user.Avatar,1)}}" ng-show="mySplit(user.Avatar,1)=='undefined'" />-->
+                        <img src="../assets/pages/img/avatars/team1.jpg" ng-show="mySplit(user.Avatar,1)=='undefined'" />
+                        <span class="username username-hide-on-mobile"> {{user.FullName}} </span>
+
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a ui-sref="account">
+                                <i class="icon-user"></i> Thông tin tài khoản
+                            </a>
+                        </li>
+                        <li class="divider"> </li>
+                        <li>
+                            <a href="javascript:;" ng-click="openEditItem('','Password')">
+                                <i class="icon-key"></i> Đổi mật khẩu
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" ng-click="LogOut()">
+                                <i class="icon-logout"></i> Đăng xuất
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+                <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <!--<li class="dropdown dropdown-quick-sidebar-toggler">
+        <a href="javascript:;" class="dropdown-toggle">
+            <i class="icon-logout"></i>
+        </a>
+    </li>-->
+                <!-- END QUICK SIDEBAR TOGGLER -->
+                <li class="dropdown dropdown-language">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <img alt="" ng-src="../assets/global/img/flags/{{ lang }}.png">
+                        <span class="langname"> {{ lang | uppercase}} </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li class="active" ng-repeat="lg in DMNgonNgu">
+                            <a href="#" ng-show="lang !== lg.FCode" ng-click="ChangeLanguage(lg.FCode,lg.FLanguage)">
+                                <img alt="" ng-src="{{$settings.globalPath}}/img/flags/{{ lg.FCode }}.png"> {{ lg.FName }}
+                            </a>
+                        </li>
+                        <!--<li>
+                <a href="#" ng-show="lang !== 'us'" ng-click="changeLanguage('us')">
+                    <img alt="" ng-src="{{$settings.globalPath}}/img/flags/us.png"> English
+                </a>
+            </li>
+            <li>
+                <a href="#" ng-show="lang !== 'fr'" ng-click="changeLanguage('fr')">
+                    <img alt="" ng-src="{{$settings.globalPath}}/img/flags/fr.png"> French
+                </a>
+            </li>-->
+                        <!--<li>
+                 <a href="#">
+                     <img alt="" src="{{$settings.globalPath}}/img/flags/de.png"> German
+                 </a>
+             </li>
+             <li>
+                 <a href="#">
+                     <img alt="" src="{{$settings.globalPath}}/img/flags/ru.png"> Russian
+                 </a>
+             </li>
+            -->
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+   
+    <!-- END LOGO -->
+  
+    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+  
+</div>
+<!-- END HEADER INNER -->

@@ -1,0 +1,50 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin tác giả</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+
+            <div class="row">
+                <!--<div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FCode[1]}}">
+                        <label class="control-label">Mã<span style="color:red">*</span>:</label>
+                        <input onKeyUp="RemoveUnicode(this);" ng-disabled="item.Id != 0 &&  item.Id != null" ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.FCode">
+                        <span class="help-block" ng-show="itemError.ModelState.FCode[0] != null">{{itemError.ModelState.FCode[0]}}</span>
+                    </div>
+                </div>-->
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tên tác giả <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FDescription[1]}}">
+                        <label class="control-label">Vị trí chụp:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FDescription">
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+
+    </div>
+
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+</script>

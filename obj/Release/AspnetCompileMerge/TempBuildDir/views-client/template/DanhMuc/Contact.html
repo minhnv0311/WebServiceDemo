@@ -1,0 +1,147 @@
+﻿
+<style>
+    .rotate {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+</style>
+<div ng-controller="ContactController">
+    <div class="page-bar">
+        <div class="col-md-7">
+
+            <ul class="page-breadcrumb ">
+                <li>
+                    <a ui-sref="dashboard">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.ParentMenu)}}</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="bold">
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.FCode)}}</a>
+
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE HEADER-->
+
+    <div class="row">
+        <div class="portlet light" style="margin-bottom:0">
+
+
+            <!--<div class="col-md-12">
+                <h4> <label class=" uppercase font-green"><i class="fa fa-list"></i> DANH MỤC {{getPageBar( $stateParams.param.FCode)}}</label></h4>
+            </div>-->
+            <div class="form-body form-horizontal">
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-icon input-icon-sm right">
+                            <i class="fa fa-search"></i>
+                            <input type="text" ng-model="Paging.SearchKey" ng-change="GetListBanner(true)" ng-model-options="{ updateOn: 'change blur'}" class="form-control input-sm" placeholder="Nhập từ khóa tìm kiếm">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-scrollable">
+                            <table class="table table-responsive table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="1%" class="text-center" style="vertical-align:middle">
+                                            STT
+                                        </th>
+                                        <th width="15%" class="text-center" style="vertical-align:middle">
+                                            Tên
+                                        </th>
+                                        <th width="10%" class="text-center" style="vertical-align:middle">
+                                            Số điện thoại
+                                        </th>
+                                        <th width="10%" class="text-center" style="vertical-align:middle">
+                                            Email
+                                        </th>
+                                        <th class="text-center">
+                                            Địa chỉ
+                                        </th>
+                                        <th class="text-center">
+                                            Nhãn
+                                        </th>
+                                        <th width="1%" class="text-center" style="vertical-align:middle">
+                                            #
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="u in List | orderBy : 'FIndex'">
+                                        <td width="1%" class="text-center" style="vertical-align:middle">
+                                            {{ShowIndex($index+1,Paging.PageNumber,Paging.PageSize)}}
+                                        </td>
+                                        <td width="10%" class="text-center" style="vertical-align:middle">
+                                            <a ng-click="openModal(u.Id,'Contact')">{{u.FName}}</a>
+                                        </td>
+
+                                        <td style="vertical-align: middle; white-space: nowrap; text-align: center">
+                                            {{u.PhoneNumber}}
+                                        </td>
+                                        <td width="10%" style="vertical-align:middle">
+                                            {{u.Email }}
+                                        </td>
+                                        <td style="vertical-align:middle; white-space: nowrap;">
+                                            {{u.Title}}
+                                        </td>
+                                        <td width="3%" style="vertical-align:middle; white-space: nowrap; text-align: center" ng-show="u.FIndex == 0" ng-init="GetHasRead(u)">
+                                            <strong>{{u.HasRead}}</strong>
+                                        </td>
+                                        <td width="3%" style="vertical-align: middle; white-space: nowrap; text-align: center" ng-show="u.FIndex == 1" ng-init="GetHasRead(u)">
+                                            {{u.HasRead}}
+                                        </td>
+                                        <td width="1%" class="text-center" style="vertical-align:middle">
+                                            <a ng-click="Delete(u.Id)" title="Xóa"><i class="fa fa-trash font-red"></i></a>
+
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="List.length == 0">
+                                        <td colspan="20">
+                                            <div class="alert alert-danger">
+                                                <strong>Thông báo!</strong> Không có danh sách liên hệ
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div ng-show="List.length > 0" class="dataTables_info" id="sample_2_info" role="status" aria-live="polite">{{DisplayInfoPagination(Paging.PageNumber,Paging.PageSize,Paging.Total)}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <ul class="pull-right pagination-sm" ng-show="Paging.Total > Paging.PageSize"
+                            boundary-links="true"
+                            previous-text="Trang trước" next-text="Trang sau" first-text="Trang đầu" last-text="Trang cuối"
+                            force-ellipses="true"
+                            max-size="10"
+                            ng-change="pageChanged()"
+                            uib-pagination total-items="Paging.Total" ng-model="Paging.PageNumber" items-per-page="Paging.PageSize"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

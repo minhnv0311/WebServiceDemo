@@ -1,0 +1,76 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin meta</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Name <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.Type[1]}}">
+                        <label class="control-label">Type :</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.Type">
+                        <span class="help-block" ng-show="itemError.ModelState.Type[0] != null">{{itemError.ModelState.Type[0]}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.Rel[1]}}">
+                        <label class="control-label">Rel:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.Rel">
+                        <span class="help-block" ng-show="itemError.ModelState.Rel[0] != null">{{itemError.ModelState.Rel[0]}}</span>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.Href[1]}}">
+                        <label class="control-label">Href :</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.Href">
+                        <span class="help-block" ng-show="itemError.ModelState.Href[0] != null">{{itemError.ModelState.Href[0]}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.Sizes[1]}}">
+                        <label class="control-label">Sizes:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.Sizes">
+                        <span class="help-block" ng-show="itemError.ModelState.Sizes[0] != null">{{itemError.ModelState.Sizes[0]}}</span>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Ghi chú:</label>
+                        <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    //ComponentsSelect2.init();
+</script>

@@ -1,0 +1,312 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin cự ly</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+            <div class="tabbable tabbable-tabdrop">
+                <ul class="nav nav-pills">
+
+                    <li class="active">
+                        <a data-target="#tab11" data-toggle="tab" aria-expanded="false">Thông tin chung</a>
+                    </li>
+                    <li class="">
+                        <a data-target="#tab12" data-toggle="tab" aria-expanded="false">ROUTE STATISTICS</a>
+                    </li>
+                    <li>
+                        <a data-target="#tab13" data-toggle="tab" aria-expanded="true">ROUTE PROFILE</a>
+                    </li>
+                    <li>
+                        <a data-target="#tab14" data-toggle="tab">RACE MAP</a>
+                    </li>
+
+                    <li>
+                        <a data-target="#tab16" data-toggle="tab">RACEKIT</a>
+                    </li>
+
+                    <li>
+                        <a data-target="#tab15" data-toggle="tab">Giải thưởng</a>
+                    </li>
+
+
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab11">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                                    <label class="control-label">Cự ly <span style="color:red">*</span>:</label>
+                                    <input type="text" class="form-control input-sm" ng-model="item.FName">
+                                    <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Url đăng ký:</label>
+                                    <input type="text" class="form-control input-sm" ng-model="item.UrlRegister">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Ghi chú:</label>
+                                    <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane" id="tab12">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Distance:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.Distance">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Total Ascent/Descent:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.TotalAscentDescent">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Lowest Point:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.LowestPoint">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Highgest Point:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.HighgestPoint">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Uphill:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.Uphill">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Downhill:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.Downhill">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Flat:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.Flat">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Max. Height Gain:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.MaxHeightGain">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Steepest Uphill:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.SteepestUphill">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Steepest Downhill:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.SteepestDownhill">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Longest Uphill:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.LongestUphill">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Longest Downhill:</label>
+                                    <input type="text" class="form-control input-sm" ng-maxlength="200" ng-model="item.LongestDownhill">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane " id="tab13">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Tải hình ảnh lên:</label>
+                                    <input class="form-control" type="file" id="file" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">&nbsp;&nbsp;</label>
+                                    <br />
+                                    <a class="btn btn-sm green-haze" ng-click="UploadBanner()" title="Upload hình ảnh"><i class="fa fa-upload"></i></a>
+                                    <a class="btn btn-sm btn-danger" ng-show="ShowDeleteButton()" ng-click="DeleteBanner()" title="Xóa hình ảnh"><i class="fa fa-close"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group form-group-sm">
+                                    <img src="{{item.RouterProfile}}" style="width:100%;height:30%" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab14">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Tải hình ảnh lên:</label>
+                                    <input class="form-control" type="file" id="file_2" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">&nbsp;&nbsp;</label>
+                                    <br />
+                                    <a class="btn btn-sm green-haze" ng-click="UploadBanner_2()" title="Upload hình ảnh"><i class="fa fa-upload"></i></a>
+                                    <a class="btn btn-sm btn-danger" ng-show="ShowDeleteButton_2()" ng-click="DeleteBanner_2()" title="Xóa hình ảnh"><i class="fa fa-close"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group form-group-sm">
+                                    <img src="{{item.RaceMap}}" style="width:100%;height:30%" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tab16">
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <a class="btn btn-sm green-haze" ng-click="AddRaceKit()"><i class="fa fa-plus"></i>&nbsp; Thêm trang bị</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <table class="table table-responsive table-bordered">
+                                        <tr>
+                                            <th width="10%">STT</th>
+                                            <th>Trang bị</th>
+                                            <th>Bắt buộc</th>
+                                            <th>Khuyến cáo</th>
+                                        </tr>
+
+                                        <tbody>
+                                            <tr ng-repeat="u in ListRaceKitForRace | orderBy : 'STT'">
+                                                <td width="10%">
+                                                    <input ng-model="u.STT" placeholder="Thứ tự" class="form-control input-sm" />
+                                                </td>
+                                                <td>
+                                                    <select class="form-control select2" ng-model="u.RaceKitId">
+                                                        <option ng-repeat="o in ddlRaceKit" value="{{o.Id}}">{{o.FName}}</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <label class="mt-checkbox mt-checkbox-outline"
+                                                           rel="popover">
+                                                        <input type="checkbox" ng-model="u.IsRequied" />
+                                                        <span></span>
+                                                    </label>
+                                                </td>
+                                                <td>
+                                                    <label class="mt-checkbox mt-checkbox-outline"
+                                                           rel="popover">
+                                                        <input type="checkbox" ng-model="u.IsNotRequied" />
+                                                        <span></span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tab15">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <a class="btn btn-sm green-haze" ng-click="AddPrize()"><i class="fa fa-plus"></i>&nbsp; Thêm giải thưởng</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <table class="table table-responsive table-bordered">
+                                        <tr>
+                                            <th width="5%">
+                                                Thứ tự
+                                            </th>
+                                            <th>
+                                                Loại giải
+                                            </th>
+
+                                            <th>
+                                                Thông tin giải
+                                            </th>
+
+
+                                        </tr>
+                                        <tbody>
+                                            <tr ng-repeat="u in ListPrice | orderBy : 'FIndex'">
+                                                <td width="5%">
+                                                    <input ng-model="u.FIndex" placeholder="Thứ tự" class="form-control input-sm" />
+                                                </td>
+                                                <td width="45%">
+                                                    <input ng-model="u.FName" placeholder="Loại giải" class="form-control input-sm" />
+                                                </td>
+                                                <td width="45%">
+                                                    <input ng-model="u.FDescription" placeholder="Thông tin giải" class="form-control input-sm" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    ComponentsSelect2.init();
+</script>

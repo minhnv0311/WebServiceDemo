@@ -1,0 +1,1948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebApiDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="FName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserEdit" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserDelete" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIsDelete" Type="bit" />
+    <Property Name="FIsEdit" Type="bit" />
+    <Property Name="FIsUpdate" Type="bit" />
+    <Property Name="FViewTime" Type="datetime" />
+    <Property Name="FEditTime" Type="datetime" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FDeleteTime" Type="datetime" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="Parent" Type="nvarchar" MaxLength="100" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="IsUnit" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUpdateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="AutoID">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="Counter" Type="bigint" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="BANG_MA_CK">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="FName" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserEdit" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserDelete" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIsDelete" Type="bit" />
+    <Property Name="FIsEdit" Type="bit" />
+    <Property Name="FIsUpdate" Type="bit" />
+    <Property Name="FViewTime" Type="datetime" />
+    <Property Name="FEditTime" Type="datetime" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FDeleteTime" Type="datetime" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="IsUnit" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="GiaTran" Type="float" />
+    <Property Name="GiaSan" Type="float" />
+    <Property Name="GiaThamChieu" Type="float" />
+    <Property Name="FNote" Type="nvarchar" MaxLength="400" />
+    <Property Name="MaChungKhoan" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BoDanhGiaHuyen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SoQD" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayQd" Type="nvarchar" MaxLength="50" />
+    <Property Name="DonViId" Type="bigint" />
+    <Property Name="TongSoDVTrucThuoc" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoUBNDXa" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoCBCCVCHuyen" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoCBCCVCXa" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoMayTinhHuyen" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoMayTinhXa" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongDiem" Type="int" />
+    <Property Name="JsonDiem" Type="nvarchar(max)" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BoDanhGiaTinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SoQD" Type="nvarchar" MaxLength="100" />
+    <Property Name="NgayQd" Type="nvarchar" MaxLength="50" />
+    <Property Name="DonViId" Type="bigint" />
+    <Property Name="TongSoDVTrucThuoc" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoCBCCVC" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongSoMayTinh" Type="nvarchar" MaxLength="10" />
+    <Property Name="TongDiem" Type="int" />
+    <Property Name="JsonDiem" Type="nvarchar(max)" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Provin" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ward" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ChucDanh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CMS_Ads">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Target" Type="nvarchar" MaxLength="4000" />
+    <Property Name="GroupLinks" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="4000" />
+    <Property Name="IsShowWithCategory" Type="bit" />
+    <Property Name="CateogoryCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="CMS_Banner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="20" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CMS_Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="MainMenu" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentMenu" Type="nvarchar" MaxLength="50" />
+    <Property Name="ControllerName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TemplateUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Permission" Type="nvarchar" MaxLength="200" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="200" />
+    <Property Name="LinkType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Link" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Target" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsNews" Type="bit" />
+    <Property Name="IsMedia" Type="bit" />
+    <Property Name="IsSell" Type="bit" />
+    <Property Name="IsQA" Type="bit" />
+    <Property Name="IsBuy" Type="bit" />
+    <Property Name="NguoiGui" Type="nvarchar" MaxLength="200" />
+    <Property Name="TraLoi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CMS_DocumentInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileSize" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContentType" Type="nvarchar" MaxLength="200" />
+    <Property Name="Path" Type="nvarchar" MaxLength="200" />
+    <Property Name="DocumentCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="CMS_Documents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="20" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="IssuedDate" Type="datetime" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="DocumentType" Type="nvarchar" MaxLength="4000" />
+    <Property Name="LinhVuc" Type="nvarchar" MaxLength="4000" />
+    <Property Name="DraftBy" Type="nvarchar" MaxLength="200" />
+    <Property Name="SignBy" Type="nvarchar" MaxLength="200" />
+    <Property Name="PromulgatedBy" Type="nvarchar" MaxLength="200" />
+    <Property Name="Promulgated" Type="nvarchar" MaxLength="200" />
+    <Property Name="FieldType" Type="nvarchar" MaxLength="200" />
+    <Property Name="DocumentFile" Type="nvarchar(max)" />
+    <Property Name="FileAttachment" Type="nvarchar(max)" />
+    <Property Name="Tick" Type="nvarchar(max)" />
+    <Property Name="Read" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CMS_Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Target" Type="nvarchar" MaxLength="4000" />
+    <Property Name="GroupLinks" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="CMS_GroupLinks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="SuDung" Type="bit" />
+  </EntityType>
+  <EntityType Name="CMS_Library">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="Rel" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Href" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Sizes" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="CMS_Links">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Target" Type="nvarchar" MaxLength="4000" />
+    <Property Name="GroupLinks" Type="bigint" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="IsShowWithCategory" Type="bit" />
+    <Property Name="CateogoryCode" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="CMS_Meta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Property" Type="nvarchar" MaxLength="500" />
+    <Property Name="ItemProp" Type="nvarchar" MaxLength="500" />
+    <Property Name="Charset" Type="nvarchar" MaxLength="500" />
+    <Property Name="HttpEquiv" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CMS_News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Menu" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsShowSortContent" Type="bit" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="SortContent" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="IsHotNews" Type="bit" />
+    <Property Name="IsTopNews" Type="bit" />
+    <Property Name="IsImportantNews" Type="bit" />
+    <Property Name="IsLiveNews" Type="bit" />
+    <Property Name="NguoiGui" Type="nvarchar" MaxLength="200" />
+    <Property Name="TraLoi" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CMS_News_Files">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="FileSize" Type="float" />
+    <Property Name="ContentType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Path" Type="nvarchar" MaxLength="500" />
+    <Property Name="Text" Type="nvarchar" MaxLength="500" />
+    <Property Name="NewsId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CMS_PageTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CMS_Videos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="2000" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="4000" />
+    <Property Name="Target" Type="nvarchar" MaxLength="4000" />
+    <Property Name="GroupLinks" Type="bigint" />
+    <Property Name="Image" Type="nvarchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Provin" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ward" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMChuanChatLuong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMCongCu_QL_ChatLuong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMDonViTinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMLinhVucDN">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DMLoaiHinh_DN">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMLoaiHinhSanXuat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMNganhNghe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMNgonNgu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="20" />
+    <Property Name="FName" Type="nvarchar(max)" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FUserCreate" Type="nvarchar(max)" />
+    <Property Name="FUserEdit" Type="nvarchar(max)" />
+    <Property Name="FUserUpdate" Type="nvarchar(max)" />
+    <Property Name="FUserDelete" Type="nvarchar(max)" />
+    <Property Name="FIsDelete" Type="bit" />
+    <Property Name="FIsEdit" Type="bit" />
+    <Property Name="FIsUpdate" Type="bit" />
+    <Property Name="FViewTime" Type="datetime" />
+    <Property Name="FEditTime" Type="datetime" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FDeleteTime" Type="datetime" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FParent" Type="nvarchar(max)" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FBranchCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DMPhanLoaiGiaCong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="LinhVucDN" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="IsLink" Type="bit" />
+  </EntityType>
+  <EntityType Name="DMQuocGia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DMTrangThai">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DOANH_NGHIEP">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="MaLoaiHinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaSoThue" Type="nvarchar" MaxLength="50" />
+    <Property Name="DienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoiDangKy" Type="nvarchar" MaxLength="200" />
+    <Property Name="DiaChi" Type="nvarchar(max)" />
+    <Property Name="NgayCap" Type="datetime" />
+    <Property Name="ChuSoHuu" Type="nvarchar" MaxLength="50" />
+    <Property Name="NganhNgheChinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="NganhNgheKinhDoan" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="TenCongTy_VI" Type="nvarchar(max)" />
+    <Property Name="TenCongTy_EN" Type="nvarchar(max)" />
+    <Property Name="TenVietTat" Type="nvarchar(max)" />
+    <Property Name="TenThuongHieu" Type="nvarchar(max)" />
+    <Property Name="SoLuongLaoDong" Type="int" />
+    <Property Name="SoLuongLDBaoHiem" Type="nvarchar" MaxLength="100" />
+    <Property Name="NamThanhLap" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoaiHinhDN" Type="nvarchar(max)" />
+    <Property Name="VonDauTu" Type="nvarchar" MaxLength="100" />
+    <Property Name="VonNhaNuoc" Type="nvarchar" MaxLength="100" />
+    <Property Name="VonTuNhan" Type="nvarchar" MaxLength="100" />
+    <Property Name="ChuanChatLuong" Type="nvarchar(max)" />
+    <Property Name="CongCuQuanLy" Type="nvarchar(max)" />
+    <Property Name="Logo" Type="nvarchar(max)" />
+    <Property Name="DoanhThu" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhanTramXuatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="NamDoanhThu" Type="nvarchar" MaxLength="50" />
+    <Property Name="DiaChi_VI" Type="nvarchar(max)" />
+    <Property Name="DiaChi_EN" Type="nvarchar(max)" />
+    <Property Name="DiaChiCSSX_VI" Type="nvarchar(max)" />
+    <Property Name="DiaChiCSSX_EN" Type="nvarchar(max)" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="200" />
+    <Property Name="Website" Type="nvarchar" MaxLength="400" />
+    <Property Name="Huyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="256" />
+    <Property Name="LyDo" Type="nvarchar(max)" />
+    <Property Name="LVSXChinh" Type="nvarchar(max)" />
+    <Property Name="PhanLoaiGiaCong" Type="nvarchar(max)" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="TongTaiSan" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiSanDaiHan" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaiSanNganHan" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoiNhuanTruocThue" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoiNhuanSauThue" Type="nvarchar" MaxLength="50" />
+    <Property Name="LuongBinhQuanLD" Type="nvarchar" MaxLength="500" />
+    <Property Name="SoLuongLDDN" Type="nvarchar" MaxLength="500" />
+    <Property Name="LinhVucSXC" Type="nvarchar(max)" />
+    <Property Name="NguoiDaiDienName" Type="nvarchar(max)" />
+    <Property Name="NguoiDaiDienCV" Type="nvarchar(max)" />
+    <Property Name="NguoiDaiDienSDT" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_KhachHang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenKH_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="TenKH_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="SanPham_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="SanPham_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="DoanhThu" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_LienHe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="NguoiLienHe" Type="nvarchar" MaxLength="400" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="ChucVu_VI" Type="nvarchar" MaxLength="200" />
+    <Property Name="ChucVu_EN" Type="nvarchar" MaxLength="200" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_LinhVuc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="LinhVuc" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhanLoai" Type="nvarchar" MaxLength="400" />
+    <Property Name="ChiTiet" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_NguyenLieu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="500" />
+    <Property Name="MaSanPham" Type="nvarchar" MaxLength="500" />
+    <Property Name="TenNguyenLieu_VI" Type="nvarchar(max)" />
+    <Property Name="TenNguyenLieu_EN" Type="nvarchar(max)" />
+    <Property Name="TyTrong" Type="nvarchar" MaxLength="100" />
+    <Property Name="TyTrongNoiDia" Type="nvarchar" MaxLength="100" />
+    <Property Name="TyTrongNhapKhau" Type="nvarchar" MaxLength="100" />
+    <Property Name="TenNuocNhapKhau" Type="nvarchar(max)" />
+    <Property Name="MaNuoc" Type="nvarchar" MaxLength="500" />
+    <Property Name="LyDo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_NhapKhau">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="NuocNhap_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="NuocNhap_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="SanPham_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="SanPham_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="CangNhap_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="CangNhap_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="DoanhThu" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_NhaXuong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenNhaXuong_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="TenNhaXuong_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="DiaChi_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="DiaChi_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="SoFax" Type="nvarchar" MaxLength="20" />
+    <Property Name="DienTich" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_SanPham">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaSanPham" Type="nvarchar" MaxLength="500" />
+    <Property Name="TenSanPham_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="TenSanPham_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="CongNghe_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="CongNghe_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="UngDung_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="UngDung_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="AnhDaiDien" Type="nvarchar" MaxLength="400" />
+    <Property Name="NangSuat" Type="nvarchar" MaxLength="400" />
+    <Property Name="SoLuongDH" Type="nvarchar" MaxLength="400" />
+    <Property Name="DoChinhXac" Type="nvarchar" MaxLength="400" />
+    <Property Name="DonViTinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="TieuChuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="SanLuong" Type="nvarchar" MaxLength="400" />
+    <Property Name="NangLuc" Type="nvarchar" MaxLength="400" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+    <Property Name="TyTrongNoiDia" Type="nvarchar" MaxLength="100" />
+    <Property Name="TyTrongXuatKhau" Type="nvarchar" MaxLength="100" />
+    <Property Name="NganhCung" Type="nvarchar" MaxLength="500" />
+    <Property Name="Type" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_ThietBi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenThietBi_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="TenThietBi_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="HieuSuat" Type="nvarchar" MaxLength="500" />
+    <Property Name="ThongSo_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="ThongSo_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="NamSX" Type="nvarchar" MaxLength="20" />
+    <Property Name="NuocSX_VI" Type="nvarchar" MaxLength="100" />
+    <Property Name="NuocSX_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="HangSX_VI" Type="nvarchar" MaxLength="100" />
+    <Property Name="HangSX_EN" Type="nvarchar" MaxLength="100" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_XuatKhau">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThiTruong_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="ThiTruong_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="SanPham_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="SanPham_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="CangXuat_VI" Type="nvarchar" MaxLength="400" />
+    <Property Name="CangXuat_EN" Type="nvarchar" MaxLength="400" />
+    <Property Name="DoanhThu" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="DoanhNghiep_XuatNhapKhau">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDoanhNghiep" Type="nvarchar" MaxLength="50" />
+    <Property Name="NuocNhapKhau" Type="nvarchar(max)" />
+    <Property Name="NuocXuatKhau" Type="nvarchar(max)" />
+    <Property Name="TyTrongXuatKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="TyTrongNhapKhau" Type="nvarchar" MaxLength="50" />
+    <Property Name="DaDuyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Donvi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FName" Type="nvarchar(max)" />
+    <Property Name="FType" Type="nvarchar" MaxLength="50" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FParent" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsDV" Type="bit" />
+    <Property Name="Provin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Disctrict" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ward" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FullAddress" Type="nvarchar(max)" />
+    <Property Name="SitePath" Type="nvarchar" MaxLength="4000" />
+    <Property Name="IsDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="DTYeuCauTheoDoi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="TieuChuanApDung" Type="nvarchar" MaxLength="50" />
+    <Property Name="CongCuQuanLy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LinhVucDN" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoaiHinhDN" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaNhaDauTu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DTYeuCauTruyVan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="NoiDungYeuCau" Type="nvarchar" MaxLength="4000" />
+    <Property Name="NoiDungTraLoi" Type="nvarchar" MaxLength="4000" />
+    <Property Name="MaNhaDauTu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GioiTinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Group_Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodeRole" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Group_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LICH_SU_GIA">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="FName" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserEdit" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserDelete" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIsDelete" Type="bit" />
+    <Property Name="FIsEdit" Type="bit" />
+    <Property Name="FIsUpdate" Type="bit" />
+    <Property Name="FViewTime" Type="datetime" />
+    <Property Name="FEditTime" Type="datetime" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FDeleteTime" Type="datetime" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="IsUnit" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaChungKhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="t_ThoiGian" Type="bigint" />
+    <Property Name="o_GiaMoCua" Type="float" />
+    <Property Name="h_GiaCaoNhat" Type="float" />
+    <Property Name="l_GiaThapNhat" Type="float" />
+    <Property Name="c_c" Type="float" />
+    <Property Name="v_Volumn" Type="float" />
+    <Property Name="s_s" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="LichSuDuyet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="MaDN_NDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LinhVuc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="Parent" Type="nvarchar" MaxLength="200" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LOAI_HINH_DN">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LoaiGiayTo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MainMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="MainMenu" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentMenu" Type="nvarchar" MaxLength="50" />
+    <Property Name="ControllerName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TemplateUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="50" />
+    <Property Name="Permission" Type="nvarchar" MaxLength="200" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NhaDauTu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="256" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="400" />
+    <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" />
+    <Property Name="QuocGia" Type="nvarchar" MaxLength="50" />
+    <Property Name="LyDo" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FParent" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsDV" Type="bit" />
+    <Property Name="Provin" Type="nvarchar" MaxLength="50" />
+    <Property Name="Disctrict" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ward" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FullAddress" Type="nvarchar(max)" />
+    <Property Name="SitePath" Type="nvarchar" MaxLength="4000" />
+    <Property Name="IsDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="Permission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Position">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="QL_FileDinhKem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DBName" Type="nvarchar(max)" />
+    <Property Name="KeyFCode" Type="nvarchar(max)" />
+    <Property Name="FileName" Type="nvarchar(max)" />
+    <Property Name="FileSize" Type="int" />
+    <Property Name="FilePath" Type="nvarchar(max)" />
+    <Property Name="Main" Type="bit" />
+    <Property Name="IsNew" Type="bit" />
+  </EntityType>
+  <EntityType Name="ROLE_ASSIGNMENT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodeRole" Type="nvarchar" MaxLength="200" />
+    <Property Name="CodePermission" Type="nvarchar(max)" />
+    <Property Name="CodeMenu" Type="nvarchar(max)" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SAN_GIAO_DICH_CK">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="FName" Type="nvarchar" MaxLength="4000" />
+    <Property Name="FDescription" Type="nvarchar(max)" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserEdit" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="100" />
+    <Property Name="FUserDelete" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIsDelete" Type="bit" />
+    <Property Name="FIsEdit" Type="bit" />
+    <Property Name="FIsUpdate" Type="bit" />
+    <Property Name="FViewTime" Type="datetime" />
+    <Property Name="FEditTime" Type="datetime" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FDeleteTime" Type="datetime" />
+    <Property Name="FLanguage" Type="nvarchar" MaxLength="100" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="IsUnit" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="FNote" Type="nvarchar" MaxLength="400" />
+    <Property Name="MaChungKhoan" Type="nvarchar" MaxLength="50" />
+    <Property Name="F1" Type="float" />
+    <Property Name="F2" Type="float" />
+    <Property Name="F3" Type="float" />
+    <Property Name="F4" Type="float" />
+    <Property Name="F5" Type="float" />
+    <Property Name="F6" Type="float" />
+    <Property Name="F7" Type="float" />
+    <Property Name="F8" Type="float" />
+    <Property Name="F9" Type="float" />
+    <Property Name="F10" Type="float" />
+    <Property Name="F11" Type="float" />
+    <Property Name="F12" Type="float" />
+    <Property Name="F13" Type="float" />
+    <Property Name="F14" Type="float" />
+    <Property Name="F15" Type="float" />
+    <Property Name="F16" Type="float" />
+    <Property Name="F17" Type="float" />
+    <Property Name="F18" Type="float" />
+    <Property Name="F19" Type="float" />
+    <Property Name="F20" Type="float" />
+    <Property Name="F21" Type="float" />
+    <Property Name="F22" Type="float" />
+    <Property Name="F23" Type="float" />
+    <Property Name="F24" Type="float" />
+    <Property Name="F25" Type="float" />
+    <Property Name="F26" Type="float" />
+    <Property Name="F27" Type="float" />
+    <Property Name="F28" Type="float" />
+    <Property Name="F29" Type="float" />
+    <Property Name="F30" Type="float" />
+    <Property Name="F31" Type="float" />
+    <Property Name="F32" Type="float" />
+    <Property Name="F33" Type="float" />
+    <Property Name="F34" Type="float" />
+    <Property Name="F35" Type="float" />
+    <Property Name="F36" Type="float" />
+    <Property Name="F37" Type="float" />
+    <Property Name="F38" Type="float" />
+    <Property Name="F1_LenhMua_Gia3" Type="float" />
+    <Property Name="F2_LenhMua_KL3" Type="float" />
+    <Property Name="F3_LenhMua_Gia2" Type="float" />
+    <Property Name="F4_LenhMua_KL2" Type="float" />
+    <Property Name="F5_LenhMua_Gia1" Type="float" />
+    <Property Name="F6_LenhMua_KL1" Type="float" />
+    <Property Name="F7_Tang_Giam" Type="float" />
+    <Property Name="F8_SauDongCua_Gia" Type="float" />
+    <Property Name="F9_SauDongCua_KL" Type="float" />
+    <Property Name="F10_TKL" Type="float" />
+    <Property Name="F11_LenhBan_Gia1" Type="float" />
+    <Property Name="F12_LenhBan_KL1" Type="float" />
+    <Property Name="F13_LenhBan_Gia2" Type="float" />
+    <Property Name="F14_LenhBan_KL2" Type="float" />
+    <Property Name="F15_LenhBan_Gia3" Type="float" />
+    <Property Name="F16_LenhBan_KL3" Type="float" />
+    <Property Name="F17_F17" Type="float" />
+    <Property Name="F18_LSGia_Cao" Type="float" />
+    <Property Name="F19_LSGia_Thap" Type="float" />
+    <Property Name="F20_NN_Mua" Type="float" />
+    <Property Name="F21_NN_Ban" Type="float" />
+    <Property Name="F22_F22" Type="float" />
+    <Property Name="F23_F23" Type="float" />
+    <Property Name="F24_F24" Type="float" />
+    <Property Name="F25_F25" Type="float" />
+    <Property Name="F26_Room_Con" Type="float" />
+    <Property Name="F27_F27" Type="float" />
+    <Property Name="F28_F28" Type="float" />
+    <Property Name="F29_F29" Type="float" />
+    <Property Name="F30_F30" Type="float" />
+    <Property Name="F31_F31" Type="float" />
+    <Property Name="F32_F32" Type="float" />
+    <Property Name="F33_F33" Type="float" />
+    <Property Name="F34_F34" Type="float" />
+    <Property Name="F35_F35" Type="float" />
+    <Property Name="F36_F36" Type="float" />
+    <Property Name="F37_F37" Type="float" />
+    <Property Name="F38_F38" Type="float" />
+  </EntityType>
+  <EntityType Name="TypeCate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="200" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Type" Type="nvarchar" MaxLength="200" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="OrgCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="FDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="FCreateTime" Type="datetime" />
+    <Property Name="FUpdateTime" Type="datetime" />
+    <Property Name="FUserCreate" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUserApprove" Type="nvarchar" MaxLength="20" />
+    <Property Name="FApproveTime" Type="datetime" />
+    <Property Name="FStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="FIndex" Type="int" />
+    <Property Name="FLevel" Type="int" />
+    <Property Name="FInUse" Type="bit" />
+    <Property Name="FBranchCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Department" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="Provin" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ward" Type="nvarchar" MaxLength="50" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="Position" Type="nvarchar" MaxLength="50" />
+    <Property Name="FUserUpdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Avatar" Type="nvarchar" MaxLength="500" />
+    <Property Name="DonVi" Type="nvarchar" MaxLength="150" />
+    <Property Name="SearchKey" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="WebApiDataModelStoreContainer">
+    <EntitySet Name="Area" EntityType="Self.Area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoID" EntityType="Self.AutoID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BANG_MA_CK" EntityType="Self.BANG_MA_CK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BoDanhGiaHuyen" EntityType="Self.BoDanhGiaHuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BoDanhGiaTinh" EntityType="Self.BoDanhGiaTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChucDanh" EntityType="Self.ChucDanh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Ads" EntityType="Self.CMS_Ads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Banner" EntityType="Self.CMS_Banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Categories" EntityType="Self.CMS_Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_DocumentInfo" EntityType="Self.CMS_DocumentInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Documents" EntityType="Self.CMS_Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Gallery" EntityType="Self.CMS_Gallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_GroupLinks" EntityType="Self.CMS_GroupLinks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Library" EntityType="Self.CMS_Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Links" EntityType="Self.CMS_Links" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Meta" EntityType="Self.CMS_Meta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_News" EntityType="Self.CMS_News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_News_Files" EntityType="Self.CMS_News_Files" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_PageTitle" EntityType="Self.CMS_PageTitle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CMS_Videos" EntityType="Self.CMS_Videos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMChuanChatLuong" EntityType="Self.DMChuanChatLuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMCongCu_QL_ChatLuong" EntityType="Self.DMCongCu_QL_ChatLuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMDonViTinh" EntityType="Self.DMDonViTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMLinhVucDN" EntityType="Self.DMLinhVucDN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMLoaiHinh_DN" EntityType="Self.DMLoaiHinh_DN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMLoaiHinhSanXuat" EntityType="Self.DMLoaiHinhSanXuat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMNganhNghe" EntityType="Self.DMNganhNghe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMNgonNgu" EntityType="Self.DMNgonNgu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMPhanLoaiGiaCong" EntityType="Self.DMPhanLoaiGiaCong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMQuocGia" EntityType="Self.DMQuocGia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DMTrangThai" EntityType="Self.DMTrangThai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DOANH_NGHIEP" EntityType="Self.DOANH_NGHIEP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep" EntityType="Self.DoanhNghiep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_KhachHang" EntityType="Self.DoanhNghiep_KhachHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_LienHe" EntityType="Self.DoanhNghiep_LienHe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_LinhVuc" EntityType="Self.DoanhNghiep_LinhVuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_NguyenLieu" EntityType="Self.DoanhNghiep_NguyenLieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_NhapKhau" EntityType="Self.DoanhNghiep_NhapKhau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_NhaXuong" EntityType="Self.DoanhNghiep_NhaXuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_SanPham" EntityType="Self.DoanhNghiep_SanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_ThietBi" EntityType="Self.DoanhNghiep_ThietBi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_XuatKhau" EntityType="Self.DoanhNghiep_XuatKhau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DoanhNghiep_XuatNhapKhau" EntityType="Self.DoanhNghiep_XuatNhapKhau" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donvi" EntityType="Self.Donvi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DTYeuCauTheoDoi" EntityType="Self.DTYeuCauTheoDoi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DTYeuCauTruyVan" EntityType="Self.DTYeuCauTruyVan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GioiTinh" EntityType="Self.GioiTinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_Role" EntityType="Self.Group_Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Group_User" EntityType="Self.Group_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LICH_SU_GIA" EntityType="Self.LICH_SU_GIA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LichSuDuyet" EntityType="Self.LichSuDuyet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LinhVuc" EntityType="Self.LinhVuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_HINH_DN" EntityType="Self.LOAI_HINH_DN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiGiayTo" EntityType="Self.LoaiGiayTo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MainMenu" EntityType="Self.MainMenu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaDauTu" EntityType="Self.NhaDauTu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permission" EntityType="Self.Permission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QL_FileDinhKem" EntityType="Self.QL_FileDinhKem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLE_ASSIGNMENT" EntityType="Self.ROLE_ASSIGNMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAN_GIAO_DICH_CK" EntityType="Self.SAN_GIAO_DICH_CK" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeCate" EntityType="Self.TypeCate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

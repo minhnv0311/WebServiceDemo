@@ -1,0 +1,76 @@
+﻿<div ng-init="OnLoad()">
+    <div class="modal-header bg-color" style="background-color:#ccc">
+        <div class="modal-title">
+            <h4> <label class=" uppercase font-white"><i class="fa fa-list"></i> Cập nhật thông tin lĩnh vực doanh nghiệp</label></h4>
+
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body form-horizontal margin-top-10">
+            <div class="row margin-bottom-5">
+
+                <div class="{{itemError.ModelState.FName[1]}}">
+                    <label class="control-label col-md-2">Tên lĩnh vực<span style="color:red">*</span>:</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control input-sm" placeholder="Nhập tên lĩnh vực" ng-disabled="check =='xem'" ng-model="item.FName">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-bottom-5">
+                <label class="control-label col-md-2">Tải banner lên:</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="file" id="file" />
+
+                </div>
+                <div class="col-md-4">
+                   
+                        <a class="btn btn-sm green-haze" ng-click="UploadBanner()" title="Upload banner"><i class="fa fa-upload"></i></a>
+                        <a class="btn btn-sm btn-danger" ng-show="ShowDeleteButton()" ng-click="DeleteBanner()" title="Xóa banner"><i class="fa fa-close"></i></a>
+               
+                </div>
+                
+            </div>
+            <div class="row margin-bottom-5">
+                <label class="control-label col-md-2">&nbsp;</label>
+                <div class="col-md-10">
+                    <div class="form-group form-group-sm">
+                        <img src="{{item.Image}}" style="width:100%;height:30%" />
+                    </div>
+                </div>
+            </div>
+                <div class="row margin-bottom-5">
+                    <label class="control-label col-md-2">Class:</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control input-sm"  ng-disabled="check =='xem'" ng-model="item.FDescription">
+                       
+                    </div>
+
+
+                </div>
+
+                <div class="form-group " style="position: sticky;bottom: 10px;z-index:500;background-color:white">
+                    <label class="control-label col-md-2"></label>
+                    <div class="col-md-10 clearfix">
+                        <a class="btn btn-sm btn-success btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode) && check !='xem'" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+                        <a class="btn btn-sm btn-success btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode) && check !='xem'" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>
+                        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('input-sm');
+        $('.form-control').addClass('input-sm');
+
+    })
+</script>
+<script>
+    jQuery(document).ready(function () {
+        ComponentsSelect2.init();
+    });
+</script>

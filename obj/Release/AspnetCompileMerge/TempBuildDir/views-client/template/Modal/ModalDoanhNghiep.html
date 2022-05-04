@@ -1,0 +1,377 @@
+﻿<div ng-init="OnLoad()">
+    <div class="modal-header bg-color" style="background-color:#ccc">
+        <div class="modal-title">
+            <h4> <label class=" uppercase font-white"><i class="fa fa-list"></i> Thông tin doanh nghiệp</label></h4>
+
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body form-horizontal margin-top-10">
+
+            <div class="tabbable-custom ">
+                <ul class="nav nav-tabs ">
+                    <li class="active">
+                        <a data-target="#tab_1" data-toggle="tab" aria-expanded="true"> Thông tin chung </a>
+                    </li>
+                    <li class="">
+                        <a data-target="#tab_2" data-toggle="tab" aria-expanded="false"> Phương pháp sản xuất </a>
+                    </li>
+                    <li class="">
+                        <a data-target="#tab_3" data-toggle="tab" aria-expanded="false"> Doanh thu và nguồn nhân lực  </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1">
+
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption caption-md">
+                                    <span class="caption-subject font-green bold uppercase">Thông tin chung</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row margin-bottom-5">
+                                    <div class="{{itemError.ModelState.TenDangNhap[1]}}">
+                                        <label class="control-label col-md-2">Tên đăng nhập<span style="color:red">*</span>:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" onKeyUp="RemoveUnicode(this);" ng-change="ValidUsername()" ng-model-options="{updateOn: 'change'}" class="form-control input-sm" ng-model="item.TenDangNhap" ng-disabled="read" placeholder="Nhập tên đăng nhập">
+
+                                        </div>
+                                    </div>
+                                    <div class="{{itemError.ModelState.FCode[1]}}">
+                                        <label class="control-label col-md-2">Mã số thuế<span style="color:red">*</span>:</label>
+                                        <div class="col-md-4">
+                                            <input onKeyUp="RemoveUnicode(this);" ng-change="ValidFCode()" ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.FCode" ng-disabled="check=='xem'" placeholder="Nhập mã số thuế">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row margin-bottom-5">
+                                    <div class="{{itemError.ModelState.TenCongTy_VI[1]}}">
+                                        <label class="control-label col-md-2">Tên tiếng Việt<span style="color:red">*</span>:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control input-sm" ng-model="item.TenCongTy_VI" ng-disabled="check=='xem'" placeholder="Nhập tên doanh nghiệp (tiếng Việt)">
+
+                                        </div>
+                                    </div>
+
+                                    <label class="control-label col-md-2">Tên nước ngoài:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.TenCongTy_EN" ng-disabled="check=='xem'" placeholder="Nhập tên doanh nghiệp (tiếng Anh)">
+                                    </div>
+
+                                </div>
+
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-2">Tên thương hiệu:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.TenThuongHieu" ng-disabled="check=='xem'" placeholder="Nhập tên thương hiệu">
+                                    </div>
+
+                                    <label class="control-label col-md-2">Tên viết tắt:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.TenVietTat" ng-disabled="check=='xem'" placeholder="Nhập tên viết tắt">
+                                    </div>
+
+                                </div>
+
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-2">Năm thành lập:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.NamThanhLap" ng-disabled="check=='xem'" placeholder="Nhập năm thành lập">
+                                    </div>
+
+                                    <label class="control-label col-md-2">Lao động:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.SoLuongLaoDong" ng-disabled="check=='xem'" placeholder="Nhập số lượng lao động">
+                                    </div>
+
+                                </div>
+
+                                <div class="row margin-bottom-5">
+                                    <div class="{{itemError.ModelState.LoaiHinhDN[1]}}">
+                                        <label class="control-label col-md-2">Loại hình DN<span style="color:red">*</span>:</label>
+                                        <div class="col-md-4">
+                                            <select ng-model="item.LoaiHinhDN" id="LoaiHinhDN" class="form-control select2" ng-disabled="check=='xem'">
+                                                <!--<option value="">Chọn Loại hình</option>-->
+                                                <option ng-repeat="c in DMLoaiHinh" value="{{c.FCode }}">{{c.FName }}</option>
+                                            </select>
+
+                                        </div>
+
+                                        <label class="control-label col-md-2">Vốn đầu tư:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control input-sm" ng-model="item.VonDauTu" ng-disabled="check=='xem'" placeholder="Nhập vốn đầu tư (USD)">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-2">Vốn nhà nước:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.VonNhaNuoc" ng-disabled="check=='xem'" placeholder="Nhập vốn nhà nước (%)">
+                                    </div>
+
+                                    <label class="control-label col-md-2">Vốn tư nhân:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.VonTuNhan" ng-disabled="check=='xem'" placeholder="Nhập vốn tư nhân (%)">
+                                    </div>
+
+                                </div>
+
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-2">Chuẩn chất lượng:</label>
+                                    <div class="col-md-4">
+                                        <select ng-model="ChuanChatLuong" multiple class="select2 form-control" ng-disabled="check=='xem'">
+                                            <!--<option value="">Chọn Chuẩn chất lượng</option>-->
+                                            <option ng-repeat="c in DMTieuChuan" value="{{c.FCode}}">{{c.FName }}</option>
+                                        </select>
+                                    </div>
+
+                                    <label class="control-label col-md-2">Công cụ QLCL:</label>
+                                    <div class="col-md-4">
+                                        <select ng-model="CongCuQuanLy" multiple class="select2 form-control input-sm" ng-disabled="check=='xem'">
+                                            <!--<option value="">Chọn Công cụ quản lý chất lượng</option>-->
+                                            <option ng-repeat="c in DMCongCuQuanLy" value="{{c.FCode}}">{{c.FName }}</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <div>
+                                        <label class="control-label col-md-2">Lĩnh vực sản xuất chính:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control input-sm" ng-model="item.LinhVucSXC" ng-disabled="check=='xem'">
+                                        </div>
+                                    </div>
+                                    <!--<div>
+            <label class="control-label col-md-2">Phương pháp sx:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control input-sm" ng-model="NameLvsxChinh" ng-disabled="check=='xem'" readonly>
+
+            </div>
+        </div>-->
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <div>
+                                        <label class="control-label col-md-2">Người đại diện:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control input-sm" ng-model="item.NguoiDaiDienName" ng-disabled="check=='xem'" placeholder="Nhập tên người đại diện">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="control-label col-md-2">Chức vụ:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control input-sm" ng-model="item.NguoiDaiDienCV" ng-disabled="check=='xem'" placeholder="Nhập chức vụ người đại diện">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <div>
+                                        <label class="control-label col-md-2">Số điện thoại người đại diện:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control input-sm" ng-model="item.NguoiDaiDienSDT" ng-disabled="check=='xem'" placeholder="Nhập SĐT người đại diện">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption caption-md">
+                                    <span class="caption-subject font-green bold uppercase">Thông tin liên hệ</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row margin-bottom-5">
+                                    <div class="{{itemError.ModelState.DiaChi_VI[1]}}">
+                                        <label class="control-label col-md-2">Địa chỉ trụ sở chính<span style="color:red">*</span>:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control input-sm" ng-model="item.DiaChi_VI" ng-disabled="check=='xem'" placeholder="Nhập địa chỉ tiếng Việt">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <div class="col-md-10 pull-right">
+                                        <input type="text" class="form-control input-sm" ng-model="item.DiaChi_EN" ng-disabled="check=='xem'" placeholder="Nhập địa chỉ tiếng nước ngoài">
+
+                                    </div>
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <div>
+                                        <label class="control-label col-md-2">Địa chỉ cơ sở sx (1):</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control input-sm" ng-model="item.DiaChiCSSX_VI" ng-disabled="check=='xem'" placeholder="Nhập địa chỉ">
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-2">Địa chỉ cơ sở sx (2):</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control input-sm" ng-model="item.DiaChiCSSX_EN" ng-disabled="check=='xem'" placeholder="Nhập địa chỉ">
+                                    </div>
+                                </div>
+                                <div class="row margin-bottom-5">
+
+                                    <div class="{{itemError.ModelState.Email[1]}}">
+                                        <label class="control-label col-md-2">Email<span style="color:red">*</span>:</label>
+                                        <div class="col-md-4">
+                                            <input onKeyUp="RemoveUnicode(this);" ng-change="ValidEmail()" ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.Email" ng-disabled="check=='xem'" placeholder="Nhập thư điện tử">
+
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-md-2">Website:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.Website" ng-disabled="check=='xem'" placeholder="Nhập địa chỉ website">
+
+                                    </div>
+
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-2">Điện thoại:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.SoDienThoai" ng-disabled="check=='xem'" placeholder="Nhập số điện thoại">
+
+                                    </div>
+
+                                    <label class="control-label col-md-2">Số Fax:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control input-sm" ng-model="item.Fax" ng-disabled="check=='xem'" placeholder="Nhập số Fax">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="tab_2">
+
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption caption-md">
+                                    <span class="caption-subject font-green bold uppercase">Phương pháp sản xuất </span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+
+                                <div id="tree_phanloai" class="tree-demo"> </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane " id="tab_3">
+
+                        <div class="portlet">
+                            <div class="portlet-title">
+                                <div class="caption caption-md">
+                                    <span class="caption-subject font-green bold uppercase">Doanh thu và nguồn nhân lực</span>
+
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-4">Năm:</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control input-sm" ng-model="item.NamDoanhThu" ng-disabled="check=='xem'">
+                                    </div>
+                                    <div>
+                                        <label class="control-label col-md-4">Tổng Tài sản (Tỷ đồng):</label>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control input-sm" ng-model="item.TongTaiSan" ng-disabled="check=='xem'" placeholder="Nhập tổng tài sản">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row margin-bottom-5">
+                                    <label class="control-label col-md-4">Tài sản dài hạn (Tỷ đồng):</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control input-sm" ng-model="item.TaiSanDaiHan" ng-disabled="check=='xem'" placeholder="Nhập tài sản">
+                                    </div>
+                                    <div>
+                                        <label class="control-label col-md-4">Tài sản ngắn hạn (Tỷ đồng):</label>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control input-sm" ng-model="item.TaiSanNganHan" ng-disabled="check=='xem'" placeholder="Nhập tài sản">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row margin-bottom-5">
+
+
+                                    <div>
+                                        <label class="control-label col-md-4">Doanh thu (Tỷ đồng):</label>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control input-sm" ng-model="item.DoanhThu" ng-disabled="check=='xem'" placeholder="Nhập doanh thu">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="control-label col-md-4">Lợi nhuận trước thuế (Tỷ đồng):</label>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control input-sm" ng-model="item.LoiNhuanTruocThue" ng-disabled="check=='xem'" placeholder="Nhập lợi nhuận trước thuế">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row margin-bottom-5">
+
+
+                                    <label class="control-label col-md-4">Lợi nhuận sau thuế (Tỷ đồng):</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control input-sm" ng-model="item.LoiNhuanSauThue" ng-disabled="check=='xem'" placeholder="Nhập lợi nhuận sau thuế">
+                                    </div>
+                                    <label class="control-label col-md-4">Tổng số lượng lao động (người):</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control input-sm" ng-model="item.SoLuongLDDN" ng-disabled="check=='xem'" placeholder="Nhập số lượng lao động">
+                                    </div>
+                                </div>
+
+                                <div class="row margin-bottom-5">
+
+
+                                    <label class="control-label col-md-4">Số lao động BHXH (người):</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control input-sm" ng-model="item.SoLuongLDBaoHiem" ng-disabled="check=='xem'" placeholder="Nhập số lượng lao động (BHXH)">
+                                    </div>
+                                    <label class="control-label col-md-4">Mức lương bình quân của lao động (VNĐ):</label>
+                                    <div class="col-md-2">
+                                        <input type="text" class="form-control input-sm" ng-model="item.LuongBinhQuanLD" ng-disabled="check=='xem'" placeholder="Nhập mức lương bình quân">
+                                    </div>
+                                </div>
+                                <!--<div class="row margin-bottom-5">
+
+
+    </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="form-group " style="position: sticky;bottom: 10px;z-index:500;background-color:white">                
+                <div class="col-md-10 clearfix">
+                    <a class="btn btn-sm btn-success btn-outline sbold" ng-show="check !='xem'" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+                    <a class="btn btn-sm btn-success btn-outline sbold" ng-show="check !='xem'" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và Duyệt </a>
+                    <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

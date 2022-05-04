@@ -1,0 +1,77 @@
+﻿@charset "UTF-8";
+/*
+ * jQuery File Upload Plugin CSS Example
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+
+body {
+    padding-top: 60px;
+}
+
+.qlform {
+}
+
+    .qlform .modal-header h4 {
+        color: #333;
+    }
+
+    .qlform .form-body {
+        background: #ffffff;
+    }
+
+        .qlform
+        .form-horizontal .form-group,
+        .qlform .form-body .form-group {
+            padding-left: 0px;
+            padding-right: 0px;
+            background: #ffffff;
+        }
+
+            .qlform .form-body .form-group .control-label {
+                padding-left: 0px;
+                padding-right: 0px
+            }
+
+            .qlform .form-body .form-group label.required {
+                color: #333;
+            }
+
+                .qlform .form-body .form-group label.required:after {
+                    content: "*";
+                    color: red;
+                    padding: 5px;
+                }
+
+
+.modal-backdrop.fade.in {
+    z-index: 10;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+    ul li {
+        list-style: none;
+    }
+
+.modal-dialog {
+}
+
+    .modal-dialog h5.modal-title {
+        font-weight: bold;
+    }
+
+
+.date-control {
+    background-image: url(/assets/apps/img/calendar.png);
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+}

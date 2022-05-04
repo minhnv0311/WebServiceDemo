@@ -1,0 +1,132 @@
+﻿<style>
+    #title {
+        font-size: 30px;
+        font-weight: 600;
+        color: #ed1a16;
+        text-align: center;
+        line-height: 40px;
+        text-shadow: 2px 2px #c1d5de;
+        word-spacing: 1px;
+    }
+
+    #describle {
+        color: #7d7c7c; 
+        font-size: 16px;
+        margin-top: 80px;
+        text-shadow: 1px 1px #dce0e4;
+        font-weight: 400;
+        word-spacing: 1px;
+    }
+
+    .user-login-5 .login-container > .login-content > .login-form {
+        margin-top: 20px;
+    }
+</style>
+<div class="user-login-5" ng-controller="LoginController">
+    <div class="row bs-reset">
+        <div class="col-md-6 bs-reset mt-login-5-bsfix">
+            <div class="login-bg" style="background-image: url(assets/pages/img/login/screen_homepage_en.jpg)">
+                <!--<img class="login-logo" src="assets/pages/img/login/logo.png" />-->
+            </div>
+        </div>
+        <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
+            <div class="login-content" style="margin-top: 10% !important">
+                <h1 id="title">BAN ĐIỀU PHỐI QUỐC GIA QUỸ TOÀN CẦU VIỆT NAM</h1>
+                <p id="describle"> Đăng nhập vào hệ thống!</p>
+
+                <div class="login-form">
+                    <div class="alert alert-danger display-hide">
+                        <button class="close" data-close="alert"></button>
+                        <span>Enter any username and password. </span>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-xs-11">
+                            <input id="username" class="form-control form-control-solid placeholder-no-fix form-group form_login" type="text" autocomplete="off" placeholder="Tên đăng nhập" name="username" ng-model="auth.username" required />
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-xs-11">
+                            <input class="form-control form-control-solid placeholder-no-fix form-group form_login" type="password" autocomplete="off" placeholder="Mật khẩu" name="password" ng-model="auth.password" required />
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                    <div class="row">
+                       
+                        <div class="col-sm-4">
+                            <div class="rem-password">
+                                <label class="rememberme mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" name="remember" value="1" /> Duy trì đăng nhập
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 text-right">
+                            <!--<div class="forgot-password">
+            <a href="javascript:;" id="forget-password" class="forget-password">Quên mật khẩu?</a>
+        </div>-->
+                            <button type="submit" id="loginBtn" ng-click="fnLogin()"
+                                    class="btn yellow mt-ladda-btn ladda-button btn-outline" data-style="contract">
+                                <span class="ladda-label">{{loading}}</span>
+                                <span class="ladda-spinner">Loading ...</span>
+                            </button>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col-sm-4 text-right">
+                        </div>
+                        <div class="col-sm-8 text-right">
+                            <button type="button" ng-click="authenExProvider('Google')" class="btn green mt-ladda-btn ladda-button btn-outline" data-style="contract">
+                                <span class="ladda-label">Google</span>
+                                <span class="ladda-spinner">Loading ...</span>
+                            </button>
+                            <button type="button" class="btn green mt-ladda-btn ladda-button btn-outline" data-style="contract">
+                                <span class="ladda-label">Twitter</span>
+                                <span class="ladda-spinner">Loading ...</span>
+                            </button>
+                            <button type="button" ng-click="authenExProvider('Facebook')" class="btn green mt-ladda-btn ladda-button btn-outline" data-style="contract">
+                                <span class="ladda-label">Facebook</span>
+                                <span class="ladda-spinner">Loading ...</span>
+                            </button>
+                        </div>
+                    </div>-->
+                </div>
+                <!-- BEGIN FORGOT PASSWORD FORM -->
+                <!--<form class="forget-form" action="javascript:;" method="post">
+                    <h3 class="font-green">Forgot Password ?</h3>
+                    <p> Enter your e-mail address below to reset your password. </p>
+                    <div class="form-group">
+                        <input class="form-control placeholder-no-fix form-group" type="text" autocomplete="off" placeholder="Email" name="email" />
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
+                        <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
+                    </div>
+                </form>-->
+                <!-- END FORGOT PASSWORD FORM -->
+            </div>
+            <div class="login-footer">
+                <div class="row bs-reset">
+                    <div class="col-xs-5 bs-reset">
+                    </div>
+                    <div class="col-xs-7 bs-reset">
+                        <div class="login-copyright text-right">
+                            <p>Copyright &copy; <a href="http://vsd.com.vn" target="_blank">VSD Việt Nam</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#username").focus();
+    $('.form_login').keypress(function (event) {
+        if (event.keyCode == 13) {
+            $('#loginBtn').click();
+        }
+    });
+</script>

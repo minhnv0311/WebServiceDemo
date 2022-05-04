@@ -1,0 +1,166 @@
+﻿
+<style>
+    .rotate {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+</style>
+<div ng-controller="CommentController">
+    <div class="page-bar">
+        <div class="col-md-7">
+
+            <ul class="page-breadcrumb ">
+                <li>
+                    <a ui-sref="dashboard">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.ParentMenu)}}</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="bold">
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.FCode)}}</a>
+
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE HEADER-->
+
+    <div class="row">
+        <div class="portlet light" style="margin-bottom:0">
+
+
+            <!--<div class="col-md-12">
+                <h4> <label class=" uppercase font-green"><i class="fa fa-list"></i> DANH MỤC {{getPageBar( $stateParams.param.FCode)}}</label></h4>
+            </div>-->
+            <div class="form-body form-horizontal">
+                <div class="row">
+                    <div class="col-md-2">
+                        <select ng-model="Status" class="form-control select2" ng-change="pageChanged()">
+                            <option value="PENDING">Chưa duyệt</option>
+                            <option value="APPROVED">Đã duyệt</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4" ng-show="Status == 'APPROVED'">
+                        <label style="margin-top: 5px"><input type="checkbox" ng-model="IsShow" ng-true-value="true" ng-false-value="false"  ng-change="pageChanged()"/>&nbsp; Hiển thị trên bài viết</label>
+                    </div>
+                    <div class="col-md-4" ng-show="Status != 'APPROVED'">
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-icon input-icon-sm right">
+                            <i class="fa fa-search"></i>
+                            <input type="text" ng-model="Paging.SearchKey" ng-change="GetListBanner(true)" ng-model-options="{ updateOn: 'change blur'}" class="form-control input-sm" placeholder="Nhập từ khóa tìm kiếm">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-scrollable">
+                            <table class="table table-responsive table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="1%" class="text-center" style="vertical-align:middle">
+                                            STT
+                                        </th>
+                                        <th width="1%" class="text-center" style="vertical-align:middle">
+                                            #
+                                        </th>
+                                        <th>
+                                            Bài viết
+                                        </th>
+                                        <th>
+                                            Người phản hồi
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Phản hồi
+                                        </th>
+                                        <th width="10%" style="vertical-align:middle">
+                                            Thời gian gửi
+                                        </th>
+                                        <th>
+                                            Trạng thái
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="u in List">
+                                        <td width="1%" class="text-center" style="vertical-align:middle">
+                                            {{ShowIndex($index+1,Paging.PageNumber,Paging.PageSize)}}
+                                        </td>
+                                        <td width="1%" class="text-center" style="vertical-align:middle">
+                                            <a ng-click="openModal(u.Id,'Comment')"><i class="fa fa-edit"></i></a>
+                                            <a ng-click="Delete(u.Id)" title="Xóa"><i class="fa fa-trash font-red"></i></a>
+                                        </td>
+                                        <td>
+                                            {{u.FName}}
+                                        </td>
+                                        <td>
+                                            {{u.Name}}
+                                        </td>
+                                        <td>
+                                            {{u.Email}}
+
+                                        </td>
+                                        <td>
+                                            {{u.FComment}}
+
+                                        </td>
+                                        <td width="10%" style="vertical-align:middle; white-space: nowrap;">
+                                            {{u.FCreateTime | date : 'dd/MM/yyyy HH:mm:ss'}}
+                                        </td>
+                                        <td width="10%" style="vertical-align:middle" ng-show="u.FStatus == 'PENDING'">
+                                            Chưa duyệt
+                                        </td>
+                                        <td width="10%" style="vertical-align:middle" ng-show="u.FStatus == 'APPROVED'">
+                                            Đã duyệt
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="List.length == 0">
+                                        <td colspan="20">
+                                            <div class="alert alert-danger">
+                                                <strong>Thông báo!</strong> Không có phản hồi
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div ng-show="List.length > 0" class="dataTables_info" id="sample_2_info" role="status" aria-live="polite">{{DisplayInfoPagination(Paging.PageNumber,Paging.PageSize,Paging.Total)}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <ul class="pull-right pagination-sm" ng-show="Paging.Total > Paging.PageSize"
+                            boundary-links="true"
+                            previous-text="Trang trước" next-text="Trang sau" first-text="Trang đầu" last-text="Trang cuối"
+                            force-ellipses="true"
+                            max-size="10"
+                            ng-change="pageChanged()"
+                            uib-pagination total-items="Paging.Total" ng-model="Paging.PageNumber" items-per-page="Paging.PageSize"></ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

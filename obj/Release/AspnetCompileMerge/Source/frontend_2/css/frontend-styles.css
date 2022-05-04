@@ -1,0 +1,160 @@
+/* Youtube playe */
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder{
+	position: relative;
+	width: 100%;
+	height: 32rem;
+	background: #000;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .big-video{
+	width: 70%;
+	height: 100%;
+	vertical-align: top;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .big-video .big-video-inner{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 42.5%;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .big-video .big-video-inner iframe{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: block;
+	margin: 0;
+	top: 0;
+	left: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.html5-main-video,
+.html5-video-player .video-stream{
+	left: 0;
+	width: 100%;
+	right: 0;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .video-thumbs{
+	width: 30%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 60px;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .video-thumbs .vmagazine-video-thumbnails{
+	height: 100%;
+	color: #F6F6F6;
+	position: relative;
+	padding: 8px 2px 8px 8px;
+	overflow: hidden !important;
+}
+.vmagazine-video-thumbnails .mCSB_outside + .mCSB_scrollTools{
+	right: -10px;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .video-thumbs .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	background-color:rgba(229,45,109,1);
+	width: 5px;
+}
+.vmagazine-video-thumbnails .mCSB_scrollTools{
+	width: 0px;
+	right: 5px;
+}
+.vmagazine-video-thumbnails .mCSB_scrollTools .mCSB_draggerContainer{
+	right: 3px;
+}
+.vmagazine-video-thumbnails .mCSB_inside > .mCSB_container{
+	margin-right: 0;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list{
+	cursor: pointer;
+	padding: 8px;
+	margin-right: 8px;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list.video-active{
+	background: #444;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list:hover{
+	background: #333;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list img{
+	width: 20%;
+	max-width: 100px;
+	float: left;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list .video-title-duration{
+	float: left;
+	padding-left: 20px;
+	width: 80%;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list .video-title-duration h6{
+	font-size: 14px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-weight: normal;
+	line-height: 20px;
+	color: #F6F6F6;
+}
+.vmagazine-video-thumbnails .vmagazine-video-list .video-list-duration {
+    font-size: 11px;
+    color: #AAA;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Arial;
+}
+.vmea-video-playlist .vmagazine-yt-player .vmagazine-video-holder .video-thumbs .video-controls{
+	position: absolute;
+	bottom: -60px;
+	right: 0;
+	left: 0;
+	height: 60px;
+	z-index: 99;
+	padding: 10px;
+	color: #FFF;
+	background: rgba(229,45,109,1);
+}
+.vmagazine-video-holder .video-thumbs .video-controls .video-track{
+	margin-right: 120px;
+	font-size: 14px;
+}
+.vmagazine-video-holder .video-thumbs .video-current-playlist{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.video-control-holder{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: rgba(0, 0, 0, 0.05);
+}
+.video-control-holder > div{
+	display: inline-block;
+	padding: 0 10px;
+	cursor: pointer;
+	line-height: 40px;
+}
+
+/* grid list block */
+.vmea-grid-list .cat-links a {
+    color: #FFF;
+    font-weight: 400;
+    padding: 0px 5px;
+    width: auto;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 auto;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    margin-left: 0.2rem;
+    margin-right: 0;
+    margin-bottom: 0.1rem;
+    margin-top: 0.15rem;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.vmea-grid-list .cat-links {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}

@@ -1,0 +1,58 @@
+﻿<div class="modal-header bg-color">
+    <h3 class="modal-title">Cập nhật dữ liệu</h3>
+</div>
+<div class="modal-body form">
+    <div class="form-body form-horizontal">
+        <div class="form-group" style="display:none">
+            <label class="control-label col-md-3">Mã</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" disabled="disabled" ng-model="item.Id" name="Id">
+            </div>
+        </div>
+
+        <div class="form-group {{itemPerError.ModelState.FCode[1]}}">
+            <label class="control-label col-md-3">Mã cơ sở in <span style="color:red">*</span></label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control"
+                           ng-model-options="{updateOn: 'change'}" ng-disabled="read"
+                           ng-change="ValidOnlyCode(item.FCode)"
+                           ng-model="item.FCode" id="FCode" name="FCode">
+                    <span class="input-group-btn">
+                        <button class="btn green-haze btn-outline sbold" ng-disabled="read" type="button" ng-click="AutoID('CSI'); item.FCode = objAutoID.FName;">Tạo mã</button>
+                    </span>
+                </div>
+                <!--<input type="text" class="form-control" ng-model="item.FCode" id="FCode" name="FCode">-->
+                <span class="help-block"> {{ itemPerError.ModelState.FCode[0] }} </span>
+            </div>
+
+        </div>
+
+        <div class="form-group {{itemPerError.ModelState.FName[1]}}">
+            <label class="control-label col-md-3">Tên cơ sở in <span style="color:red">*</span></label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="item.FName" id="FName" name="FName">
+                <span class="help-block"> {{ itemPerError.ModelState.FName[0] }} </span>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Địa chỉ </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="item.DiaChi" name="DiaChi">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Mô tả </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="item.FDescription" name="FName">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn green-haze btn-outline sbold" ng-show="Type != 'VIEW'" ng-click="SaveModal()"> Cập nhật </button>
+    <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+</div>

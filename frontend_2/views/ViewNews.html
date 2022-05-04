@@ -1,0 +1,528 @@
+﻿<div ng-controller="NewsController">
+    <div class="vmagazine-lite-breadcrumb-wrapper">
+
+        <div class="vmagazine-lite-bread-home">
+            <div class="vmagazine-lite-bread-wrapp">
+
+                <div class="breadcrumb-title">
+                </div>
+                <div class="vmagazine-lite-breadcrumb">
+                    <nav role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs">
+                        <ul class="trail-items" ng-hide="Parent != null"><li class="trail-item trail-begin"><a ng-href="#/"><span>HOME</span></a></li><li class="trail-item trail-end current"><span>{{News.MainTag}}</span></li></ul>
+                        <ul class="trail-items" ng-show="Parent != null"><li class="trail-item trail-begin"><a ng-href="#/"><span>HOME</span></a></li><li class="trail-item"><a ng-href="#/{{lang}}/{{Parent.Url}}/"><span>{{Parent.FName}}</span></a></li><li class="trail-item trail-end current"><span>{{News.MainTag}}</span></li></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vmagazine-lite-container">
+
+        <div id="primary" class="content-area post-single-layout1 vmagazine-lite-content">
+            <main id="main" class="site-main" role="main">
+                <div class="today" style="width: 100%; padding-bottom: 15px; background-color: #fff; border-bottom: 1px solid #ddd; margin-bottom: 15px"><span>{{DayInWeek}}, </span><span id="current-time"></span></div>
+                <article id="post-6445" class="post-6445 post type-post status-publish format-standard has-post-thumbnail hentry category-bien-ban category-du-an category-giam-sat-thuc-dia category-hiv-aids category-hop-ccm category-hop-tieu-ban category-hop-uy-ban-giam-sat">
+
+                    <span class="cat-links"><a ng-repeat="a in Tags" ng-href="#/{{lang}}/category/{{a.Url}}" class="cat-156">{{a.FName}}</a></span>
+                    <header class="entry-header">
+                        <h1 class="entry-title" style=" line-height: 1.3 !important; font-size: 1.3rem !important">{{News.FName}}</h1>
+                    </header><!-- .entry-header -->
+                    <div class="entry-meta clearfix">
+                        <span class="posted-on"><i class="fa fa-clock-o"></i>{{News.FCreateTime | date:'dd/MM/yyyy'}}</span><span class="comments"><i class="fa fa-comments"></i>{{News.FIndex}}</span>
+                    </div><!-- .entry-meta -->
+                    <div ng-show="News.Image != '../../../Uploads/Banners/banner-no-image.jpg'" class="entry-thumb" style="margin-bottom: 0.75rem !important"><img width="778" height="528" ng-src="{{News.Image}}" class="attachment-full size-full wp-post-image" alt="" loading="lazy" sizes="(max-width: 778px) 100vw, 778px" /></div>
+                    <p style="text-align: center; font-style: italic">{{News.FDescription}}</p>
+                    <div class="entry-content clearfix">
+                        <div class='apss-social-share apss-theme-1  apss-buttons-left clearfix apsp-share-inline-top'>
+                            <div class='apss-share-wrapper-div'>
+
+                                <div class='apss-facebook apss-single-icon  '>
+
+                                    <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436');return false;" data-hover="Facebook" title="{{'share-on' | translate}} Facebook ">
+                                        <div class='apss-icon-block clearfix' data-hover="Facebook">
+                                            <i class="fa fa-facebook "></i>
+                                            <span class='apss-social-text'>{{'share-on' | translate}} Facebook</span>
+                                            <span class='apss-share'>{{'share' | translate}}</span>
+                                        </div>
+                                        <div class="apss-hover-content-wrap">
+                                            <div class="apss-hover-text">
+                                                {{'share' | translate}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class='apss-twitter apss-single-icon  '>
+
+                                    <a onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436');return false;" data-hover="Twitter" title="{{'share-on' | translate}} Twitter ">
+                                        <div class='apss-icon-block clearfix' data-hover="Twitter">
+                                            <i class="fa fa-twitter "></i>
+                                            <span class='apss-social-text'>{{'share-on' | translate}} Twitter</span>
+                                            <span class='apss-share'>{{'share' | translate}}</span>
+                                        </div>
+                                        <div class="apss-hover-content-wrap">
+                                            <div class="apss-hover-text">
+                                                {{'share' | translate}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class='apss-google-plus apss-single-icon  '>
+
+                                    <a onclick="window.open('https://plus.google.com/share?url'+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436');return false;" data-hover="Google-plus" title="{{'share-on' | translate}} Google Plus ">
+                                        <div class='apss-icon-block clearfix' data-hover="Google-plus">
+                                            <i class="fa fa-google-plus "></i>
+                                            <span class='apss-social-text'>{{'share-on' | translate}} Google Plus</span>
+                                            <span class='apss-share'>{{'share' | translate}}</span>
+                                        </div>
+                                        <div class="apss-hover-content-wrap">
+                                            <div class="apss-hover-text">
+                                                {{'share' | translate}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class='apss-pinterest apss-single-icon  '>
+
+                                    <a onclick="window.open('http://pinterest.com/pin/create/button/?url='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436');return false;" data-hover="Pinterest" title="{{'share-on' | translate}} Pinterest ">
+                                        <div class='apss-icon-block clearfix' data-hover="Pinterest">
+                                            <i class="fa fa-pinterest "></i>
+                                            <span class='apss-social-text'>{{'share-on' | translate}} Pinterest</span>
+                                            <span class='apss-share'>{{'share' | translate}}</span>
+                                        </div>
+                                        <div class="apss-hover-content-wrap">
+                                            <div class="apss-hover-text">
+                                                {{'share' | translate}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class='apss-linkedin apss-single-icon  '>
+
+                                    <a onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436');return false;" data-hover="Linkedin" title="{{'share-on' | translate}} Linkedin ">
+                                        <div class='apss-icon-block clearfix' data-hover="Linkedin">
+                                            <i class="fa fa-linkedin "></i>
+                                            <span class='apss-social-text'>{{'share-on' | translate}} Linkedin</span>
+                                            <span class='apss-share'>{{'share' | translate}}</span>
+                                        </div>
+                                        <div class="apss-hover-content-wrap">
+                                            <div class="apss-hover-text">
+                                                {{'share' | translate}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class='apss-digg apss-single-icon  '>
+
+                                    <a onclick="window.open('http://digg.com/submit?phase=2%20&amp;url='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436');return false;" data-hover="Digg" title="{{'share-on' | translate}} Digg ">
+                                        <div class='apss-icon-block clearfix' data-hover="Digg">
+                                            <i class="fa fa-digg"></i>
+                                            <span class='apss-social-text'>{{'share-on' | translate}} Digg</span>
+                                            <span class='apss-share'>{{'share' | translate}}</span>
+                                        </div>
+                                        <div class="apss-hover-content-wrap">
+                                            <div class="apss-hover-text">
+                                                {{'share' | translate}}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class='apss-total-share-count'>
+                                    <span class="apss-prepend-text"> </span>
+                                    <span class='apss-count-number'>0</span>
+                                    <span class='apss-append-text'> </span>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="title">
+                            <div class="content">
+                                <h1 style="line-height: 1 !important"><span style="font-size: 16px; line-height: 1 !important">{{News.SortContent}}</span></h1>
+                            </div>
+                        </section>
+                        <div class="row collapse show">
+                            <div class="col-md-12 col-lg-12">
+                                <p class="mb-0 " ng-bind-html="News.Content"></p>
+                            </div>
+                            <!--<div class="col-md-12 col-lg-12 mb-5" ng-repeat="f in itemFiles">
+                                {{f.Text}}: <a style="color: darkblue; cursor: pointer" ng-click="OpenFile(f.Path)">{{f.Name}}</a>
+                            </div>-->
+                        </div>
+                        <input type="hidden" value="6445">
+                        <div class="uab-frontend-wrapper-outer" style="margin-top: 15px; display: none">
+                            <div id="" class="uab-frontend-inner-layer uab-frontend-wrapper-author-1 " data-timeout="1000">
+                                <div id="uab-frontend-wrapper" class="uab-frontend-wrapper uab-template-1">
+                                    <div id="uab-tab-index-wrapper" class="uab-tab-index-wrapper" style="display:none;">
+                                        <ul class="uab-tabs uab-clearfix">
+                                            <li class="tab-link uab_author_detail uab-current" data-tab="tab-1" data-name="Author Details">
+                                                Author Details
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="tab-1" class="uab-tab-content uab-current">
+                                        <div class="uab-defaut-tab-wrapper ">
+                                            <div class="uab-defaut-tab uab-clearfix">
+
+                                                <div class="uab-author-profile-pic">
+                                                    <div class="uap-profile-image uap-profile-image-square uab-show-popup">
+                                                        <img alt='' src='http://0.gravatar.com/avatar/94126f00bc6f771af3f79804e3e97f14?s=200&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/94126f00bc6f771af3f79804e3e97f14?s=400&#038;d=mm&#038;r=g 2x' class='avatar avatar-200 photo' height='200' width='200' loading='lazy' />
+                                                    </div>
+                                                </div>
+                                                <div class="uab-front-content">
+                                                    <div class="uab-display-name">
+                                                        <!-- User Display Name -->
+                                                        <a href="/login.html" target="_blank">admin</a>
+
+                                                        <span class="uab-user-role uab-role-Administrator">Administrator</span>
+                                                    </div>
+                                                    <div class="uab-short-info">
+                                                        Sorry! The Author has not filled his profile.
+                                                    </div>
+                                                    <div class="uab-short-contact ">
+                                                        <div class="uab-contact-inner">
+                                                            <span class="uab-contact-label">web</span>
+                                                            <div class="uab-user-website">
+                                                                <!--<a href="http://localhost/syndi" target="_blank">http://localhost/syndi</a>-->
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div><!--  -->
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uab-frontend-popup-wrapper">
+                                    <div class="uab-frontend-popup-content">
+                                        <span class="uab-popup-close">&times;</span>
+                                        <div class="uab-pop-up-wrapper-first uab-clearfix">
+                                            <div class="uab-popup-image-wrapper">
+
+                                                <div class="uab-author-profile-pic">
+                                                    <div class="uap-profile-image uap-profile-image-square uab-show-popup">
+                                                        <img alt='' src='http://0.gravatar.com/avatar/94126f00bc6f771af3f79804e3e97f14?s=200&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/94126f00bc6f771af3f79804e3e97f14?s=400&#038;d=mm&#038;r=g 2x' class='avatar avatar-200 photo' height='200' width='200' loading='lazy' />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uab-popup-description-wrapper ">
+                                                <div class="uab-display-name">
+                                                    <!-- User Display Name -->
+                                                    <a href="/login.html" target="_blank">admin</a>
+
+                                                    <span class="uab-user-role uab-role-Administrator">Administrator</span>
+                                                </div>
+                                                <div class="uab-short-info">
+                                                    Sorry! The Author has not filled his profile.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uab-pop-up-wrapper-second uab-clearfix">
+                                            <div class="uab-popup-contact-wrapper">
+                                                <div class="uab-short-contact ">
+                                                    <div class="uab-contact-inner">
+                                                        <span class="uab-contact-label">web</span>
+                                                        <div class="uab-user-website">
+                                                            <!--<a href="http://localhost/syndi" target="_blank">http://localhost/syndi</a>-->
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>				<!--  -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="entry-content clearfix">
+
+
+                        <nav class="navigation post-navigation" role="navigation" aria-label="Bài viết">
+                            <h2 class="screen-reader-text">Điều hướng bài viết</h2>
+                            <div class="nav-links">
+                                <div class="nav-previous" ng-show="PrevNews != null"><a ng-href="#/{{lang}}/view/{{PrevNews.Id}}"><span> {{'Previous Article' | translate }}</span> <p>{{PrevNews.FName}}</p></a></div><div class="nav-next" ng-show="NextNews != null"><a ng-href="#/{{lang}}/view/{{NextNews.Id}}" rel="next"><span> {{'Next Article' | translate }}</span> <p>{{NextNews.FName}}</p></a></div>
+                            </div>
+                        </nav>
+                    </div><!-- .entry-content -->
+
+                    <div id="respond" class="comment-respond">
+                        <h4 id="reply-title" class="comment-reply-title"><span class="title-bg">{{'Comment here' | translate}} <small><a rel="nofollow" id="cancel-comment-reply-link" href="/hiv-aids/#respond" style="display:none;">Hủy</a></small></span></h4>
+                        <form method="post" id="commentform" class="comment-form" novalidate>
+                            <p class="comment-form-comment"><label for="comment">Bình luận</label> <textarea placeholder="{{'Your Comment' | translate}} . . ." id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" ng-model="UserComment"></textarea></p>
+                            <p class="comment-form-author"><label for="author">Tên <span class="required">*</span></label> <input id="author" placeholder="{{'Name' | translate}}*" name="author" type="text" value="" size="30" maxlength="245" required='required' ng-model="UserName" /></p>
+                            <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" placeholder="{{'Email Address' | translate}}*" name="email" type="email" value="" size="30" maxlength="100" required='required' ng-model="UserEmail" /></p>
+                            <p class="comment-form-url"><label for="url">Trang web</label> <input id="url" placeholder="Website" name="url" type="url" value="" size="30" maxlength="200" ng-model="UserWebsite" /></p>
+                            <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Lưu tên của tôi, email, và trang web trong trình duyệt này cho lần bình luận kế tiếp của tôi.</label></p>
+                            <p class="form-submit">
+                                <button ng-disabled="loading == true" id="submit" class="button-more" ng-click="PostComment()"> {{'Comment' | translate}} </button>
+                            </p>
+                        </form>
+                    </div><!-- #respond -->
+
+                </article><!-- #post-## -->
+            </main><!-- #main -->
+        </div><!-- #primary -->
+
+
+        <aside id="secondary" class="widget-area vmagazine-lite-sidebar" role="complementary">
+            <div class="theiaStickySidebar">
+                <div id="search-1" class="widget widget_search">
+                    <form method="get" class="search-form">
+                        <label>
+                            <span class="screen-reader-text">Search for:</span>
+                            <input type="search" autocomplete="off" class="search-field" placeholder="{{'search' | translate}} ..." ng-model="SearchKey" name="s">
+                        </label>
+                        <a ng-href="#/{{lang}}/search/{{SearchKey}}"><input type="submit" class="search-submit" value="Search"></a>
+
+                    </form>
+
+                </div>
+                <div id="recent-posts-1" class="widget widget_recent_entries">
+                    <h4 class="widget-title"><span class="title-bg">{{'new-post' | translate}}</span></h4>
+                    <ul>
+                        <li ng-repeat="h in HotNews">
+                            <a ng-href="#/{{lang}}/view/{{h.Id}}">{{h.FName}}</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div id="recent-comments-1" class="widget widget_recent_comments">
+                    <h4 class="widget-title"><span class="title-bg">{{'Recent comments' | translate}}</span></h4>
+                    <ul id="recentcomments">
+                        <li ng-repeat="comment in Comments"><h6>{{comment.Name}}</h6><p style="margin: 0">{{comment.FComment}}</p></li>
+                    </ul>
+                </div>
+                <div id="archives-1" class="widget widget_archive">
+                    <h4 class="widget-title"><span class="title-bg">{{'storage' | translate}}</span></h4>
+                    <ul>
+                        <li ng-repeat="storage in Storage"><a ng-href="#/{{lang}}/storage/{{storage.yyyy}}/{{storage.MM}}">{{storage.MMMM}}{{storage.yyyy}}</a></li>
+                    </ul>
+
+                </div>
+                <div id="categories-1" class="widget widget_categories">
+                    <h4 class="widget-title"><span class="title-bg">{{'categories' | translate}}</span></h4>
+                    <ul>
+                        <li ng-repeat="mnb in MenuBar" class="cat-item cat-item-{{mnb.Id}}" ng-show="mnb.IsNews != true">
+                            <a ng-href="#/{{lang}}/{{mnb.Url}}">{{mnb.FName}}</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div id="meta-1" class="widget widget_meta">
+                    <h4 class="widget-title"><span class="title-bg">Meta</span></h4>
+                    <ul>
+                        <li><a href="/login.html">{{'login' | translate}}</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </aside><!-- #secondary -->
+    </div>
+    <div class="row-footer" style="background-color: #fff; max-width: 1180px; margin: 0 auto">
+        <div class="column-footer footer1">
+            <div class="row d-flex justify-content-center">
+                <embed ng-src="{{ Logo.Image | trustAsResourceUrl }}" style="height: 120px" title="">
+            </div>
+        </div>
+        <div class="column-footer footer2">
+            <p class="footer-p">{{ 'Copyright' | translate }}</p>
+            <p class="footer-p">{{ 'Add-tel' | translate }}</p>
+            <p class="footer-p">EMAIL: <a href="mailto:CCMVIETNAM@GMAIL.COM" class="email-a"> CCMVIETNAM@GMAIL.COM</a></p>
+        </div>
+        <div class="column-footer footer3">
+            <span style="color: #006ae8; ">
+                <a href="#" title="Facebook">
+                    <i class="fa fa-facebook-square fa-3x"></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px;">
+                <a href="#" title="Instagram">
+                    <i class="fa fa-instagram fa-3x" style="background: -webkit-linear-gradient(#7222ba, #d48c3b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; "></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px; color: #0270ad;">
+                <a href="#" title="Linkedin">
+                    <i class="fa fa-linkedin-square fa-3x"></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px; color: red;">
+                <a href="#" title="Google+">
+                    <i class="fa fa-google-plus-square fa-3x"></i>
+                </a>
+            </span>
+            <span style="padding-left: 5px; color: #00a7e6;">
+                <a href="#" title="Twitter">
+                    <i class="fa fa-twitter-square fa-3x" style="width: 25px"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column-footer {
+        float: left;
+        padding: 35px;
+        height: 180px; /* Should be removed. Only for demonstration */
+    }
+
+    .footer1 {
+        text-align: center;
+        width: 20%;
+    }
+
+    .footer2 {
+        width: 50%;
+        padding-left: 0;
+        padding-top: 50px
+    }
+
+    .footer3 {
+        text-align: center;
+        padding-top: 65px;
+        width: 30%;
+    }
+    /* Clear floats after the columns */
+    .row-footer:after {
+        content: "";
+        display: table;
+        clear: both;
+        margin-bottom: 30px;
+    }
+
+    .email-a {
+        color: red;
+    }
+
+    .footer-p {
+        font-size: 70%;
+        margin-bottom: 15px;
+        color: #312682;
+        font-weight: bold;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+        .column-footer {
+            width: 100%;
+        }
+
+        .footer2 {
+            text-align: center;
+            height: auto;
+            padding: 0;
+        }
+
+        .footer3 {
+            height: auto;
+            padding: 20px;
+        }
+    }
+</style>
+<style>
+    img {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 15px;
+    }
+
+    .has-error {
+        border: 1px solid red !important;
+    }
+
+    .button-more {
+        border: 1px solid #0066bf;
+        padding: 10px;
+        background-color: #0066bf;
+        color: #fff;
+    }
+
+        .button-more:hover {
+            border: 1px solid #0066bf;
+            padding: 10px;
+            background-color: #fff;
+            color: #0066bf;
+        }
+</style>
+<script>
+    $(document).ready(function () {
+        $('.mobile-navigation,.mob-search-form').removeClass("on");
+        $('body').removeClass('mob-menu-enabled');
+        $('body').removeClass('mob-search-enabled');
+        //vmagazineFocusForce('button.btn-transparent-toggle.nav-toggle');
+    });
+</script>
+<script>
+    var curDate = new Date();
+
+    // Ngày hiện tại
+    var curDay = curDate.getDate();
+
+    // Tháng hiện tại
+    var curMonth = curDate.getMonth() + 1;
+
+    // Năm hiện tại
+    var curYear = curDate.getFullYear();
+
+    // Gán vào thẻ HTML
+    document.getElementById('current-time').innerHTML = curDay + "/" + curMonth + "/" + curYear;
+</script>
+<script type='text/javascript' id='apss-frontend-mainjs-js-extra'>
+    /* <![CDATA[ */
+    var frontend_ajax_object = { "ajax_url": "http:\/\/litanamedia.work\/wp-admin\/admin-ajax.php", "ajax_nonce": "dea1b20868" };
+    var frontend_js_object = { "whatsapp_hide": "0", "viber_hide": "0", "sms_hide": "0", "messenger_hide": "0", "hide_popup_overlay": "0" };
+    /* ]]> */
+</script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/frontend3.js" id='apss-frontend-mainjs-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/frontend4.js" id='apsc-frontend-script-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/regenerator-runtime.min.js" id='regenerator-runtime-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/wp-polyfill.min.js" id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+    /* <![CDATA[ */
+    var wpcf7 = { "api": { "root": "http:\/\/litanamedia.work\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+    /* ]]> */
+</script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/index.js" id='contact-form-7-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/slick.min.js" id='jquery-slickslider-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/lightslider.js" id='jquery-lightslider-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/jquery.lazy.min.js" id='jquery-lazy-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/iframe-api.js" id='youtube-api-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/scripts.js" id='vmagazine-ea-script-js'></script>
+<script type='text/javascript' id='vmagazine-ea-ajax-js-extra'>
+    /* <![CDATA[ */
+    var vmea_ajax_script = { "ajaxurl": "http:\/\/litanamedia.work\/wp-admin\/admin-ajax.php" };
+    /* ]]> */
+</script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/vmea-ajax.js" id='vmagazine-ea-ajax-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/jquery.mCustomScrollbar.js" id='jquery-mCustomScrollbar-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/jquery.fitvids.js" id='jquery-fitvids-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/navigation.js" id='vmagazine-lite-navigation-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/skip-link-focus-fix.js" id='vmagazine-lite-skip-link-focus-fix-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/wow.js" id='jquery-wow-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/jquery.prettyPhoto.js" id='jquery-prettyphoto-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/theia-sticky-sidebar.js" id='jquery-theia-sticky-sidebar-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/slick.min.js" id='jquery-slick-js'></script>
+<script type='text/javascript' id='vmagazine-lite-custom-script-js-extra'>
+    /* <![CDATA[ */
+    var vmagazine_lite_ajax_script = { "mode": "enable", "ajax_search": "hide", "ajaxurl": "", "fileUrl": "", "lazy": "enable", "controls": "default-layout" };
+    /* ]]> */
+</script>
+<!--<script type='text/javascript' src='http://litanamedia.work/wp-content/themes/vmagazine-lite/assets/js/vmagazine-lite-custom.js?ver=1.3.5' id='vmagazine-lite-custom-script-js'></script>-->
+<script type='text/javascript' src="frontend_2/js/ccmvn/vmagazine-lite-custom.js" id='vmagazine-lite-custom-script-js'></script>
+<script type='text/javascript' src="frontend_2/js/ccmvn/wp-embed.min.js" id='wp-embed-js'></script>
+<script type='text/javascript' src='http://litanamedia.work/wp-includes/js/comment-reply.min.js?ver=5.8.1' id='comment-reply-js'></script>

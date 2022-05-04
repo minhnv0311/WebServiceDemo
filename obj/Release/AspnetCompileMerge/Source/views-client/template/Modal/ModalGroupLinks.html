@@ -1,0 +1,40 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin mùa giải</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tên Album <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.UrlResult[1]}}">
+                        
+                        <label class="control-label"><input type="checkbox" ng-model="item.SuDung" /> Hiển thị lên trang chủ</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+</script>

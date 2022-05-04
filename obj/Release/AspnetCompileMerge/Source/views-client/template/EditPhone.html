@@ -1,0 +1,97 @@
+﻿<div class="modal-header bg-color">
+    <h3 class="modal-title">Chỉnh sửa điện thoại</h3>
+</div>
+<div class="modal-body form">
+
+    <div class="form-body form-horizontal">
+
+        <div class="form-group" style="display:none">
+            <label class="control-label col-md-2">Mã</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control green-haze" disabled="disabled" ng-model="itemPhone.Id" name="Id">
+            </div>
+
+        </div>
+        <div class="form-group {{itemPhoneError.ModelState.FCode[1]}}">
+            <label class="control-label col-md-3">Mã điện thoại <span style="color:red">*</span></label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="itemPhone.FCode" id="FCode" name="FCode">
+                    <span class="input-group-btn">
+                        <button class="btn green-haze btn-outline sbold" type="button" ng-click="AutoID('MB');itemPhone.FCode = objAutoID.FName;">Tạo mã</button>
+                    </span>
+
+                </div>
+                <span class="help-block"> {{ itemPhoneError.ModelState.FCode[0] }} </span>
+            </div>
+          
+        </div>
+        <div class="form-group {{itemPhoneError.ModelState.FName[1]}}">
+            <label class="control-label col-md-3">Tên điện thoại <span style="color:red">*</span></label>
+            <div class="col-md-6 ">
+                <input type="text" class="form-control" ng-model="itemPhone.FName" id="FName" name="FCode">
+                <span class="help-block"> {{ itemPhoneError.ModelState.FName[0] }} </span>
+            </div>
+        </div>
+        <div class="form-group {{itemPhoneError.ModelState.Type[1]}}">
+            <label class="control-label col-md-3">Hãng sản xuất <span style="color:red">*</span></label>
+            <div class="col-md-6">
+                <input type="text" class="form-control"  ng-model="itemPhone.Type" id="Type" name="Type">
+                <span class="help-block"> {{ itemPhoneError.ModelState.Type[0] }} </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Năm sản xuất</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="itemPhone.TimeProduced" name="FCode">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">Mô tả sản phẩm</label>
+            <div class="col-md-6">
+                <input type="text" class="form-control" ng-model="itemPhone.FDescription" name="FCode">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn green-haze btn-outline sbold" ng-click="SaveModal()"> Cập nhật </button>
+    <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        //ComponentsDateTimePickers.init();
+        $.fn.select2.defaults.set("theme", "bootstrap");
+
+        var placeholder = "Select a State";
+
+        $(".select2, .select2-multiple").select2({
+            placeholder: placeholder,
+            width: null
+        });
+
+        $(".select2-allow-clear").select2({
+            allowClear: true,
+            placeholder: placeholder,
+            width: null
+        });
+
+        $("button[data-select2-open]").click(function () {
+            $("#" + $(this).data("select2-open")).select2("open");
+        });
+
+
+        //if (jQuery().datepicker) {
+        //    $('.date-picker').datepicker({
+        //        rtl: App.isRTL(),
+        //        orientation: "left",
+        //        autoclose: true
+        //    });
+        //    //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+        //}
+
+    });
+
+
+</script>

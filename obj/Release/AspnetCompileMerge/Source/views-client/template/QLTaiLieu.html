@@ -1,0 +1,180 @@
+﻿<style>
+
+    .table-condensed {
+        width: 280px;
+        height: 250px
+    }
+</style>
+
+<div class="row" ng-controller="QLTaiLieuController">
+
+
+    <div class="col-md-12">
+        <div class="page-bar">
+            <div class="col-md-7" style="padding: 0">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <a ui-sref="dashboard">Trang chủ</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a ui-sref="formtools">Quản lý tài liệu</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 15px">
+            <div class="portlet-body form">
+                <div class="col-md-6">
+                    <label class="col-md-2" style="padding: 0; margin-top: 5px">Từ ngày </label>
+                    <div class="col-md-4" style="margin-left: -25px">
+                        <div class="input-group date date-picker">
+                            <input type="text" class="form-control input-sm " ng-model="Paging.TuNgay" date
+                                   ng-model-options="{updateOn: 'change'}">
+                            <span class="input-group-btn">
+                                <button class="btn input-sm default" type="button">
+                                    <i class="fa fa-calendar"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <label class="col-md-2" style="margin-top: 5px">Đến ngày </label>
+                    <div class="col-md-4" style="margin-left: -25px">
+                        <div class="input-group date date-picker">
+                            <input type="text" class="form-control input-sm " ng-model="Paging.DenNgay" date
+                                   ng-model-options="{updateOn: 'change'}">
+                            <span class="input-group-btn">
+                                <button class="btn input-sm default" type="button">
+                                    <i class="fa fa-calendar"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="padding: 0">
+                    <label class="col-md-3" style="padding: 0; margin-top: 5px; text-align: right">Cơ quan xin cấp phép </label>
+                    <div class="col-md-9">
+                        <select ng-model="Paging.CoQuan" class="form-control select2" ng-change="Load()">
+                            <option value="">-- Chọn --</option>
+                            <option ng-repeat="u in lstCoQuan" value="{{u.FCode}}">{{u.FName}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-5" style="margin-top: 10px">
+                    <input type="text" ng-change="Load()" ng-model="Paging.searchKey" ng-model-options="{updateOn: 'change'}" class="form-control" placeholder="Tìm kiếm dữ liệu...">
+                </div>
+                <div class="col-md-1" style="margin-top: 10px">
+                    <a class="btn green-haze btn-outline sbold" ng-click="Load()">
+                        <i class="fa fa-search"></i> &nbsp; Tìm kiếm
+                    </a>
+                </div>
+                <div class="col-md-4" style="margin-top: 10px">
+                    
+                </div>
+                <div class="col-md-2" style="margin-top: 10px; text-align: right">
+                    <a class="btn green-haze btn-outline sbold" ng-click="ExportExcel()">
+                        <i class="fa fa-file-excel-o"></i> &nbsp; Tải danh sách
+                    </a>
+                </div>
+                <div class="col-md-12" style="padding: 0">
+                    <div class="col-md-4" style="margin-top: 15px">
+                        <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="openNewItem('','QLTaiLieu')">
+                            <i class="fa fa-plus"></i>&nbsp; Thêm mới
+                        </a>
+                    </div>
+                    <div class="col-md-4" style="margin-top: 15px">
+                    </div>
+                    <div class="col-md-4" style="margin-top: 15px">
+                        <div class="input-group pull-right">
+
+                            <span class="input-group-addon">
+                                Trang :
+                            </span>
+                            <input type="text" value="1" onkeypress='onlynumber(event)'
+                                   ng-change="Load()" ng-model="Paging.currentPage" class="form-control text-center border-right" maxlength="6">
+                            <div class="input-group-btn">
+                                <a class="btn btn-default sbold border-right" ng-click="PrePage()" title="Trang trước">
+                                    <i class="fa fa-angle-double-left"></i>
+                                </a>
+                                <a class="btn btn-default  sbold" ng-click="NextPage()" title="Trang sau">
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                            <span class="input-group-addon">
+                                <b class="text-danger">{{Paging.pageStart}}</b> - <b class="text-danger">{{Paging.pageEnd}}</b> của <b class="text-danger">{{Paging.totalCount}}</b>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="text-center" ng-show="loading" style="left: 50%; top: 50%; position: fixed; z-index: 1000; display: block;">
+                        <img src="../../31.gif" />
+                    </div>
+
+                    <div class="table-scrollable">
+                        <!-- BEGIN FORM-->
+                        <table class="table table-striped table-bordered table-hover"
+                               id="fixTable">
+                            <thead>
+                                <tr>
+                                    <th align="center"> STT </th>
+                                    <th> Mã </th>
+                                    <th style="min-width: 300px"> Tên tài liệu</th>
+                                    <th> Cơ quan xin cấp phép </th>
+                                    <th> Ngày cấp phép </th>
+                                    <th> Khuôn khổ </th>
+                                    <th> Số trang </th>
+                                    <th> Cơ sở in </th>
+                                    <th> Đơn đề nghị </th>
+                                    <th> Giấy phép </th>
+                                    <th align="center"> # </th>
+                                    <th align="center"> # </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX" ng-repeat="ph in Areas">
+                                    <td align="center" width="1%"> {{ ph.RowNum }} </td>
+                                    <td align="left"> <a ng-click="openViewItem(ph,'QLTaiLieu')"> {{ ph.FCode }} </a> </td>
+                                    <td width="300px"> <a ng-click="openViewItem(ph,'QLTaiLieu')"> {{ ph.FName }} </a> </td>
+
+                                    <td ng-init="GetTenCoQuan(ph)" style="white-space: nowrap;">
+                                        {{ ph.TenCoQuan }}
+                                    </td>
+                                    <td style="white-space: nowrap;">
+                                        {{ ph.NgayCapPhep | date:'dd/MM/yyyy' }}
+                                    </td>
+                                    <td style="white-space: nowrap;">
+                                        {{ ph.KhuonKho }}
+                                    </td>
+                                    <td style="white-space: nowrap;">
+                                        {{ ph.SoTrang }}
+                                    </td>
+                                    <td ng-init="GetTenCoSoIn(ph)" style="white-space: nowrap;">
+                                        {{ ph.TenCoSoIn }}
+                                    </td>
+                                    <td>
+                                        <button class="btn input-sm grey-cascade" ng-repeat="x in ph.lstDonDeNghi" ng-click="DownloadFile(x)" style="padding: 0px 5px 5px 5px; margin-top: 0px; margin-bottom: 5px; height: 22px; "><i class="fa fa-file"></i> {{x.substr(19)}} </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn input-sm grey-cascade" ng-repeat="x in ph.lstGiayPhep" ng-click="DownloadFile(x)" style="padding: 0px 5px 5px 5px; margin-top: 0px; margin-bottom: 5px; height: 22px; "><i class="fa fa-file"></i> {{x.substr(19)}} </button>
+                                    </td>
+                                    <td align="center" width="1%"><a ng-click="openEditItem(ph,'QLTaiLieu')"> <i class="fa fa-edit"></i> </a></td>
+                                    <td align="center" width="1%"> <a><i class="fa fa-times font-red" ng-click="Delete(ph.Id);"></i></a> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- END PORTLET-->
+    </div>
+
+</div>
+
+<!-- END MAIN CONTENT -->

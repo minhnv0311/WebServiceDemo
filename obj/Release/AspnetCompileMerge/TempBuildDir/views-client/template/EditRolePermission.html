@@ -1,0 +1,98 @@
+﻿<style>
+    .mt-checkbox.mt-checkbox-outline > span {
+        border: 1px solid #44b6ae;
+        background: none;
+    }
+
+    .mt-checkbox.mt-checkbox-outline > input:focus ~ span {
+        border: 1px solid #44b6ae;
+        background: none;
+    }
+
+    .mt-checkbox.mt-checkbox-outline > input:checked ~ span {
+        border: 1px solid #44b6ae;
+        background: none;
+    }
+
+    .mt-checkbox.mt-checkbox-outline > input:checked ~ span {
+        border: 1px solid #44b6ae;
+        background: none;
+    }
+
+    .mt-checkbox > span:after {
+        left: 6px;
+        top: 2px;
+        width: 5px;
+        height: 10px;
+        border: solid #44b6ae;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+
+    .mt-checkbox > input:disabled ~ span:after {
+        border-color: #44b6ae;
+    }
+</style>
+<div class="modal-header bg-color">
+    <h3 class="modal-title">Cập nhật quyền theo vai trò</h3>
+</div>
+<div class="modal-body form" ng-init="OnLoad()">
+    <div class="form-horizontal form-bordered">
+        <div class="form-body ">
+            <div class="form-group">
+                <label class="control-label col-md-3">Vai trò </label>
+                <div class="col-md-9">
+                    <select ng-model="itemRolePermission.FCode" disabled class="select2 form-control">
+                        <option value="">Chọn vai trò chính</option>
+                        <option ng-repeat="m in DropRole" value="{{m.FCode}}">{{m.FName}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3">Chọn Danh mục chính </label>
+                <div class="col-md-9">
+                    <select ng-model="CoCode" class="form-control select2" ng-change="LoadMenuChange(CoCode)">
+                        <option ng-selected="CoCode == c.FCode" ng-repeat="c in DropMain" value="{{c.FCode}}">{{c.FName }}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th nowrap align="center" style="vertical-align:middle">Tên danh mục</th>
+                                <th ng-repeat="g in Permission" nowrap align="center" style="width:10px;vertical-align:middle">
+                                    {{g.FName}}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr bs-popover ng-repeat="tree in MenuRole | orderBy: 'FIndex'">
+                                <td>
+                                    {{GetMenuName(tree.menu)}}
+                                </td>
+                                <td bs-popover ng-repeat="value in tree.check track by $index" nowrap align="center" style="width:10px">
+                                    <label class="mt-checkbox mt-checkbox-outline"
+                                           rel="popover"
+                                           data-content="{{value.PerName}}"
+                                           ng-show="value.display">
+                                        <input type="checkbox"
+                                               ng-show="value.display" ng-checked="value.checkRole" ng-model="value.checkRole" />
+                                        <span></span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button class="btn green-haze btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode)" ng-click="SaveModal(MenuRole,itemRolePermission.FCode)"> Cập nhật </button>
+    <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+</div>

@@ -1,0 +1,74 @@
+﻿<div ng-init="OnLoad()">
+    <div class="modal-header bg-color" style="background-color:#ccc">
+        <div class="modal-title">
+            <h4> <label class=" uppercase font-white"><i class="fa fa-list"></i> Cập nhật thông tin danh mục ngôn ngữ</label></h4>
+
+        </div>
+    </div>
+    <div class="modal-body form">
+
+        <div class="form-body form-horizontal margin-top-10">
+
+            <div class="row margin-bottom-5">
+
+                <div class="{{itemError.ModelState.FCode[1]}}">
+                    <label class="control-label col-md-2">Mã<span style="color:red">*</span>:</label>
+                    <div class="col-md-4">
+                        <input onKeyUp="RemoveUnicode(this);" ng-change="ValidFCode()" ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.FCode" ng-disabled="read">
+
+
+
+                    </div>
+                </div>
+                <div class="{{itemError.ModelState.FName[1]}}">
+                    <label class="control-label col-md-2">Ngôn ngữ <span style="color:red">*</span>:</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-bottom-5">
+                <div class="{{itemError.ModelState.FLanguage[1]}}">
+                    <label class="control-label col-md-2">Ký hiệu ngôn ngữ<span style="color:red">*</span>:</label>
+                    <div class="col-md-4">
+                        <input ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.FLanguage">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="control-label col-md-2">Ghi chú:</label>
+                <div class="col-md-10">
+                    <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                </div>
+
+
+            </div>
+
+            <div class="form-group " style="position: sticky;bottom: 10px;z-index:500;background-color:white">
+                <label class="control-label col-md-2"></label>
+                <div class="col-md-10 clearfix">
+                    <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+                    <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>
+                    <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('input-sm');
+        $('.form-control').addClass('input-sm');
+
+    })
+</script>
+<script>
+    jQuery(document).ready(function () {
+        ComponentsSelect2.init();
+    });
+</script>

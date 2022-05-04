@@ -1,0 +1,32 @@
+﻿<div class="modal-header bg-color">
+    <h3 class="modal-title">Import dữ liệu</h3>
+</div>
+<div class="modal-body form" ng-init="OnLoad()">
+    <form class="horizontal-form">
+        <div class="form-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="file" name="file" class="form-control"
+                               onchange="angular.element(this).scope().loadFile(this.files)">
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label">Vui lòng nhập theo mẫu dữ liệu này: </label>
+                        <a class="sbold" href="/FILE_MAU/DSDA_HANAM.xlsx" download="">Tải File mẫu</a>
+                    </div>
+                </div>
+
+            </div>
+            <br />
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn green-haze btn-outline sbold" ng-click="handleFile()"> Tải lên </button>
+    <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+</div>

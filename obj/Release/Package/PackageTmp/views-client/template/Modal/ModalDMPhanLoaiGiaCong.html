@@ -1,0 +1,97 @@
+﻿<div ng-init="OnLoad()">
+    <div class="modal-header bg-color" style="background-color:#ccc">
+        <div class="modal-title">
+            <h4> <label class=" uppercase font-white"><i class="fa fa-list"></i> Thông tin phân loại gia công</label></h4>
+
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body form-horizontal margin-top-10">
+
+            <div class="row margin-bottom-5">
+                <div class="{{itemError.ModelState.FName[1]}}">
+                    <label class="control-label col-md-2">Tên<span style="color:red">*</span>:</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control input-sm" ng-model="item.FName" ng-disabled="check=='xem'" placeholder="Nhập tên loại gia công">
+
+                    </div>
+                </div>
+                <div class="{{itemError.ModelState.LinhVucDN[1]}}">
+                    <label class="control-label col-md-2">Lĩnh vực<span style="color:red">*</span>:</label>
+                    <div class="col-md-4">
+                        <select ng-model="item.LinhVucDN" id="LinhVucDN" class="form-control select2" ng-disabled="check=='xem'">
+                            <option ng-repeat="c in DMLinhVuc" value="{{c.FCode }}">{{c.FName }}</option>
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row margin-bottom-5">
+                <label class="control-label col-md-2">Tải banner lên:</label>
+                <div class="col-md-6">
+                    <input class="form-control" type="file" id="file" />
+
+                </div>
+                <div class="col-md-4">
+
+                    <a class="btn btn-sm green-haze" ng-click="UploadBanner()" title="Upload banner"><i class="fa fa-upload"></i></a>
+                    <a class="btn btn-sm btn-danger" ng-show="ShowDeleteButton()" ng-click="DeleteBanner()" title="Xóa banner"><i class="fa fa-close"></i></a>
+
+                </div>
+
+            </div>
+            <div class="row margin-bottom-5">
+                <label class="control-label col-md-2">&nbsp;</label>
+                <div class="col-md-10">
+                    <div class="form-group form-group-sm">
+                        <img src="{{item.Image}}" style="width:100%;height:30%" />
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-bottom-5">
+                <label class="control-label col-md-2">Đến trang khác:</label>
+                <div class="col-md-10">
+                   <input type="checkbox" ng-model="item.IsLink" ng-true-value="true" ng-false-value="false"/>
+                </div>
+
+            </div>
+            <div class="row margin-bottom-5">
+                <label class="control-label col-md-2">Mô tả:</label>
+                <div class="col-md-10">
+                    <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription" ng-disabled="check=='xem'" placeholder="Nhập mô tả"></textarea>
+                </div>
+
+            </div>
+
+            <div class="form-group " style="position: sticky;bottom: 10px;z-index:500;background-color:white">
+                <label class="control-label col-md-2"></label>
+                <div class="col-md-10 clearfix">
+                    <a class="btn btn-sm btn-success btn-outline sbold" ng-show="check !='xem'" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+                    <a class="btn btn-sm btn-success btn-outline sbold" ng-show="check !='xem'" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>
+                    <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('input-sm');
+        $('.form-control').addClass('input-sm');
+
+        $(".form_user").select2({
+            placeholder: 'Chọn',
+            escapeMarkup: function (m) { return m; },
+            width: null
+        });
+
+    })
+</script>
+<script>
+    jQuery(document).ready(function () {
+        ComponentsSelect2.init();
+    });
+</script>

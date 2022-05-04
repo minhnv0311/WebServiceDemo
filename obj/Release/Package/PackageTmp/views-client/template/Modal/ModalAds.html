@@ -1,0 +1,132 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin quảng cáo</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tên liên kết <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.GroupLinks[1]}}">
+                        <label class="control-label">Nhóm liên kết:</label>
+                        <select class="form-control" ng-model="item.GroupLinks">
+                            <option value="">
+                                --- Nhóm liên kết ---
+                            </option>
+                            <option ng-repeat="u in GroupLinks" value="{{u.Id}}">
+                                {{u.FName}}
+                            </option>
+                        </select>
+                        <span class="help-block" ng-show="itemError.ModelState.GroupLinks[0] != null">{{itemError.ModelState.GroupLinks[0]}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Đường dẫn liên kết:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.Url">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Hình thức mở:</label>
+                        <select class="form-control" ng-model="item.Target">
+                            <option value="">
+                                --- Hình thức mở liên kết ---
+                            </option>
+                            <option ng-repeat="u in UrlType" value="{{u.value}}">
+                                {{u.name}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Danh mục:</label>
+                        <!--<select ng-model="item.CateogoryCode" id="Menu" class="form-control">
+        <optgroup label="{{ mgroup.FName }}" ng-repeat="mgroup in DropMenu | filter:{MainMenu:'MAIN'}">
+            <option ng-repeat-start="m in DropMenu | filter:{ParentMenu: mgroup.FCode}" value="{{ m.FCode }}">{{ m.FLevel == "2" ? "&nbsp;&nbsp;|-- " + m.FName : m.FName }}</option>
+            <option ng-repeat-end ng-repeat="cm in DropMenu | filter: {ParentMenu:m.FCode}" value="{{cm.FCode}}">{{ cm.FLevel == "3" ? "&nbsp;&nbsp;&nbsp;&nbsp;|---- " + cm.FName : cm.FName }}</option>
+        </optgroup>
+    </select>-->
+                        <div class="input-group select2-bootstrap-prepend">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" data-select2-open="single-prepend-text">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                            <select ng-model="item.CateogoryCode" id="ParentMenu" class="form-control">
+                                <option value="">Chọn danh mục</option>
+                                <option ng-repeat="m in DropMenu" value="{{m.FCode}}">
+                                    {{m.FLevel == "2" ? " |--" + m.FName : m.FName }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">&nbsp;</label><br />
+                        <label><input type="checkbox" ng-model="item.IsShowWithCategory" ng-true-value="true" ng-false-value="false" />&nbsp; Hiển thị dưới danh mục</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Tải hình ảnh lên:</label>
+                        <input class="form-control" type="file" id="file" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">&nbsp;&nbsp;</label>
+                        <br />
+                        <a class="btn btn-sm green-haze" ng-click="UploadBanner()" title="Upload hình ảnh"><i class="fa fa-upload"></i></a>
+                        <a class="btn btn-sm btn-danger" ng-show="ShowDeleteButton()" ng-click="DeleteBanner()" title="Xóa hình ảnh"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <img src="{{item.Image}}" style="width:100%;height:30%" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Ghi chú:</label>
+                        <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    ComponentsSelect2.init();
+</script>

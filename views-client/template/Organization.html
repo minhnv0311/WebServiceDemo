@@ -1,0 +1,172 @@
+﻿<!-- BEGIN PAGE HEADER-->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a ui-sref="dashboard">Trang chủ</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">Cơ cấu tổ chức</a>
+        </li>
+    </ul>
+</div>
+<br />
+<!-- END PAGE HEADER-->
+<div class="row" ng-controller="OrganizationController" >
+    <div class="col-md-4">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green">
+                    <i class="icon-folder font-green"></i>
+                    <span class="caption-subject bold uppercase"> Danh sách cơ quan nhà nước</span>
+                </div>
+                <div class="actions">
+
+                </div>
+            </div>
+            <div class="portlet-body form">
+
+                <select ng-model="CoCode"  
+                        class="form-control select2"
+                        ng-change="CompanyChange()" tabindex="-1" aria-hidden="true">
+                    <option ng-selected="CoCode == c.FCode" ng-repeat="c in Company" value="{{c.FCode}}">{{c.FName }}</option>
+                </select>
+                <div id="tree_3" class="tree-demo"> </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-green">
+                    <i class="icon-folder font-green"></i>
+                    <span class="caption-subject bold uppercase"> Cập nhật thông tin</span>
+                </div>
+                <div class="actions">
+                    <button class="btn green-haze btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode)" ng-click="AddNew()"> Thêm mới </button>
+                </div>
+            </div>
+            <div class="portlet-body form" >
+                <div class="alert alert-danger" ng-show="!view">
+                    <strong>Ghi chú!</strong> Vui lòng chọn đơn vị phía bên trái nếu bạn muốn chỉnh sửa hoặc xóa!
+                </div>
+                <div class="form-body form-horizontal" ng-show="view">
+                    <div class="form-group" ng-show="false">
+                        <label class="control-label col-md-3">Mã</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control " disabled="disabled" ng-model="Org.Id" name="Id">
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="form-group {{itemPerError.ModelState.FCode[1]}}">
+                        <label class="control-label col-md-3">Mã đơn vị <span style="color:red">*</span></label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <input type="text" class="form-control" ng-model="Org.FCode" ng-disabled="read"
+                                       ng-change="ValidOnlyCode(Org.FCode)" ng-model-options="{updateOn: 'change'}"
+                                       placeholder="Mã đơn vị/phòng ban" id="FCode" name="FCode">
+                                <span class="input-group-btn">
+                                    <button class="btn green-haze btn-outline sbold" type="button" ng-disabled="read" ng-click="AutoID('ORG'); Org.FCode = objAutoID.FName;">Tạo mã</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group {{itemPerError.ModelState.FName[1]}}">
+                        <label class="control-label col-md-3">Tên đơn vị <span style="color:red">*</span></label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="Org.FName" placeholder="Tên đơn vị/phòng ban" id="FName" name="FName">
+                        </div>
+                    </div>
+                    <div class="form-group {{itemPerError.ModelState.FParent[1]}}">
+                        <label class="control-label col-md-3">Đơn vị cấp cha <span style="color:red">*</span></label>
+                        <div class="col-md-9">
+                            <select ng-model="Org.FParent" class="form-control select2" id="Org">
+                                <option ng-repeat="c in TreeTextOrgs" value="{{c.code}}">{{c.text }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Tỉnh/TP</label>
+                        <div class="col-md-9">
+                            <select ng-model="Org.Provin" ng-change="ProvinChange(Org.Provin,'0','0')" placeholder="Chọn tỉnh/thành" class="form-control select2">
+                                <option ng-repeat="m in Provin" value="{{m.FCode}}">{{ m.FName }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Quận/Huyện/TP/TX</label>
+                        <div class="col-md-9">
+                            <select ng-model="Org.Disctrict" ng-change="ProvinChange(Org.Provin,Org.Disctrict,'0')" class="form-control select2">
+                                <option ng-repeat="m in District" value="{{m.FCode}}">{{ m.FName }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Xã/Phường/TT</label>
+                        <div class="col-md-9">
+                            <select ng-model="Org.Ward" class="form-control select2">
+                                <option ng-repeat="m in Ward" value="{{m.FCode}}">{{ m.FName }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Địa chỉ</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="Org.Address" placeholder="Địa chỉ" name="FName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Mô tả</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="Org.FDescription" placeholder="Mô tả" name="FName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Đơn vị</label>
+                        <div class="col-md-6">
+                            <div class="mt-checkbox-list">
+                                <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" ng-model="Org.IsDV" name="Icon">
+                                    <span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Đường dẫn</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" ng-model="Org.SitePath" placeholder="Mô tả" name="FName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3">Mặc định</label>
+                        <div class="col-md-6">
+                            <div class="mt-checkbox-list">
+                                <label class="mt-checkbox mt-checkbox-outline">
+                                    <input type="checkbox" ng-model="Org.IsDefault" name="Icon">
+                                    <span></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group" ng-init="init()">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button class="btn green-haze btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode)" ng-click="SaveModal()"> Cập nhật </button>
+                            <button class="btn red-haze btn-outline sbold" ng-show="AuthorizationPermission('DELETE',$stateParams.param.FCode)" ng-click="DeleteOrg(Org.Id)"> Xóa </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+     //$('#Org').select2({
+     //       placeholder: 'Chọn',
+     //       //escapeMarkup: function (m) { return m; },
+     //       width: '100%',
+     //       // allowClear: true,
+     //   });
+</script>
+

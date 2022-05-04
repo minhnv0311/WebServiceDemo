@@ -1,0 +1,129 @@
+private void BindGrid_ThanhPhanHoSo()
+    {
+        ArrayList arr = new ArrayList();
+        ArrayList listObj = new ArrayList();
+        Database.LIEN_THONG.THANHPHAN_LT objThanhPhanLT = new Database.LIEN_THONG.THANHPHAN_LT(oSession);
+        GroupOperator cri = new GroupOperator(GroupOperatorType.And);
+        var FCode = GetQuery("FCodeLT");
+        if (string.IsNullOrEmpty(FCode)) FCode = GetQuery("FCode");
+        cri.Operands.Add(new BinaryOperator("MaHoSo", FCode, BinaryOperatorType.Equal));
+        XPCollection oColl = new XPCollection(objThanhPhanLT.Session, objThanhPhanLT.GetType(), cri);
+        if (oColl != null)
+        {
+            cri.Operands.Add(new BinaryOperator("DaNop", "True", BinaryOperatorType.Equal));
+            oColl.Sorting.Add(new SortProperty("FIndex", SortingDirection.Ascending));
+        }
+        foreach (Database.LIEN_THONG.THANHPHAN_LT item in oColl)
+        {
+            ObjectNewThanhPhanLT obj = new ObjectNewThanhPhanLT();
+            obj.DaNop = item.DaNop;
+            obj.BanGoc = item.BanGoc;
+            obj.BanSao = item.BanSao;
+            obj.BanPhoTo = item.BanPhoTo;
+            obj.MaDinhKem = item.MaDinhKem;
+            obj.FCode = item.FCode;
+            obj.FName = item.FName;
+            listObj.Add(obj);
+        }
+
+        Database.LIEN_THONG.HOSO_LT objHSLT = new Database.LIEN_THONG.HOSO_LT(oSession);
+        Database.LIEN_THONG.HOSO_LT ObjHSLT = (Database.LIEN_THONG.HOSO_LT)objHSLT.GetObjectByFieldName("FCode", FCode);
+        if (ObjHSLT != null)
+        {
+            string[] list = ObjHSLT.MaKetQua.Split(';');
+            if (list.Count() != 0)
+            {
+                foreach (string s in list)
+                {
+                    if (!string.IsNullOrEmpty(s))
+                    {
+                        arr.Add(s);
+                    }
+                }
+            }
+        }
+        if (arr.Count != 0)
+        {
+            Array List = arr.ToArray().Distinct().ToArray();
+            int i = 1;
+            foreach (var item in List)
+            {
+                ObjectNewThanhPhanLT obj = new ObjectNewThanhPhanLT();
+                obj.DaNop = true;
+                obj.BanGoc = 0;
+                obj.BanSao = 0;
+                obj.BanPhoTo = 0;
+                obj.MaDinhKem = item.ToString();
+                obj.FCode = item.ToString();
+                obj.FName = "Kết quả xứ lý của đơn vị gửi - " + i;
+                listObj.Add(obj);
+                i++;
+            }
+        }
+        if (listObj.Count != 0)
+        {
+            // KetQuaNhan.Visible = true;
+            gridThanhPhanHoSoLT.DataSource = listObj;
+            gridThanhPhanHoSoLT.DataBind();
+        }
+
+        foreach (GridViewRow row in gridThanhPhanHoSoLT.Rows)
+        {
+            CheckBox cbtest = (CheckBox)row.FindControl("cbChon"); cbtest.Checked = true;
+        }
+    }
+	
+	
+	
+	
+	 private void BindGrid(string db, string field, string value)
+    {
+        Database.LIEN_THONG.HOSO_LT objHSLT = new Database.LIEN_THONG.HOSO_LT(oSession);
+        var MaHS = GetQuery("FCodeLT");
+        if (string.IsNullOrEmpty(MaHS)) MaHS = GetQuery("FCode");
+        if (objHSLT.KiemTraHoSoGuiLienThong(MaHS))
+        {
+            XPCollection oColl = new XPCollection();
+            GroupOperator cri = new GroupOperator(GroupOperatorType.And);
+            if (db == "Database.HO_SO.HOSO_THUTUC")
+            {
+                Database.HO_SO.HOSO_THUTUC objHoSo_ThuTuc = new Database.HO_SO.HOSO_THUTUC(oSession);
+                cri.Operands.Add(new BinaryOperator(field, value, BinaryOperatorType.Equal));
+                if (ddlNhomTP.Items.Count > 0)
+                {
+                    cri.Operands.Add(new BinaryOperator("MaNhom", "%;" + ddlNhomTP.SelectedValue + ";%", BinaryOperatorType.Like));
+                }
+                oColl = new XPCollection(objHoSo_ThuTuc.Session, objHoSo_ThuTuc.GetType(), cri);
+            }
+            else
+            {
+                Database.DanhMuc.THU_TUC objThuTuc = new Database.DanhMuc.THU_TUC(oSession);
+                cri.Operands.Add(new BinaryOperator(field, value, BinaryOperatorType.Equal));
+                cri.Operands.Add(new BinaryOperator("IsUsed", "True", BinaryOperatorType.Equal));
+                if (ddlNhomTP.Items.Count > 0)
+                {
+                    cri.Operands.Add(new BinaryOperator("MaNhomThuTuc", "%;" + ddlNhomTP.SelectedValue + ";%", BinaryOperatorType.Like));
+                }
+                oColl = new XPCollection(objThuTuc.Session, objThuTuc.GetType(), cri);
+            }
+            if (oColl != null)
+            {
+                oColl.Sorting.Add(new SortingCollection(new SortProperty("FIndex", SortingDirection.Ascending), new SortProperty("FName", SortingDirection.Ascending)));
+            }
+            gridThanhPhanHoSo.DataSource = oColl;
+            gridThanhPhanHoSo.DataBind();
+        }
+        else
+        {
+            ThanhPhanHSLT.Visible = true;
+            BindGrid_ThanhPhanHoSo();
+        }
+        //if (GetQuery("Action") == "connect")
+        //{
+      
+        //}
+        //else
+        //{
+        //  ThanhPhanHSLT.Visible = false;
+        //}
+    }

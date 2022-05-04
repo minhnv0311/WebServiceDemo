@@ -1,0 +1,149 @@
+﻿<div class="modal-header bg-color">
+    <h3 class="modal-title">Quản lý người sử dụng</h3>
+</div>
+<div class="modal-body form">
+    <div class="form-body form-horizontal">
+
+        <input type="text" class="form-control" ng-model="itemUser.Id" name="Id" style="display:none">
+        <div class="form-group  ">
+            <label class="control-label col-md-2">Tên đăng nhập <span style="color:red">*</span></label>
+            <div class="col-md-4 {{itemUserError.ModelState.UserName[1]}}">
+                <input type="text" class="form-control" id="UserName"
+                       ng-model="itemUser.UserName" ng-change="ChageUser(itemUser.UserName)" ng-model-options="{updateOn:'change'}" name="FCode" ng-disabled="disabled">
+                <span class="help-block"> {{ itemUserError.ModelState.UserName[0] }} </span>
+            </div>
+            <label class="control-label col-md-2">Họ & Tên</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="itemUser.FullName" name="Id">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Giới tính</label>
+            <div class="col-md-4">
+                <select ng-model="itemUser.Gender" class="form-control form_user">
+                    <option ng-repeat="u in GioiTinh" value="{{u.FCode}}">{{u.FName}}</option>
+                </select>
+            </div>
+            <label class="control-label col-md-2">Ngày sinh</label>
+            <div class="col-md-4">
+                <div class="input-group date date-picker">
+                    <input type="text" class="form-control" ng-model="itemUser.Birthday" date>
+                    <input ng-model="itemUser.Birthday" hidden="hidden" type="text">
+                    <span class="input-group-btn">
+                        <button class="btn default" type="button">
+                            <i class="fa fa-calendar"></i>
+                        </button>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2">Số điện thoại </label>
+            <div class="col-md-4 {{itemUserError.ModelState.PhoneNumber[1]}}">
+                <input type="text" class="form-control" ng-model="itemUser.Mobile" id="PhoneNumber" name="FCode">
+                <span class="help-block"> {{ itemUserError.ModelState.PhoneNumber[0] }} </span>
+            </div>
+            <label class="control-label col-md-2">Email </label>
+            <div class="col-md-4 {{ itemUserError.ModelState.Email[1] }}">
+                <input type="text" class="form-control" ng-model="itemUser.Email" id="Email" name="FCode">
+                <span class="help-block"> {{ itemUserError.ModelState.Email[0] }} </span>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2">Địa chỉ</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="itemUser.Address" name="Id">
+            </div>
+            <label class="control-label col-md-2">Tỉnh/thành phố</label>
+            <div class="col-md-4">
+                <select ng-model="itemUser.Provin" ng-change="ProvinChange(itemUser.Provin,'0','0')" placeholder="Chọn tỉnh/thành" id="single-provin-text" class="form-control form_user">
+                    <option ng-repeat="m in Provin" value="{{m.FCode}}">{{ m.FName }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Quận/Huyện</label>
+            <div class="col-md-4">
+                <select ng-model="itemUser.District" ng-change="ProvinChange(itemUser.Provin,itemUser.District,'0')" id="single-district-text" class="form-control form_user">
+                    <option ng-repeat="m in District" value="{{m.FCode}}">{{ m.FName }}</option>
+                </select>
+            </div>
+            <label class="control-label col-md-2">Xã/Phường</label>
+            <div class="col-md-4">
+                <select ng-model="itemUser.Ward" id="single-ward-text" class="form-control form_user">
+                    <option ng-repeat="m in Ward" value="{{m.FCode}}">{{ m.FName }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group " >
+            <label class="control-label col-md-2 {{itemUserError.ModelState.DonVi[1]}}">Đơn vị<span style="color:red">*</span></label>
+            <div class="col-md-4 {{itemUserError.ModelState.DonVi[1]}}">
+                <select ng-model="itemDV" id="DonVi" class="form-control form_user" ng-change="ChangeDV()" ng-disabled="checkDisable">
+                    <option ng-repeat="c in TreeTextDV" value="{{c.id}}">{{c.text }}</option>
+                </select>
+            </div>
+            <label class="control-label col-md-2 {{itemUserError.ModelState.Department[1]}}">Phòng ban</label>
+            <div class="col-md-4 {{itemUserError.ModelState.Department[1]}}">
+                <select ng-model="itemDepartment" id="Department" class="form-control form_user" ng-disabled="checkDisable">
+                    <option ng-repeat="c in TreeTextDeparment" value="{{c.id}}">{{c.text }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="control-label col-md-2">Chức vụ </label>
+            <div class="col-md-4">
+                <div class="input-group" ng-show="!DisabledRow(u)">
+                    <div>
+                        <select ng-model="itemUser.Position" id="single-ps-text" class="form-control form_user">
+                            <option ng-repeat="c in Position" value="{{c.FCode}}">{{c.FName }}</option>
+                        </select>
+                    </div>
+                    <div class="input-group-btn">
+                        <a ng-show="u.o.Id == null"
+                           popover data-trigger="hover"
+                           data-placement="right"
+                           data-html="true"
+                           data-selector=""
+                           data-content="Thêm mới chức vụ"
+                           class="btn green-haze btn-outline" ng-click="openEditPostion('')"><i class="fa fa-plus"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+           
+            <label class="control-label col-md-2">Thuộc nhóm </label>
+
+            <div class="col-md-4">
+                <select ng-model="itemGroup" class="form-control form_user" multiple  ng-disabled="checkDisable">
+                    <option ng-repeat="c in Group" value="{{c.FCode}}">{{c.FName }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn green-haze btn-outline sbold" ng-show="AuthorizationPermission('ADD',$stateParams.param.FCode)" ng-click="SaveModal()"> Cập nhật </button>
+            <button class="btn green-haze btn-outline sbold" ng-click="cancelModal()"> Thoát </button>
+        </div>
+    </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        $(".form_user").select2({
+            placeholder: 'Chọn',
+            escapeMarkup: function (m) { return m; },
+            width: null
+        });
+
+        if (jQuery().datepicker) {
+            $('.date-picker').datepicker({
+                rtl: App.isRTL(),
+                format: 'dd/mm/yyyy',
+                orientation: "left",
+                autoclose: true
+            });
+
+        }
+    });
+
+
+</script>

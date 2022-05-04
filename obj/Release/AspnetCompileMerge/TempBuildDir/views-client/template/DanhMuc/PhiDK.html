@@ -1,0 +1,229 @@
+﻿<style>
+    .rotate {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+</style>
+<div ng-controller="PhiDKController">
+    <div class="page-bar">
+        <div class="col-md-7">
+
+            <ul class="page-breadcrumb ">
+                <li>
+                    <a ui-sref="dashboard">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.ParentMenu)}}</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="bold">
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.FCode)}}</a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a ng-click="IsShowPage_DangKyCaNhan = true;IsShowPage_DangKyNhom=false" data-target="#dangkycanhan" aria-controls="dangkycanhan" role="tab" data-toggle="tab">Thông tin đăng ký</a>
+                </li>
+                <li role="presentation">
+                    <a ng-click="IsShowPage_DangKyNhom = true;IsShowPage_DangKyCaNhan=false" data-target="#dangkynhom" aria-controls="dangkynhom" role="tab" data-toggle="tab">Đăng ký theo nhóm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="row">
+            <div ng-show="IsShowPage_DangKyCaNhan == true" role="tabpanel" class="tab-pane active" id="dangkycanhan">
+                <div class="portlet light" style="margin-bottom:0">
+
+
+                    <!--<div class="col-md-12">
+                        <h4> <label class=" uppercase font-green"><i class="fa fa-list"></i> DANH MỤC {{getPageBar( $stateParams.param.FCode)}}</label></h4>
+                    </div>-->
+                    <div class="form-body form-horizontal">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a class="btn btn-primary btn-sm" ng-click="openModal('','PhiDK')"><i class="fa fa-plus-circle"></i> Thêm mới</a>
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-icon input-icon-sm right">
+                                    <i class="fa fa-search"></i>
+                                    <input type="text" ng-model="Paging.SearchKey" ng-change="GetListBanner(true)" ng-model-options="{ updateOn: 'change blur'}" class="form-control input-sm" placeholder="Nhập từ khóa tìm kiếm">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-scrollable">
+                                    <table class="table table-responsive table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th width="1%" class="text-center" style="vertical-align:middle">
+                                                    STT
+                                                </th>
+                                                <th width="1%" class="text-center" style="vertical-align:middle">
+                                                    #
+                                                </th>
+                                                <th width="10%" class="text-center" style="vertical-align:middle">
+                                                    Tên
+                                                </th>
+                                                <th>
+                                                    Mô tả
+                                                </th>
+                                                <th width="10%" style="vertical-align:middle">
+                                                    Người tạo
+                                                </th>
+                                                <th width="10%" style="vertical-align:middle">
+                                                    Thời gian tạo
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="u in List | orderBy : '-FCreateTime'">
+                                                <td width="1%" class="text-center" style="vertical-align:middle">
+                                                    {{ShowIndex($index+1,Paging.PageNumber,Paging.PageSize)}}
+                                                </td>
+                                                <td width="1%" class="text-center" style="vertical-align:middle">
+                                                    <a ng-click="openModal(u.Id,'PhiDK')"><i class="fa fa-edit"></i></a>
+                                                    <a ng-click="Delete(u.Id)" title="Xóa"><i class="fa fa-trash font-red"></i></a>
+
+                                                </td>
+                                                <td width="10%" class="text-center" style="vertical-align:middle">
+                                                    {{u.FName}}
+                                                </td>
+
+                                                <td style="vertical-align:middle; white-space: nowrap;">
+                                                    {{u.FDescription}}
+                                                </td>
+                                                <td width="10%" style="vertical-align:middle">
+                                                    {{u.FUserCreate }}
+                                                </td>
+                                                <td width="10%" style="vertical-align:middle; white-space: nowrap;">
+                                                    {{u.FCreateTime | date : 'dd/MM/yyyy HH:mm:ss'}}
+                                                </td>
+                                            </tr>
+                                            <tr ng-show="List.length == 0">
+                                                <td colspan="20">
+                                                    <div class="alert alert-danger">
+                                                        <strong>Thông báo!</strong> Không có danh sách
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div ng-show="List.length > 0" class="dataTables_info" id="sample_2_info" role="status" aria-live="polite">{{DisplayInfoPagination(Paging.PageNumber,Paging.PageSize,Paging.Total)}}</div>
+                            </div>
+                            <div class="col-md-7">
+                                <ul class="pull-right pagination-sm" ng-show="Paging.Total > Paging.PageSize"
+                                    boundary-links="true"
+                                    previous-text="Trang trước" next-text="Trang sau" first-text="Trang đầu" last-text="Trang cuối"
+                                    force-ellipses="true"
+                                    max-size="10"
+                                    ng-change="pageChanged()"
+                                    uib-pagination total-items="Paging.Total" ng-model="Paging.PageNumber" items-per-page="Paging.PageSize"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div ng-show="IsShowPage_DangKyNhom == true" role="tabpanel" class="tab-pane active" id="dangkynhom">
+                <div class="portlet light">
+                    <div class="portlet-body form">
+                        <div class="col-md-3">
+                            <a href="javascript:;" class="btn btn-primary btn-outline sbold" ng-click="OpenModalDangKyNhom()">
+                                <i class="fa fa-plus"></i>&nbsp; Thêm mới
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <input type="text" ng-change="Paging_DKNhom.currentPage = 1;LoadDanhSachDangKyNhom()" ng-model="Paging_DKNhom.SearchKey"
+                                       ng-model-options="{updateOn: 'change'}"
+                                       class="form-control" placeholder="Tìm kiếm dữ liệu...">
+                                <div class="input-group-btn">
+                                    <a class="btn btn-default" ng-click="Paging_DKNhom.currentPage = 1;LoadDanhSachDangKyNhom()">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-12">
+                            <div class="text-center" ng-show="loading" style="left: 50%; top: 50%; position: fixed; z-index: 1000; display: block;">
+                                <img src="../../31.gif" />
+                            </div>
+
+                            <div style="overflow: hidden" class="table-scrollable">
+                                <!-- BEGIN FORM-->
+                                <table class="table table-striped table-bordered table-hover"
+                                       id="fixTable">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:5%">STT</th>
+                                            <th>Số lượng</th>
+                                            <th>Ưu đãi</th>
+                                            <th>#</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX" ng-repeat="x in lstDanhSach">
+                                            <td>{{$index + Paging_DKNhom.pageStart}}</td>
+                                            <td>{{x.FName}}</td>
+                                            <td>{{x.FDescription}}</td>
+                                            <td width="1%"><a ng-click="OpenModalDangKyNhom(x)"> <i class="fa fa-edit"></i> </a></td>
+                                            <td width="1%"> <a><i class="fa fa-trash font-red" ng-click="DeleteDKNhom(x.Id);"></i></a> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-5 input-group pull-right">
+
+                                <span class="input-group-addon">
+                                    Trang :
+                                </span>
+                                <input type="text" value="1" onkeypress='onlynumber(event)'
+                                       ng-change="LoadDanhSachDangKyNhom()" ng-model="Paging_DKNhom.currentPage" class="form-control text-center border-right" maxlength="6">
+                                <div class="input-group-btn">
+                                    <a class="btn btn-default sbold border-right" ng-click="((Paging_DKNhom.currentPage>1) ? Paging_DKNhom.currentPage=Paging_DKNhom.currentPage-1 : Paging_DKNhom.currentPage=Paging_DKNhom.currentPage);LoadDanhSachDangKyNhom()" title="Trang trước">
+                                        <i class="fa fa-angle-double-left"></i>
+                                    </a>
+                                    <a class="btn btn-default  sbold" ng-click="((Paging_DKNhom.currentPage < Paging_DKNhom.totalPage) ? Paging_DKNhom.currentPage = Paging_DKNhom.currentPage + 1 : (Paging_DKNhom.currentPage == Paging_DKNhom.totalPage) ? Paging_DKNhom.currentPage = Paging_DKNhom.totalPage : Paging_DKNhom.currentPage=Paging_DKNhom.currentPage);LoadDanhSachDangKyNhom()" title="Trang sau">
+                                        <i class="fa fa-angle-double-right"></i>
+                                    </a>
+                                </div>
+                                <span class="input-group-addon">
+                                    <b class="text-danger">{{Paging_DKNhom.pageStart}}</b> - <b class="text-danger">{{Paging_DKNhom.pageEnd}}</b> của <b class="text-danger">{{Paging_DKNhom.totalCount}}</b>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

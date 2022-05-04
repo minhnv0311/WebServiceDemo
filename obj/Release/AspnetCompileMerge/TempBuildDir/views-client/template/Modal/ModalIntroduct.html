@@ -1,0 +1,69 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin giới thiệu</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tiêu đề <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Trang:</label>
+                        <select ng-model="item.FStatus" class="form-control">
+                            <option ng-repeat="p in ListPage" value="{{p.FCode}}">{{p.FName}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Nội dung rút gọn:</label>
+                        <summernote ng-model="item.SortContent"></summernote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Nội dung:</label>
+                        <summernote ng-model="item.Content"></summernote>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Ghi chú:</label>
+                        <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    ComponentsSelect2.init();
+</script>

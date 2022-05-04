@@ -1,0 +1,143 @@
+ Hàm check khách hàng : 
+ 
+ public string Check_MaKhachHang(string MaKhachHang)
+    {
+
+        string thongbao = "0";
+       
+        //return thongbao;
+        #region code cũ
+        Database.DanhMuc.MA_KHACH_HANG oMa_KH = new Database.DanhMuc.MA_KHACH_HANG(Commons.oSession());
+        Database.DanhMuc.MA_KHACH_HANG OMa_KH = (Database.DanhMuc.MA_KHACH_HANG)oMa_KH.GetObjectBy_MaKhachHang_SoGiayTo(MaKhachHang, MaKhachHang);
+        if (OMa_KH != null)
+        {
+            thongbao = "1";
+        }
+        else
+        {
+            requestTest rq = new requestTest();
+            rq.msdn = MaKhachHang;
+            RestClient client = new RestClient("http://localhost:51750/api/DoanhNghiep");
+
+            #region lấy mã token
+            var request = new RestRequest("getToken", Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            request.RequestFormat = DataFormat.Json;
+            var result = client.Execute(request);
+            if (!string.IsNullOrEmpty(result.Content))
+            {
+                var token = JsonConvert.DeserializeObject<accesstoken>(result.Content);
+                var rqTTDN = new RestRequest("getByMsdn", Method.POST);
+                rqTTDN.AddParameter("Authorization",
+                                    string.Format(token.token_type + " " + token.access_token),
+                                                ParameterType.HttpHeader);
+                rqTTDN.AddHeader("Content-Type", "application/json");
+                rqTTDN.RequestFormat = DataFormat.Json;
+                rqTTDN.AddBody(rq);
+                var rsTTDN = client.Execute(rqTTDN);
+                if (!string.IsNullOrEmpty(rsTTDN.Content))
+                {
+                    var info = JsonConvert.DeserializeObject<DoanhNghiepDetail>(rsTTDN.Content);
+                    if (info != null)
+                    {
+                        if (info.DataCount != 0)
+                        {
+                            thongbao = "1";
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
+        return thongbao;
+        #endregion
+    }
+	
+	
+Hàm lấy thông tin khách hàng:
+
+ public DataSet Sent_ThongTin_MaKhachHang(string MaKhachHang)
+    {
+        DataSet MA_KHACHHANG = new DataSet();
+        DataTable MA_KHACH_HANG = MA_KHACHHANG.Tables.Add("MA_KHACH_HANG");
+        Database.DanhMuc.MA_KHACH_HANG oMa_KH = new Database.DanhMuc.MA_KHACH_HANG(Commons.oSession());
+        foreach (FieldInfo field in oMa_KH.GetType().GetFields())
+        {
+            MA_KHACH_HANG.Columns.Add(field.Name, field.FieldType);
+        }
+       
+        #region code cũ
+        Database.DanhMuc.MA_KHACH_HANG OMa_KH = (Database.DanhMuc.MA_KHACH_HANG)oMa_KH.GetObjectBy_MaKhachHang_SoGiayTo(MaKhachHang, MaKhachHang);
+        if (OMa_KH != null)
+        {
+            #region Gửi dữ liệu
+            DataRow row = MA_KHACH_HANG.NewRow();
+            foreach (DataColumn column in MA_KHACH_HANG.Columns)
+            {
+                if (OMa_KH.GetMemberValue(column.ColumnName) != null)
+                {
+                    row[column.ColumnName] = OMa_KH.GetMemberValue(column.ColumnName);
+                }
+            }
+            MA_KHACH_HANG.Rows.Add(row);
+            #endregion
+        }
+        else
+        {
+            #region lấy mã token
+            requestTest rq = new requestTest();
+            rq.msdn = MaKhachHang;
+			
+            RestClient client = new RestClient("http://localhost:51750/api/DoanhNghiep");
+            var request = new RestRequest("getToken", Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            request.RequestFormat = DataFormat.Json;
+            var result = client.Execute(request);
+            if (!string.IsNullOrEmpty(result.Content))
+            {
+                var token = JsonConvert.DeserializeObject<accesstoken>(result.Content);
+                var rqTTDN = new RestRequest("getByMsdn", Method.POST);
+                rqTTDN.AddParameter("Authorization",
+                                    string.Format(token.token_type + " " + token.access_token),
+                                                ParameterType.HttpHeader);
+                rqTTDN.AddHeader("Content-Type", "application/json");
+                rqTTDN.RequestFormat = DataFormat.Json;
+                rqTTDN.AddBody(rq);
+                var rsTTDN = client.Execute(rqTTDN);
+                if (!string.IsNullOrEmpty(rsTTDN.Content))
+                {
+                    var info = JsonConvert.DeserializeObject<DoanhNghiepDetail>(rsTTDN.Content);
+                    if (info != null)
+                    {
+                        if (info.DataCount != 0)
+                        {
+                            DataRow row = MA_KHACH_HANG.NewRow();
+                            row["MaKhachHang"] = MaKhachHang;
+                            row["HoTenNguoiNop"] = info.Data.Representatives[0].FULL_NAME;
+                            //row["LoaiGiayToHL"] = MaKhachHang;
+                            //row["GioiTinh"] = MaKhachHang;
+                            row["TenCoQuan"] = info.Data.MainInformation.NAME;
+                            row["DiaChi"] = info.Data.HOAdress.AddressFullText;
+                            //row["Email"] = MaKhachHang;
+                            //if(info.Data.MainInformation.FOUNDING_DATE != null)
+                            //{
+                            //row["NgaySinh"] = info.Data.MainInformation.FOUNDING_DATE.Value.ToString("dd");
+                            //row["NamSinh"] = info.Data.MainInformation.FOUNDING_DATE.Value.ToString("yyyy"); ;
+                            //}
+
+
+                            row["SoGiayTo"] = MaKhachHang;
+                            //row["SoDienThoai"] = MaKhachHang;
+                            row["FDescription"] = info.Data.MainInformation.ENTERPRISE_TYPE_NAME;
+                            MA_KHACH_HANG.Rows.Add(row);
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
+        #endregion
+        return MA_KHACHHANG;
+    }
+	a
+	

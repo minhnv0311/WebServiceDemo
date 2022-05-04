@@ -1,0 +1,83 @@
+﻿<!-- BEGIN PAGE HEADER-->
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a ui-sref="dashboard">Trang chủ</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">Quản lý chức năng</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">Tool quản trị</a>
+
+        </li>
+    </ul>
+
+</div>
+
+<!-- END PAGE HEADER-->
+<div ng-controller="AdminController">
+    <div class="row">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="col-md-12">
+                    <a href="javascript:;" class="btn green-haze btn-outline sbold" ng-click="openEditAreaModal()">
+                        <i class="fa fa-plus"></i>&nbsp; Thêm mới
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="col-md-12">
+                    <div class="tabbable-custom">
+                        <ul class="nav nav-tabs ">
+                            <li class="active">
+                                <a data-target="#tab_5_3" data-toggle="tab">
+                                    <label class="bold">Import cơ quan nhà nước</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-target="#tab_5_4" data-toggle="tab">
+                                    <label class="bold">Đơn vị </label>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab_5_3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <input type="file" name="file" class="form-control"
+                                                   onchange="angular.element(this).scope().loadFile(this.files)">
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-2"><button class="btn btn-sm green sbold btn-outline" ng-click="handleFile()">Import từ Excel </button></div>
+                                    <div class="col-md-6">
+                                        <input id="Button1" type="button" ng-click="Import()" class="btn btn-sm green sbold btn-outline" value="Import trực tiếp" />
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="tab-pane" id="tab_5_4">
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<!-- END MAIN CONTENT -->

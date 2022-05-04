@@ -1,0 +1,124 @@
+﻿
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a ui-sref="dashboard">Trang chủ</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">Thông tin tài khoản</a>
+        </li>
+    </ul>
+
+</div>
+<div class="row margin-top-20">
+    <div class="col-md-12" ng-controller="AccountController" ng-init="OnLoad()">
+        <div class="profile-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light">
+                        <div class="portlet-title tabbable-line">
+                            <div class="caption caption-md">
+                                <i class="icon-globe theme-font hide"></i>
+                                <span class="caption-subject font-green bold uppercase">Hồ sơ tài khoản</span>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a href="#" data-target="#tab_1_1" data-toggle="tab">Thông tin cá nhân</a>
+                                </li>
+                                <li>
+                                    <a href="#" data-target="#tab_1_3" data-toggle="tab">Đổi mật khẩu</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="tab-content">
+                                <!-- PERSONAL INFO TAB -->
+                                <div class="tab-pane active" id="tab_1_1">
+                                    <form role="form" action="#">
+                                        <div class="col-md-6">
+                                            <br />
+                                            <div class="form-group">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 200px;">
+                                                        <img src="../../Avatar/{{ListBMName[0]}}" alt="" style="width: 200px; height: 200px;" ng-show="ListBMName.length != 0" />
+                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" ng-show="ListBMName.length == 0" />
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 200px;"> </div>
+                                                    <div>
+                                                        <span class="btn default btn-file">
+                                                            <input type="file" id="file1" name="file"
+                                                                accept=".jpg,.png"   ng-files="getTheFiles($files)" />
+                                                        </span>
+                                                        <!--<a  class="btn btn-danger" ng-click="uploadFiles()"> Upload </a>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class=" col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Tên tài khoản</label>
+                                                <input type="text" ng-model="user.UserName" ng-readonly="true" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Tên đầy đủ</label>
+                                                <input type="text" ng-model="user.FullName" ng-readonly="true" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Số điện thoại</label>
+                                                <input type="text" ng-model="user.Mobile" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Email</label>
+                                                <input type="text" ng-model="user.Email" id="Email" class="form-control" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Địa chỉ</label>
+                                                <input type="text" ng-model="user.Address" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="margiv-top-10">
+                                                <a ng-click="uploadFiles()" class="btn green-haze"> Lưu thay đổi </a>
+
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <!-- END PERSONAL INFO TAB -->
+                                <!-- CHANGE PASSWORD TAB -->
+                                <div class="tab-pane" id="tab_1_3">
+                                    <form action="#">
+                                        <div class="form-group {{itemError.ModelState.OldPassword[1]}}">
+                                            <label class="control-label">Mật khẩu cũ</label>
+                                            <input type="password" ng-model="item.OldPassword" id="OldPassword" class="form-control" />
+                                        </div>
+                                        <div class="form-group {{itemError.ModelState.NewPassword[1]}}">
+                                            <label class="control-label">Mật khẩu mới</label>
+                                            <input type="password" ng-model="item.NewPassword" id="NewPassword" class="form-control" />
+                                        </div>
+                                        <div class="form-group {{itemError.ModelState.ConfirmPassword[1]}}">
+                                            <label class="control-label">Nhập lại mật khẩu mới</label>
+                                            <input type="password" ng-model="item.ConfirmPassword" id="ConfirmPassword" class="form-control" />
+                                        </div>
+                                        <div class="margin-top-10">
+                                            <a ng-click="ChangePass()" class="btn green-haze"> Đổi mật khẩu </a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- END CHANGE PASSWORD TAB -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

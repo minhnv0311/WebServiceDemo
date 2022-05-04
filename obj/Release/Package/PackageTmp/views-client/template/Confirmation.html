@@ -1,0 +1,55 @@
+﻿<!--<style>
+    #getFixed {
+        position: relative;
+        left: 10px;
+        width: 600px;
+    }
+</style>-->
+<div class="modal-header">
+    <h5 class="modal-title sbold">Bạn có chắc chắn muốn kết thúc cuộc thanh tra này không ?</h5>
+</div>
+<div class="modal-body form" style="max-height: calc(100vh - 180px);overflow-y: auto;">
+    <div class="form-body">
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <!--<th class="text-center" width="1%">
+                        STT
+                    </th>-->
+                    <th class="text-center">
+                        <label class="uppercase sbold">
+                            Danh sách đối tượng, thành viên chưa cập nhật văn bản
+                        </label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="(key, value) in arr | groupBy: 'Type'">
+                <tr>
+                    <td colspan="2">
+                        <label ng-show="key=='OBJ'" class="text-center sbold" style="vertical-align:middle">I. Đối tượng thanh, kiểm tra</label>
+                        <label ng-show="key=='USER'" class="text-center sbold" style="vertical-align:middle">II. Thành viên Đoàn thanh tra</label>
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr ng-repeat="u in value">
+                                    <td width="1px" class="text-center" style="vertical-align:middle">{{$index + 1}}</td>
+                                    <td>{{u.Obj.FName}}</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </td>
+                    <!--<td>
+
+                    </td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer" >
+    <div id="getFixed">
+        <button class="btn green-haze btn-outline sbold " ng-click="saveModal()"> Đồng ý </button>
+        <button class="btn green-haze btn-outline sbold " ng-click="cancelModal()"> Hủy bỏ </button>
+    </div>
+   
+</div>

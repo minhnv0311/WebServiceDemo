@@ -1,0 +1,107 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin phí đăng ký</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+            <div class="tabbable tabbable-tabdrop">
+                <ul class="nav nav-pills">
+
+                    <li class="active">
+                        <a data-target="#tab11" data-toggle="tab" aria-expanded="false">Thông tin chung</a>
+                    </li>
+                  
+                    <li>
+                        <a data-target="#tab15" data-toggle="tab">Giải thưởng</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab11">
+                        <div class="row">
+
+                            <div class="col-md-6">
+                                <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                                    <label class="control-label">Tên <span style="color:red">*</span>:</label>
+                                    <input type="text" class="form-control input-sm" ng-model="item.FName">
+                                    <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-group-sm">
+                                    <label class="control-label">Thông tin:</label>
+                                    <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab15">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <a class="btn btn-sm green-haze" ng-click="AddPrize()"><i class="fa fa-plus"></i>&nbsp; Thêm chi tiết</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <table class="table table-responsive table-bordered">
+                                        <tr>
+                                            <th width="5%">
+                                                Thứ tự
+                                            </th>
+                                            <th>
+                                                Loại cự ly
+                                            </th>
+
+                                            <th>
+                                                Phí đăng ký
+                                            </th>
+
+
+                                        </tr>
+                                        <tbody>
+                                            <tr ng-repeat="u in ListPrice | orderBy : 'FIndex'">
+                                                <td width="5%">
+                                                    <input ng-model="u.FIndex" placeholder="Thứ tự" class="form-control input-sm" />
+                                                </td>
+                                                <td width="45%">
+                                                    <input ng-model="u.FName" placeholder="Loại cự ly" class="form-control input-sm" />
+                                                </td>
+                                                <td width="45%">
+                                                    <input ng-model="u.FDescription" placeholder=" Phí đăng ký" class="form-control input-sm" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    ComponentsSelect2.init();
+</script>

@@ -1,0 +1,1867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebApiDataModelStoreContainer" CdmEntityContainer="WebApiDataEntities">
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="WebApiDataModel.Area">
+        <MappingFragment StoreEntitySet="Area">
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="IsUnit" ColumnName="IsUnit" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FDeleteTime" ColumnName="FDeleteTime" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FEditTime" ColumnName="FEditTime" />
+          <ScalarProperty Name="FViewTime" ColumnName="FViewTime" />
+          <ScalarProperty Name="FIsUpdate" ColumnName="FIsUpdate" />
+          <ScalarProperty Name="FIsEdit" ColumnName="FIsEdit" />
+          <ScalarProperty Name="FIsDelete" ColumnName="FIsDelete" />
+          <ScalarProperty Name="FUserDelete" ColumnName="FUserDelete" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FUserEdit" ColumnName="FUserEdit" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="WebApiDataModel.AspNetUser">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoIDs">
+      <EntityTypeMapping TypeName="WebApiDataModel.AutoID">
+        <MappingFragment StoreEntitySet="AutoID">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="WebApiDataModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Provin" ColumnName="Provin" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChucDanhs">
+      <EntityTypeMapping TypeName="WebApiDataModel.ChucDanh">
+        <MappingFragment StoreEntitySet="ChucDanh">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="WebApiDataModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Provin" ColumnName="Provin" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMNgonNgus">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMNgonNgu">
+        <MappingFragment StoreEntitySet="DMNgonNgu">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FParent" ColumnName="FParent" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FDeleteTime" ColumnName="FDeleteTime" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FEditTime" ColumnName="FEditTime" />
+          <ScalarProperty Name="FViewTime" ColumnName="FViewTime" />
+          <ScalarProperty Name="FIsUpdate" ColumnName="FIsUpdate" />
+          <ScalarProperty Name="FIsEdit" ColumnName="FIsEdit" />
+          <ScalarProperty Name="FIsDelete" ColumnName="FIsDelete" />
+          <ScalarProperty Name="FUserDelete" ColumnName="FUserDelete" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FUserEdit" ColumnName="FUserEdit" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOANH_NGHIEP">
+      <EntityTypeMapping TypeName="WebApiDataModel.DOANH_NGHIEP">
+        <MappingFragment StoreEntitySet="DOANH_NGHIEP">
+          <ScalarProperty Name="NganhNgheKinhDoan" ColumnName="NganhNgheKinhDoan" />
+          <ScalarProperty Name="NganhNgheChinh" ColumnName="NganhNgheChinh" />
+          <ScalarProperty Name="ChuSoHuu" ColumnName="ChuSoHuu" />
+          <ScalarProperty Name="NgayCap" ColumnName="NgayCap" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="NoiDangKy" ColumnName="NoiDangKy" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="MaLoaiHinh" ColumnName="MaLoaiHinh" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GioiTinhs">
+      <EntityTypeMapping TypeName="WebApiDataModel.GioiTinh">
+        <MappingFragment StoreEntitySet="GioiTinh">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_Role">
+      <EntityTypeMapping TypeName="WebApiDataModel.Group_Role">
+        <MappingFragment StoreEntitySet="Group_Role">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="CodeGroup" ColumnName="CodeGroup" />
+          <ScalarProperty Name="CodeRole" ColumnName="CodeRole" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Group_User">
+      <EntityTypeMapping TypeName="WebApiDataModel.Group_User">
+        <MappingFragment StoreEntitySet="Group_User">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="CodeGroup" ColumnName="CodeGroup" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="WebApiDataModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinhVucs">
+      <EntityTypeMapping TypeName="WebApiDataModel.LinhVuc">
+        <MappingFragment StoreEntitySet="LinhVuc">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOAI_HINH_DN">
+      <EntityTypeMapping TypeName="WebApiDataModel.LOAI_HINH_DN">
+        <MappingFragment StoreEntitySet="LOAI_HINH_DN">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiGiayToes">
+      <EntityTypeMapping TypeName="WebApiDataModel.LoaiGiayTo">
+        <MappingFragment StoreEntitySet="LoaiGiayTo">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MainMenus">
+      <EntityTypeMapping TypeName="WebApiDataModel.MainMenu">
+        <MappingFragment StoreEntitySet="MainMenu">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="WebApiDataModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="TemplateUrl" ColumnName="TemplateUrl" />
+          <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+          <ScalarProperty Name="ParentMenu" ColumnName="ParentMenu" />
+          <ScalarProperty Name="MainMenu" ColumnName="MainMenu" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="WebApiDataModel.Organization">
+        <MappingFragment StoreEntitySet="Organization">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="SitePath" ColumnName="SitePath" />
+          <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="Disctrict" ColumnName="Disctrict" />
+          <ScalarProperty Name="Provin" ColumnName="Provin" />
+          <ScalarProperty Name="IsDV" ColumnName="IsDV" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FParent" ColumnName="FParent" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="WebApiDataModel.Permission">
+        <MappingFragment StoreEntitySet="Permission">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="WebApiDataModel.Position">
+        <MappingFragment StoreEntitySet="Position">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLE_ASSIGNMENT">
+      <EntityTypeMapping TypeName="WebApiDataModel.ROLE_ASSIGNMENT">
+        <MappingFragment StoreEntitySet="ROLE_ASSIGNMENT">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="CodeMenu" ColumnName="CodeMenu" />
+          <ScalarProperty Name="CodePermission" ColumnName="CodePermission" />
+          <ScalarProperty Name="CodeRole" ColumnName="CodeRole" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="WebApiDataModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeCates">
+      <EntityTypeMapping TypeName="WebApiDataModel.TypeCate">
+        <MappingFragment StoreEntitySet="TypeCate">
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="WebApiDataModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="DonVi" ColumnName="DonVi" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Provin" ColumnName="Provin" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BANG_MA_CK">
+      <EntityTypeMapping TypeName="WebApiDataModel.BANG_MA_CK">
+        <MappingFragment StoreEntitySet="BANG_MA_CK">
+          <ScalarProperty Name="MaChungKhoan" ColumnName="MaChungKhoan" />
+          <ScalarProperty Name="FNote" ColumnName="FNote" />
+          <ScalarProperty Name="GiaThamChieu" ColumnName="GiaThamChieu" />
+          <ScalarProperty Name="GiaSan" ColumnName="GiaSan" />
+          <ScalarProperty Name="GiaTran" ColumnName="GiaTran" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="IsUnit" ColumnName="IsUnit" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FDeleteTime" ColumnName="FDeleteTime" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FEditTime" ColumnName="FEditTime" />
+          <ScalarProperty Name="FViewTime" ColumnName="FViewTime" />
+          <ScalarProperty Name="FIsUpdate" ColumnName="FIsUpdate" />
+          <ScalarProperty Name="FIsEdit" ColumnName="FIsEdit" />
+          <ScalarProperty Name="FIsDelete" ColumnName="FIsDelete" />
+          <ScalarProperty Name="FUserDelete" ColumnName="FUserDelete" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FUserEdit" ColumnName="FUserEdit" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAN_GIAO_DICH_CK">
+      <EntityTypeMapping TypeName="WebApiDataModel.SAN_GIAO_DICH_CK">
+        <MappingFragment StoreEntitySet="SAN_GIAO_DICH_CK">
+          <ScalarProperty Name="F38_F38" ColumnName="F38_F38" />
+          <ScalarProperty Name="F37_F37" ColumnName="F37_F37" />
+          <ScalarProperty Name="F36_F36" ColumnName="F36_F36" />
+          <ScalarProperty Name="F35_F35" ColumnName="F35_F35" />
+          <ScalarProperty Name="F34_F34" ColumnName="F34_F34" />
+          <ScalarProperty Name="F33_F33" ColumnName="F33_F33" />
+          <ScalarProperty Name="F32_F32" ColumnName="F32_F32" />
+          <ScalarProperty Name="F31_F31" ColumnName="F31_F31" />
+          <ScalarProperty Name="F30_F30" ColumnName="F30_F30" />
+          <ScalarProperty Name="F29_F29" ColumnName="F29_F29" />
+          <ScalarProperty Name="F28_F28" ColumnName="F28_F28" />
+          <ScalarProperty Name="F27_F27" ColumnName="F27_F27" />
+          <ScalarProperty Name="F26_Room_Con" ColumnName="F26_Room_Con" />
+          <ScalarProperty Name="F25_F25" ColumnName="F25_F25" />
+          <ScalarProperty Name="F24_F24" ColumnName="F24_F24" />
+          <ScalarProperty Name="F23_F23" ColumnName="F23_F23" />
+          <ScalarProperty Name="F22_F22" ColumnName="F22_F22" />
+          <ScalarProperty Name="F21_NN_Ban" ColumnName="F21_NN_Ban" />
+          <ScalarProperty Name="F20_NN_Mua" ColumnName="F20_NN_Mua" />
+          <ScalarProperty Name="F19_LSGia_Thap" ColumnName="F19_LSGia_Thap" />
+          <ScalarProperty Name="F18_LSGia_Cao" ColumnName="F18_LSGia_Cao" />
+          <ScalarProperty Name="F17_F17" ColumnName="F17_F17" />
+          <ScalarProperty Name="F16_LenhBan_KL3" ColumnName="F16_LenhBan_KL3" />
+          <ScalarProperty Name="F15_LenhBan_Gia3" ColumnName="F15_LenhBan_Gia3" />
+          <ScalarProperty Name="F14_LenhBan_KL2" ColumnName="F14_LenhBan_KL2" />
+          <ScalarProperty Name="F13_LenhBan_Gia2" ColumnName="F13_LenhBan_Gia2" />
+          <ScalarProperty Name="F12_LenhBan_KL1" ColumnName="F12_LenhBan_KL1" />
+          <ScalarProperty Name="F11_LenhBan_Gia1" ColumnName="F11_LenhBan_Gia1" />
+          <ScalarProperty Name="F10_TKL" ColumnName="F10_TKL" />
+          <ScalarProperty Name="F9_SauDongCua_KL" ColumnName="F9_SauDongCua_KL" />
+          <ScalarProperty Name="F8_SauDongCua_Gia" ColumnName="F8_SauDongCua_Gia" />
+          <ScalarProperty Name="F7_Tang_Giam" ColumnName="F7_Tang_Giam" />
+          <ScalarProperty Name="F6_LenhMua_KL1" ColumnName="F6_LenhMua_KL1" />
+          <ScalarProperty Name="F5_LenhMua_Gia1" ColumnName="F5_LenhMua_Gia1" />
+          <ScalarProperty Name="F4_LenhMua_KL2" ColumnName="F4_LenhMua_KL2" />
+          <ScalarProperty Name="F3_LenhMua_Gia2" ColumnName="F3_LenhMua_Gia2" />
+          <ScalarProperty Name="F2_LenhMua_KL3" ColumnName="F2_LenhMua_KL3" />
+          <ScalarProperty Name="F1_LenhMua_Gia3" ColumnName="F1_LenhMua_Gia3" />
+          <ScalarProperty Name="F38" ColumnName="F38" />
+          <ScalarProperty Name="F37" ColumnName="F37" />
+          <ScalarProperty Name="F36" ColumnName="F36" />
+          <ScalarProperty Name="F35" ColumnName="F35" />
+          <ScalarProperty Name="F34" ColumnName="F34" />
+          <ScalarProperty Name="F33" ColumnName="F33" />
+          <ScalarProperty Name="F32" ColumnName="F32" />
+          <ScalarProperty Name="F31" ColumnName="F31" />
+          <ScalarProperty Name="F30" ColumnName="F30" />
+          <ScalarProperty Name="F29" ColumnName="F29" />
+          <ScalarProperty Name="F28" ColumnName="F28" />
+          <ScalarProperty Name="F27" ColumnName="F27" />
+          <ScalarProperty Name="F26" ColumnName="F26" />
+          <ScalarProperty Name="F25" ColumnName="F25" />
+          <ScalarProperty Name="F24" ColumnName="F24" />
+          <ScalarProperty Name="F23" ColumnName="F23" />
+          <ScalarProperty Name="F22" ColumnName="F22" />
+          <ScalarProperty Name="F21" ColumnName="F21" />
+          <ScalarProperty Name="F20" ColumnName="F20" />
+          <ScalarProperty Name="F19" ColumnName="F19" />
+          <ScalarProperty Name="F18" ColumnName="F18" />
+          <ScalarProperty Name="F17" ColumnName="F17" />
+          <ScalarProperty Name="F16" ColumnName="F16" />
+          <ScalarProperty Name="F15" ColumnName="F15" />
+          <ScalarProperty Name="F14" ColumnName="F14" />
+          <ScalarProperty Name="F13" ColumnName="F13" />
+          <ScalarProperty Name="F12" ColumnName="F12" />
+          <ScalarProperty Name="F11" ColumnName="F11" />
+          <ScalarProperty Name="F10" ColumnName="F10" />
+          <ScalarProperty Name="F9" ColumnName="F9" />
+          <ScalarProperty Name="F8" ColumnName="F8" />
+          <ScalarProperty Name="F7" ColumnName="F7" />
+          <ScalarProperty Name="F6" ColumnName="F6" />
+          <ScalarProperty Name="F5" ColumnName="F5" />
+          <ScalarProperty Name="F4" ColumnName="F4" />
+          <ScalarProperty Name="F3" ColumnName="F3" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="MaChungKhoan" ColumnName="MaChungKhoan" />
+          <ScalarProperty Name="FNote" ColumnName="FNote" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="IsUnit" ColumnName="IsUnit" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FDeleteTime" ColumnName="FDeleteTime" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FEditTime" ColumnName="FEditTime" />
+          <ScalarProperty Name="FViewTime" ColumnName="FViewTime" />
+          <ScalarProperty Name="FIsUpdate" ColumnName="FIsUpdate" />
+          <ScalarProperty Name="FIsEdit" ColumnName="FIsEdit" />
+          <ScalarProperty Name="FIsDelete" ColumnName="FIsDelete" />
+          <ScalarProperty Name="FUserDelete" ColumnName="FUserDelete" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FUserEdit" ColumnName="FUserEdit" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LICH_SU_GIA">
+      <EntityTypeMapping TypeName="WebApiDataModel.LICH_SU_GIA">
+        <MappingFragment StoreEntitySet="LICH_SU_GIA">
+          <ScalarProperty Name="s_s" ColumnName="s_s" />
+          <ScalarProperty Name="v_Volumn" ColumnName="v_Volumn" />
+          <ScalarProperty Name="c_c" ColumnName="c_c" />
+          <ScalarProperty Name="l_GiaThapNhat" ColumnName="l_GiaThapNhat" />
+          <ScalarProperty Name="h_GiaCaoNhat" ColumnName="h_GiaCaoNhat" />
+          <ScalarProperty Name="o_GiaMoCua" ColumnName="o_GiaMoCua" />
+          <ScalarProperty Name="t_ThoiGian" ColumnName="t_ThoiGian" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="MaChungKhoan" ColumnName="MaChungKhoan" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="IsUnit" ColumnName="IsUnit" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FDeleteTime" ColumnName="FDeleteTime" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FEditTime" ColumnName="FEditTime" />
+          <ScalarProperty Name="FViewTime" ColumnName="FViewTime" />
+          <ScalarProperty Name="FIsUpdate" ColumnName="FIsUpdate" />
+          <ScalarProperty Name="FIsEdit" ColumnName="FIsEdit" />
+          <ScalarProperty Name="FIsDelete" ColumnName="FIsDelete" />
+          <ScalarProperty Name="FUserDelete" ColumnName="FUserDelete" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FUserEdit" ColumnName="FUserEdit" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Categories">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Categories">
+        <MappingFragment StoreEntitySet="CMS_Categories">
+          <ScalarProperty Name="IsMedia" ColumnName="IsMedia" />
+          <ScalarProperty Name="IsNews" ColumnName="IsNews" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LinkType" ColumnName="LinkType" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="TemplateUrl" ColumnName="TemplateUrl" />
+          <ScalarProperty Name="ControllerName" ColumnName="ControllerName" />
+          <ScalarProperty Name="ParentMenu" ColumnName="ParentMenu" />
+          <ScalarProperty Name="MainMenu" ColumnName="MainMenu" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_News">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_News">
+        <MappingFragment StoreEntitySet="CMS_News">
+          <ScalarProperty Name="IsLiveNews" ColumnName="IsLiveNews" />
+          <ScalarProperty Name="IsImportantNews" ColumnName="IsImportantNews" />
+          <ScalarProperty Name="IsTopNews" ColumnName="IsTopNews" />
+          <ScalarProperty Name="IsHotNews" ColumnName="IsHotNews" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="SortContent" ColumnName="SortContent" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="IsShowSortContent" ColumnName="IsShowSortContent" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Menu" ColumnName="Menu" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_News_Files">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_News_Files">
+        <MappingFragment StoreEntitySet="CMS_News_Files">
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Banner">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Banner">
+        <MappingFragment StoreEntitySet="CMS_Banner">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Ads">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Ads">
+        <MappingFragment StoreEntitySet="CMS_Ads">
+          <ScalarProperty Name="CateogoryCode" ColumnName="CateogoryCode" />
+          <ScalarProperty Name="IsShowWithCategory" ColumnName="IsShowWithCategory" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="GroupLinks" ColumnName="GroupLinks" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_GroupLinks">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_GroupLinks">
+        <MappingFragment StoreEntitySet="CMS_GroupLinks">
+          <ScalarProperty Name="SuDung" ColumnName="SuDung" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Links">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Links">
+        <MappingFragment StoreEntitySet="CMS_Links">
+          <ScalarProperty Name="CateogoryCode" ColumnName="CateogoryCode" />
+          <ScalarProperty Name="IsShowWithCategory" ColumnName="IsShowWithCategory" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="GroupLinks" ColumnName="GroupLinks" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Gallery">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Gallery">
+        <MappingFragment StoreEntitySet="CMS_Gallery">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="GroupLinks" ColumnName="GroupLinks" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Videos">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Videos">
+        <MappingFragment StoreEntitySet="CMS_Videos">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="GroupLinks" ColumnName="GroupLinks" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Documents">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Documents">
+        <MappingFragment StoreEntitySet="CMS_Documents">
+          <ScalarProperty Name="Read" ColumnName="Read" />
+          <ScalarProperty Name="Tick" ColumnName="Tick" />
+          <ScalarProperty Name="FileAttachment" ColumnName="FileAttachment" />
+          <ScalarProperty Name="DocumentFile" ColumnName="DocumentFile" />
+          <ScalarProperty Name="FieldType" ColumnName="FieldType" />
+          <ScalarProperty Name="Promulgated" ColumnName="Promulgated" />
+          <ScalarProperty Name="PromulgatedBy" ColumnName="PromulgatedBy" />
+          <ScalarProperty Name="SignBy" ColumnName="SignBy" />
+          <ScalarProperty Name="DraftBy" ColumnName="DraftBy" />
+          <ScalarProperty Name="LinhVuc" ColumnName="LinhVuc" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_DocumentInfo">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_DocumentInfo">
+        <MappingFragment StoreEntitySet="CMS_DocumentInfo">
+          <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Meta">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Meta">
+        <MappingFragment StoreEntitySet="CMS_Meta">
+          <ScalarProperty Name="HttpEquiv" ColumnName="HttpEquiv" />
+          <ScalarProperty Name="Charset" ColumnName="Charset" />
+          <ScalarProperty Name="ItemProp" ColumnName="ItemProp" />
+          <ScalarProperty Name="Property" ColumnName="Property" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_Library">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_Library">
+        <MappingFragment StoreEntitySet="CMS_Library">
+          <ScalarProperty Name="Sizes" ColumnName="Sizes" />
+          <ScalarProperty Name="Href" ColumnName="Href" />
+          <ScalarProperty Name="Rel" ColumnName="Rel" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CMS_PageTitle">
+      <EntityTypeMapping TypeName="WebApiDataModel.CMS_PageTitle">
+        <MappingFragment StoreEntitySet="CMS_PageTitle">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoDanhGiaHuyens">
+      <EntityTypeMapping TypeName="WebApiDataModel.BoDanhGiaHuyen">
+        <MappingFragment StoreEntitySet="BoDanhGiaHuyen">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="JsonDiem" ColumnName="JsonDiem" />
+          <ScalarProperty Name="TongDiem" ColumnName="TongDiem" />
+          <ScalarProperty Name="TongSoMayTinhXa" ColumnName="TongSoMayTinhXa" />
+          <ScalarProperty Name="TongSoMayTinhHuyen" ColumnName="TongSoMayTinhHuyen" />
+          <ScalarProperty Name="TongSoCBCCVCXa" ColumnName="TongSoCBCCVCXa" />
+          <ScalarProperty Name="TongSoCBCCVCHuyen" ColumnName="TongSoCBCCVCHuyen" />
+          <ScalarProperty Name="TongSoUBNDXa" ColumnName="TongSoUBNDXa" />
+          <ScalarProperty Name="TongSoDVTrucThuoc" ColumnName="TongSoDVTrucThuoc" />
+          <ScalarProperty Name="DonViId" ColumnName="DonViId" />
+          <ScalarProperty Name="NgayQd" ColumnName="NgayQd" />
+          <ScalarProperty Name="SoQD" ColumnName="SoQD" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoDanhGiaTinhs">
+      <EntityTypeMapping TypeName="WebApiDataModel.BoDanhGiaTinh">
+        <MappingFragment StoreEntitySet="BoDanhGiaTinh">
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="JsonDiem" ColumnName="JsonDiem" />
+          <ScalarProperty Name="TongDiem" ColumnName="TongDiem" />
+          <ScalarProperty Name="TongSoMayTinh" ColumnName="TongSoMayTinh" />
+          <ScalarProperty Name="TongSoCBCCVC" ColumnName="TongSoCBCCVC" />
+          <ScalarProperty Name="TongSoDVTrucThuoc" ColumnName="TongSoDVTrucThuoc" />
+          <ScalarProperty Name="DonViId" ColumnName="DonViId" />
+          <ScalarProperty Name="NgayQd" ColumnName="NgayQd" />
+          <ScalarProperty Name="SoQD" ColumnName="SoQD" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMChuanChatLuongs">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMChuanChatLuong">
+        <MappingFragment StoreEntitySet="DMChuanChatLuong">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMCongCu_QL_ChatLuong">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMCongCu_QL_ChatLuong">
+        <MappingFragment StoreEntitySet="DMCongCu_QL_ChatLuong">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMDonViTinhs">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMDonViTinh">
+        <MappingFragment StoreEntitySet="DMDonViTinh">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMLinhVucDNs">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMLinhVucDN">
+        <MappingFragment StoreEntitySet="DMLinhVucDN">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMLoaiHinh_DN">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMLoaiHinh_DN">
+        <MappingFragment StoreEntitySet="DMLoaiHinh_DN">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMLoaiHinhSanXuats">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMLoaiHinhSanXuat">
+        <MappingFragment StoreEntitySet="DMLoaiHinhSanXuat">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMNganhNghes">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMNganhNghe">
+        <MappingFragment StoreEntitySet="DMNganhNghe">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMPhanLoaiGiaCongs">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMPhanLoaiGiaCong">
+        <MappingFragment StoreEntitySet="DMPhanLoaiGiaCong">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="LinhVucDN" ColumnName="LinhVucDN" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMQuocGias">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMQuocGia">
+        <MappingFragment StoreEntitySet="DMQuocGia">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DMTrangThais">
+      <EntityTypeMapping TypeName="WebApiDataModel.DMTrangThai">
+        <MappingFragment StoreEntitySet="DMTrangThai">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghieps">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep">
+        <MappingFragment StoreEntitySet="DoanhNghiep">
+          <ScalarProperty Name="LVSXChinh" ColumnName="LVSXChinh" />
+          <ScalarProperty Name="DiaChiCSSX_EN" ColumnName="DiaChiCSSX_EN" />
+          <ScalarProperty Name="DiaChiCSSX_VI" ColumnName="DiaChiCSSX_VI" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="PhanLoaiGiaCong" ColumnName="PhanLoaiGiaCong" />
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="Huyen" ColumnName="Huyen" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="DiaChi_EN" ColumnName="DiaChi_EN" />
+          <ScalarProperty Name="DiaChi_VI" ColumnName="DiaChi_VI" />
+          <ScalarProperty Name="NamDoanhThu" ColumnName="NamDoanhThu" />
+          <ScalarProperty Name="PhanTramXuatKhau" ColumnName="PhanTramXuatKhau" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="CongCuQuanLy" ColumnName="CongCuQuanLy" />
+          <ScalarProperty Name="ChuanChatLuong" ColumnName="ChuanChatLuong" />
+          <ScalarProperty Name="VonTuNhan" ColumnName="VonTuNhan" />
+          <ScalarProperty Name="VonNhaNuoc" ColumnName="VonNhaNuoc" />
+          <ScalarProperty Name="VonDauTu" ColumnName="VonDauTu" />
+          <ScalarProperty Name="LoaiHinhDN" ColumnName="LoaiHinhDN" />
+          <ScalarProperty Name="NamThanhLap" ColumnName="NamThanhLap" />
+          <ScalarProperty Name="SoLuongLDBaoHiem" ColumnName="SoLuongLDBaoHiem" />
+          <ScalarProperty Name="SoLuongLaoDong" ColumnName="SoLuongLaoDong" />
+          <ScalarProperty Name="TenThuongHieu" ColumnName="TenThuongHieu" />
+          <ScalarProperty Name="TenVietTat" ColumnName="TenVietTat" />
+          <ScalarProperty Name="TenCongTy_EN" ColumnName="TenCongTy_EN" />
+          <ScalarProperty Name="TenCongTy_VI" ColumnName="TenCongTy_VI" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_KhachHang">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_KhachHang">
+        <MappingFragment StoreEntitySet="DoanhNghiep_KhachHang">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="SanPham_EN" ColumnName="SanPham_EN" />
+          <ScalarProperty Name="SanPham_VI" ColumnName="SanPham_VI" />
+          <ScalarProperty Name="TenKH_EN" ColumnName="TenKH_EN" />
+          <ScalarProperty Name="TenKH_VI" ColumnName="TenKH_VI" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_LienHe">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_LienHe">
+        <MappingFragment StoreEntitySet="DoanhNghiep_LienHe">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="ChucVu_EN" ColumnName="ChucVu_EN" />
+          <ScalarProperty Name="ChucVu_VI" ColumnName="ChucVu_VI" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="NguoiLienHe" ColumnName="NguoiLienHe" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_LinhVuc">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_LinhVuc">
+        <MappingFragment StoreEntitySet="DoanhNghiep_LinhVuc">
+          <ScalarProperty Name="ChiTiet" ColumnName="ChiTiet" />
+          <ScalarProperty Name="PhanLoai" ColumnName="PhanLoai" />
+          <ScalarProperty Name="LinhVuc" ColumnName="LinhVuc" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_NhapKhau">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_NhapKhau">
+        <MappingFragment StoreEntitySet="DoanhNghiep_NhapKhau">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="CangNhap_EN" ColumnName="CangNhap_EN" />
+          <ScalarProperty Name="CangNhap_VI" ColumnName="CangNhap_VI" />
+          <ScalarProperty Name="SanPham_EN" ColumnName="SanPham_EN" />
+          <ScalarProperty Name="SanPham_VI" ColumnName="SanPham_VI" />
+          <ScalarProperty Name="NuocNhap_EN" ColumnName="NuocNhap_EN" />
+          <ScalarProperty Name="NuocNhap_VI" ColumnName="NuocNhap_VI" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_NhaXuong">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_NhaXuong">
+        <MappingFragment StoreEntitySet="DoanhNghiep_NhaXuong">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="DienTich" ColumnName="DienTich" />
+          <ScalarProperty Name="SoFax" ColumnName="SoFax" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="DiaChi_EN" ColumnName="DiaChi_EN" />
+          <ScalarProperty Name="DiaChi_VI" ColumnName="DiaChi_VI" />
+          <ScalarProperty Name="TenNhaXuong_EN" ColumnName="TenNhaXuong_EN" />
+          <ScalarProperty Name="TenNhaXuong_VI" ColumnName="TenNhaXuong_VI" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_SanPham">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_SanPham">
+        <MappingFragment StoreEntitySet="DoanhNghiep_SanPham">
+          <ScalarProperty Name="NganhCung" ColumnName="NganhCung" />
+          <ScalarProperty Name="TyTrongXuatKhau" ColumnName="TyTrongXuatKhau" />
+          <ScalarProperty Name="TyTrongNoiDia" ColumnName="TyTrongNoiDia" />
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="NangLuc" ColumnName="NangLuc" />
+          <ScalarProperty Name="SanLuong" ColumnName="SanLuong" />
+          <ScalarProperty Name="TieuChuan" ColumnName="TieuChuan" />
+          <ScalarProperty Name="DonViTinh" ColumnName="DonViTinh" />
+          <ScalarProperty Name="DoChinhXac" ColumnName="DoChinhXac" />
+          <ScalarProperty Name="SoLuongDH" ColumnName="SoLuongDH" />
+          <ScalarProperty Name="NangSuat" ColumnName="NangSuat" />
+          <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
+          <ScalarProperty Name="UngDung_EN" ColumnName="UngDung_EN" />
+          <ScalarProperty Name="UngDung_VI" ColumnName="UngDung_VI" />
+          <ScalarProperty Name="CongNghe_EN" ColumnName="CongNghe_EN" />
+          <ScalarProperty Name="CongNghe_VI" ColumnName="CongNghe_VI" />
+          <ScalarProperty Name="TenSanPham_EN" ColumnName="TenSanPham_EN" />
+          <ScalarProperty Name="TenSanPham_VI" ColumnName="TenSanPham_VI" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_ThietBi">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_ThietBi">
+        <MappingFragment StoreEntitySet="DoanhNghiep_ThietBi">
+          <ScalarProperty Name="HieuSuat" ColumnName="HieuSuat" />
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="HangSX_EN" ColumnName="HangSX_EN" />
+          <ScalarProperty Name="HangSX_VI" ColumnName="HangSX_VI" />
+          <ScalarProperty Name="NuocSX_EN" ColumnName="NuocSX_EN" />
+          <ScalarProperty Name="NuocSX_VI" ColumnName="NuocSX_VI" />
+          <ScalarProperty Name="NamSX" ColumnName="NamSX" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="ThongSo_EN" ColumnName="ThongSo_EN" />
+          <ScalarProperty Name="ThongSo_VI" ColumnName="ThongSo_VI" />
+          <ScalarProperty Name="TenThietBi_EN" ColumnName="TenThietBi_EN" />
+          <ScalarProperty Name="TenThietBi_VI" ColumnName="TenThietBi_VI" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoanhNghiep_XuatKhau">
+      <EntityTypeMapping TypeName="WebApiDataModel.DoanhNghiep_XuatKhau">
+        <MappingFragment StoreEntitySet="DoanhNghiep_XuatKhau">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="DaDuyet" ColumnName="DaDuyet" />
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
+          <ScalarProperty Name="CangXuat_EN" ColumnName="CangXuat_EN" />
+          <ScalarProperty Name="CangXuat_VI" ColumnName="CangXuat_VI" />
+          <ScalarProperty Name="SanPham_EN" ColumnName="SanPham_EN" />
+          <ScalarProperty Name="SanPham_VI" ColumnName="SanPham_VI" />
+          <ScalarProperty Name="ThiTruong_EN" ColumnName="ThiTruong_EN" />
+          <ScalarProperty Name="ThiTruong_VI" ColumnName="ThiTruong_VI" />
+          <ScalarProperty Name="MaDoanhNghiep" ColumnName="MaDoanhNghiep" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donvis">
+      <EntityTypeMapping TypeName="WebApiDataModel.Donvi">
+        <MappingFragment StoreEntitySet="Donvi">
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="SitePath" ColumnName="SitePath" />
+          <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Ward" ColumnName="Ward" />
+          <ScalarProperty Name="Disctrict" ColumnName="Disctrict" />
+          <ScalarProperty Name="Provin" ColumnName="Provin" />
+          <ScalarProperty Name="IsDV" ColumnName="IsDV" />
+          <ScalarProperty Name="FUserUpdate" ColumnName="FUserUpdate" />
+          <ScalarProperty Name="FParent" ColumnName="FParent" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FType" ColumnName="FType" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DTYeuCauTheoDois">
+      <EntityTypeMapping TypeName="WebApiDataModel.DTYeuCauTheoDoi">
+        <MappingFragment StoreEntitySet="DTYeuCauTheoDoi">
+          <ScalarProperty Name="MaNhaDauTu" ColumnName="MaNhaDauTu" />
+          <ScalarProperty Name="LoaiHinhDN" ColumnName="LoaiHinhDN" />
+          <ScalarProperty Name="LinhVucDN" ColumnName="LinhVucDN" />
+          <ScalarProperty Name="CongCuQuanLy" ColumnName="CongCuQuanLy" />
+          <ScalarProperty Name="TieuChuanApDung" ColumnName="TieuChuanApDung" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DTYeuCauTruyVans">
+      <EntityTypeMapping TypeName="WebApiDataModel.DTYeuCauTruyVan">
+        <MappingFragment StoreEntitySet="DTYeuCauTruyVan">
+          <ScalarProperty Name="MaNhaDauTu" ColumnName="MaNhaDauTu" />
+          <ScalarProperty Name="NoiDungTraLoi" ColumnName="NoiDungTraLoi" />
+          <ScalarProperty Name="NoiDungYeuCau" ColumnName="NoiDungYeuCau" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LichSuDuyets">
+      <EntityTypeMapping TypeName="WebApiDataModel.LichSuDuyet">
+        <MappingFragment StoreEntitySet="LichSuDuyet">
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="MaDN_NDT" ColumnName="MaDN_NDT" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaDauTus">
+      <EntityTypeMapping TypeName="WebApiDataModel.NhaDauTu">
+        <MappingFragment StoreEntitySet="NhaDauTu">
+          <ScalarProperty Name="LyDo" ColumnName="LyDo" />
+          <ScalarProperty Name="QuocGia" ColumnName="QuocGia" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+          <ScalarProperty Name="SearchKey" ColumnName="SearchKey" />
+          <ScalarProperty Name="FLanguage" ColumnName="FLanguage" />
+          <ScalarProperty Name="FBranchCode" ColumnName="FBranchCode" />
+          <ScalarProperty Name="FInUse" ColumnName="FInUse" />
+          <ScalarProperty Name="FIndex" ColumnName="FIndex" />
+          <ScalarProperty Name="FStatus" ColumnName="FStatus" />
+          <ScalarProperty Name="FApproveTime" ColumnName="FApproveTime" />
+          <ScalarProperty Name="FUserApprove" ColumnName="FUserApprove" />
+          <ScalarProperty Name="FUserCreate" ColumnName="FUserCreate" />
+          <ScalarProperty Name="FUpdateTime" ColumnName="FUpdateTime" />
+          <ScalarProperty Name="FCreateTime" ColumnName="FCreateTime" />
+          <ScalarProperty Name="FDescription" ColumnName="FDescription" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="FCode" ColumnName="FCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QL_FileDinhKem">
+      <EntityTypeMapping TypeName="WebApiDataModel.QL_FileDinhKem">
+        <MappingFragment StoreEntitySet="QL_FileDinhKem">
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="Main" ColumnName="Main" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="FileSize" ColumnName="FileSize" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="KeyFCode" ColumnName="KeyFCode" />
+          <ScalarProperty Name="DBName" ColumnName="DBName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

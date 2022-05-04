@@ -1,0 +1,93 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin banner</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+
+            <div class="row">
+                <!--<div class="col-md-6">
+        <div class="form-group form-group-sm {{itemError.ModelState.FCode[1]}}">
+            <label class="control-label">Mã<span style="color:red">*</span>:</label>
+            <input onKeyUp="RemoveUnicode(this);" ng-disabled="item.Id != 0 &&  item.Id != null" ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.FCode">
+            <span class="help-block" ng-show="itemError.ModelState.FCode[0] != null">{{itemError.ModelState.FCode[0]}}</span>
+        </div>
+    </div>-->
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tên banner <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FStatus[1]}}">
+                        <label class="control-label">Loại <span style="color:red">*</span>:</label>
+                        <select ng-model="item.FStatus" class="form-control">
+                            <option value="">-- Loại --</option>
+                            <option ng-repeat="u in TypeBanner" value="{{u.FCode}}">{{u.FName}}</option>
+                        </select>
+                        <span class="help-block" ng-show="itemError.ModelState.FStatus[0] != null">{{itemError.ModelState.FStatus[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FInUse[1]}}">
+                        <label class="control-label"></label>
+                        <div class="checkbox-list">
+                            <label>
+                                <input type="checkbox" ng-model="item.FInUse"> Sử dụng
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Tải banner lên:</label>
+                        <input class="form-control" type="file" id="file" />
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">&nbsp;&nbsp;</label>
+                        <br />
+                        <a class="btn btn-sm green-haze" ng-click="UploadBanner()" title="Upload banner"><i class="fa fa-upload"></i></a>
+                        <a class="btn btn-sm btn-danger" ng-show="ShowDeleteButton()" ng-click="DeleteBanner()" title="Xóa banner"><i class="fa fa-close"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <img src="{{item.Image}}" style="width:100%;height:30%" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Ghi chú:</label>
+                        <textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+        
+    </div>
+  
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+</script>

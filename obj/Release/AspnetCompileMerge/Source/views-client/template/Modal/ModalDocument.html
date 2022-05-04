@@ -1,0 +1,122 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Thông tin văn bản</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+            <!--<pre>{{item | json}}</pre>-->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FCode[1]}}">
+                        <label class="control-label">Số ký hiệu <span style="color:red">*</span>:</label>
+                        <input onKeyUp="RemoveUnicode(this);" ng-disabled="item.Id != 0 &&  item.Id != null" ng-model-options="{updateOn: 'change'}" type="text" class="form-control input-sm" ng-model="item.FCode">
+                        <span class="help-block" ng-show="itemError.ModelState.FCode[0] != null">{{itemError.ModelState.FCode[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tên văn bản <span style="color:red">*</span>:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FStatus[1]}}">
+                        <label class="control-label">Trạng thái văn bản :</label>
+                        <select class="form-control" ng-model="item.FStatus">
+                            <option value="">--- Trạng thái văn bản ---</option>
+                            <option ng-repeat="u in DocStatus" value="{{u.value}}"> {{u.text}}</option>
+                        </select>
+                        <span class="help-block" ng-show="itemError.ModelState.FStatus[0] != null">{{itemError.ModelState.FStatus[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.IssuedDate[1]}}">
+                        <label class="control-label">Ngày ban hành:</label>
+                        <input type="text" id="IssuedDate" class="form-control input-sm date-picker" ng-model="item.IssuedDate">
+                        <span class="help-block" ng-show="itemError.ModelState.Content[0] != null">{{itemError.ModelState.IssuedDate[0]}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.DocumentType[1]}}">
+                        <label class="control-label">Loại văn bản :</label>
+                        <select class="form-control" ng-model="item.DocumentType">
+                            <option value="">--- Loại văn bản ---</option>
+                            <option ng-repeat="u in DocumentType" value="{{u.value}}"> {{u.name}}</option>
+                        </select>
+                        <span class="help-block" ng-show="itemError.ModelState.DocumentType[0] != null">{{itemError.ModelState.DocumentType[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm {{itemError.ModelState.Content[1]}}">
+                        <label class="control-label">Trích yếu :</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.Content">
+                        <span class="help-block" ng-show="itemError.ModelState.Content[0] != null">{{itemError.ModelState.Content[0]}}</span>
+                    </div>
+                </div>
+
+             
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Nội dung văn bản:</label>
+                        <div name="summernote" id="summernote">
+                        </div>
+                        <!--<textarea rows="2" class="form-control input-sm" ng-model="item.FDescription"></textarea>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">&nbsp;</label>
+                        <div class="input-group">
+                            <input type="file" id="file" multiple />
+                            <span class="input-group-btn">
+                                <a class="btn btn-xs green-haze" ng-click="UploadBanner()" title="Upload tài liệu"><i class="fa fa-upload"></i></a>
+                                <a class="btn btn-xs btn-danger" ng-click="DeleteBanner()" ng-show="ShowDeleteButton()" title="Xóa tài liệu"><i class="fa fa-close"></i></a>-->
+                            </span>
+                        </div>
+                    </div>
+                    <!--<pre>{{ListFileAttach | json}}</pre>-->
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="u in ListFileAttach">
+                            <a href="{{u.Path}}" target="_blank">{{u.FName}}</a>&nbsp;<a ng-click="RemoveFile(u)"><i class="fa fa-close font-red"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    if (jQuery().datepicker) {
+        $('.date-picker').datepicker({
+            rtl: App.isRTL(),
+            format: 'dd/mm/yyyy',
+            orientation: "auto",
+            autoclose: true,
+        });
+
+    }
+</script>

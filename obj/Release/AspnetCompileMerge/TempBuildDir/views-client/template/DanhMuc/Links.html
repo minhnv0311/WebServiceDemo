@@ -1,0 +1,170 @@
+﻿
+<style>
+    .rotate {
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+    }
+</style>
+<div ng-controller="LinksController">
+    <div class="page-bar">
+        <div class="col-md-7">
+
+            <ul class="page-breadcrumb ">
+                <li>
+                    <a ui-sref="dashboard">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.ParentMenu)}}</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="bold">
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.FCode)}}</a>
+
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE HEADER-->
+
+    <div class="row">
+        <div class="portlet light" style="margin-bottom:0">
+
+
+            <!--<div class="col-md-12">
+                <h4> <label class=" uppercase font-green"><i class="fa fa-list"></i> DANH MỤC {{getPageBar( $stateParams.param.FCode)}}</label></h4>
+            </div>-->
+            <div class="form-body form-horizontal">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a class="btn btn-primary btn-sm" ng-click="openModal('','Links')"><i class="fa fa-plus-circle"></i> Thêm mới</a>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-icon input-icon-sm right">
+                            <i class="fa fa-search"></i>
+                            <input type="text" ng-model="Paging.SearchKey" ng-change="GetListBanner(true)" ng-model-options="{ updateOn: 'change blur'}" class="form-control input-sm" placeholder="Nhập từ khóa tìm kiếm">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-scrollable">
+                            <table class="table table-responsive table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="1%" class="text-center" style="vertical-align:middle">
+                                            STT
+                                        </th>
+                                        <th width="1%" class="text-center" style="vertical-align:middle">
+                                            #
+                                        </th>
+                                        <th width="10%" class="text-center" style="vertical-align:middle">
+                                            Hình ảnh
+                                        </th>
+                                        <th>
+                                            Tên liên kết
+                                        </th>
+                                        <th>
+                                            Đường dẫn liên kết
+                                        </th>
+                                        <th>
+                                            Hình thức mở
+                                        </th>
+                                        <th>
+                                            Nhóm liên kết
+                                        </th>
+                                        <th>
+                                            Mô tả
+                                        </th>
+                                        <th width="10%" style="vertical-align:middle">
+                                            Thứ tự
+                                        </th>
+                                        <th width="10%" style="vertical-align:middle">
+                                            Thời gian tạo
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="u in List | orderBy : '-FCreateTime'">
+                                        <td width="1%" class="text-center" style="vertical-align:middle">
+                                            {{ShowIndex($index+1,Paging.PageNumber,Paging.PageSize)}}
+                                        </td>
+                                        <td width="1%" class="text-center" style="vertical-align:middle">
+                                            <a ng-click="openModal(u.Id,'Links')"><i class="fa fa-edit"></i></a>
+                                            <a ng-click="Delete(u.Id)" title="Xóa"><i class="fa fa-trash font-red"></i></a>
+                                        </td>
+                                        <td width="10%" class="text-center" style="vertical-align:middle">
+                                            <img src="{{u.Image == null ? '../../../Uploads/Banners/banner-no-image.jpg': u.Image}}" width="60" height="40" />
+                                        </td>
+                                        <td style="vertical-align:middle; white-space: nowrap;">
+                                            {{u.FName}}
+                                        </td>
+                                        <td style="vertical-align:middle; white-space: nowrap;">
+                                            <a target="{{u.Target}}" href="{{u.Url}}">
+                                                {{u.Url}}
+                                            </a>
+
+                                        </td>
+                                        <td style="vertical-align:middle">
+                                            {{u.Target}}
+
+                                        </td>
+                                        <td style="vertical-align:middle; white-space: nowrap;">
+                                            {{ShowGroupName(u.GroupLinks)}}
+
+                                        </td>
+                                        <td style="vertical-align:middle; white-space: nowrap;">
+                                            {{u.FDescription}}
+                                        </td>
+                                        <td width="10%" style="vertical-align:middle">
+                                            {{u.FIndex }}
+                                        </td>
+                                        <td width="10%" style="vertical-align:middle; white-space: nowrap;">
+                                            {{u.FCreateTime | date : 'dd/MM/yyyy HH:mm:ss'}}
+                                        </td>
+                                    </tr>
+                                    <tr ng-show="List.length == 0">
+                                        <td colspan="20">
+                                            <div class="alert alert-danger">
+                                                <strong>Thông báo!</strong> Không có dữ liệu liên kết
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div ng-show="List.length > 0" class="dataTables_info" id="sample_2_info" role="status" aria-live="polite">{{DisplayInfoPagination(Paging.PageNumber,Paging.PageSize,Paging.Total)}}</div>
+                    </div>
+                    <div class="col-md-7">
+                        <ul class="pull-right pagination-sm" ng-show="Paging.Total > Paging.PageSize"
+                            boundary-links="true"
+                            previous-text="Trang trước" next-text="Trang sau" first-text="Trang đầu" last-text="Trang cuối"
+                            force-ellipses="true"
+                            max-size="10"
+                            ng-change="pageChanged()"
+                            uib-pagination total-items="Paging.Total" ng-model="Paging.PageNumber" items-per-page="Paging.PageSize"></ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+

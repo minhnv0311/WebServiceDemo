@@ -1,0 +1,56 @@
+﻿<!-- Styles -->
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 700px;
+        max-width: 100%;
+    }
+</style>
+<!-- Resources -->
+<script src="/amcharts4/core.js"></script>
+<script src="/amcharts4/charts.js"></script>
+<script src="/amcharts4/themes/animated.js"></script>
+
+<div ng-controller="BangKyThuatController">
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption font-green">
+                <i class="icon-folder font-green"></i>
+                <span class="caption-subject bold uppercase"> Phân tích kỹ thuật chứng khoán</span>
+            </div>
+            <div class="actions">
+
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <div class="row" style="border: 1px solid #bdbbbb;position: sticky;top: -10px;z-index: 500;padding: 5px;background-color: white;margin: 2px;">
+                <div class="col-md-4">
+                    <div class="input-group col-md-12">
+                        <div class="input-group-btn {{ openSearch }}">
+                            <input type="text" class="form-control rounded-3 input-sm" placeholder="Nhập mã chứng khoán ... " ng-keyup="barcodeKeyup($event)" ng-model-options="{updateOn:'default'}" ng-model="searchBarcode" name="searchBarcode">
+                            <button type="button" class="btn btn-outline input-sm green-dark dropdown-toggle" ng-click="openSearch == '' ? openSearch = 'open' : openSearch = ''"><i class="fa fa-search"></i></button>
+                            <div class="dropdown-menu pull-left hold-on-click" is-open="true">
+                                <div class="modal-body form">
+                                    <div class="form-body">
+                                        <div class="row" style="max-height: calc(100vh - 400px);overflow-y: auto;">
+                                            <div class="form-group col-md-12" style="margin-bottom:0px">
+                                                <table class="table table-hover" style="min-width:500px;margin-bottom:0px">
+                                                    <tr ng-repeat="item in listCK" style="cursor:pointer" ng-click="getPriceHistory(item.MaChungKhoan)">
+                                                        <td width="1%" nowrap>{{ item.MaChungKhoan }}</td>
+                                                        <td>{{ item.FName }}</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="chartdiv"></div>
+        </div>
+    </div>
+</div>
+

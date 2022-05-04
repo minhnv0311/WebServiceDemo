@@ -1,0 +1,31 @@
+﻿<div ng-controller="GetStockPriceController">
+    <div class="portlet light bordered">
+        <div class="portlet-title">
+            <div class="caption font-green">
+                <i class="icon-folder font-green"></i>
+                <span class="caption-subject bold uppercase"> Tải số liệu chứng khoán</span>
+            </div>
+            <div class="actions">
+                
+            </div>
+        </div>
+        <div class="portlet-body form">
+            <table class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <td>Thời gian bắt đầu</td>
+                        <td>Thời gian Kết thúc</td>
+                        <td>Trạng thái</td>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in ListGetData">
+                        <td>{{ item.dateStart | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+                        <td>{{ item.dateEnd | date:'dd/MM/yyyy hh:mm:ss' }}</td>
+                        <td><span class=" badge label label-{{ getStatus(item.status,1) }}">{{ getStatus(item.status,2) }}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

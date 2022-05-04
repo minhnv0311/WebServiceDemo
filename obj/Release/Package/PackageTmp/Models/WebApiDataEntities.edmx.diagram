@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8d9f4fb54b94e60bada5d2d81e59766" Name="Diagram1">
+        <EntityTypeShape EntityType="WebApiDataEntities.Area" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.AspNetRole" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.AspNetUser" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.AutoID" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.BANG_MA_CK" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Category" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.ChucDanh" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Ads" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Banner" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_DocumentInfo" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Documents" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Gallery" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Introduct" Width="1.5" PointX="4.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Library" Width="1.5" PointX="13.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Links" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Meta" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_PageTitle" Width="1.5" PointX="9.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Videos" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Company" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Donvi" Width="1.5" PointX="6.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.GioiTinh" Width="1.5" PointX="17.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Group_Role" Width="1.5" PointX="17.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Group_User" Width="1.5" PointX="11.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Group" Width="1.5" PointX="19.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.LinhVuc" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.MainMenu" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Menu" Width="1.5" PointX="19.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Organization" Width="1.5" PointX="13.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Permission" Width="1.5" PointX="19.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Position" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.ROLE_ASSIGNMENT" Width="1.5" PointX="21.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Role" Width="1.5" PointX="21.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.UserProfile" Width="1.5" PointX="21.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.DMNgonNgu" Width="1.5" PointX="21.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.TypeCate" Width="1.5" PointX="8.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Race" Width="1.5" PointX="23.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Price" Width="1.5" PointX="23.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_DanhMucPhiDK" Width="1.5" PointX="15.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_PriceRace" Width="1.5" PointX="17.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Author" Width="1.5" PointX="23.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_RaceKit" Width="1.5" PointX="4.75" PointY="24.75" IsExpanded="true" />
+        <AssociationConnector Association="WebApiDataEntities.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="WebApiDataEntities.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="WebApiDataEntities.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Sponsors" Width="1.5" PointX="0.75" PointY="25.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_GroupLinks" Width="1.5" PointX="24.375" PointY="25.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Contact" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_PERSON_GROUP" Width="1.5" PointX="26.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_RACKIT_RACE" Width="1.5" PointX="11.375" PointY="26.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_PRICERACE_GROUP" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_FAQ" Width="1.5" PointX="26.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.DM_CoQuan" Width="1.5" PointX="20.375" PointY="26.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.DM_CoSoIn" Width="1.5" PointX="7.375" PointY="27.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.QL_TaiLieu" Width="1.5" PointX="26.375" PointY="27.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.Group_Tags" Width="1.5" PointX="28.375" PointY="0.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_News" Width="1.5" PointX="28.375" PointY="13.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.TAG" Width="1.5" PointX="28.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_News_Files" Width="1.5" PointX="28.375" PointY="21.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_Categories" Width="1.5" PointX="28.375" PointY="28.75" />
+        <EntityTypeShape EntityType="WebApiDataEntities.CMS_News_Comments" Width="1.5" PointX="30.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

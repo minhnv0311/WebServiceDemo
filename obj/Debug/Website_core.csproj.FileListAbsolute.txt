@@ -1,0 +1,192 @@
+E:\website_core\Website\bin\ApplicationInsights.config
+E:\website_core\Website\bin\roslyn\csc.exe
+E:\website_core\Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\website_core\Website\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\website_core\Website\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\website_core\Website\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\website_core\Website\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\website_core\Website\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\website_core\Website\bin\roslyn\System.Collections.Immutable.dll
+E:\website_core\Website\bin\roslyn\System.Reflection.Metadata.dll
+E:\website_core\Website\bin\roslyn\vbc.exe
+E:\website_core\Website\bin\roslyn\VBCSCompiler.exe
+E:\website_core\Website\bin\roslyn\VBCSCompiler.exe.config
+E:\website_core\Website\bin\WebApiCore.dll.config
+E:\website_core\Website\bin\WebApiCore.dll
+E:\website_core\Website\bin\WebApiCore.pdb
+E:\website_core\Website\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+E:\website_core\Website\obj\Debug\Website_core.csproj.CopyComplete
+E:\website_core\Website\obj\Debug\WebApiCore.dll
+E:\website_core\Website\obj\Debug\WebApiCore.pdb
+E:\Visual 2017\WebMarathon2\Website\bin\ApplicationInsights.config
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\csc.exe
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\System.Collections.Immutable.dll
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\System.Reflection.Metadata.dll
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\vbc.exe
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\VBCSCompiler.exe
+E:\Visual 2017\WebMarathon2\Website\bin\roslyn\VBCSCompiler.exe.config
+E:\Visual 2017\WebMarathon2\Website\bin\WebApiCore.dll.config
+E:\Visual 2017\WebMarathon2\Website\bin\WebApiCore.dll
+E:\Visual 2017\WebMarathon2\Website\bin\WebApiCore.pdb
+E:\Visual 2017\WebMarathon2\Website\obj\Debug\Website_core.csprojAssemblyReference.cache
+E:\Visual 2017\WebMarathon2\Website\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+E:\Visual 2017\WebMarathon2\Website\obj\Debug\Website_core.csproj.CopyComplete
+E:\Visual 2017\WebMarathon2\Website\obj\Debug\WebApiCore.dll
+E:\Visual 2017\WebMarathon2\Website\obj\Debug\WebApiCore.pdb
+D:\WebMarathon2\Website\bin\ApplicationInsights.config
+D:\WebMarathon2\Website\bin\roslyn\csc.exe
+D:\WebMarathon2\Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\WebMarathon2\Website\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\WebMarathon2\Website\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\WebMarathon2\Website\bin\roslyn\System.Collections.Immutable.dll
+D:\WebMarathon2\Website\bin\roslyn\System.Reflection.Metadata.dll
+D:\WebMarathon2\Website\bin\roslyn\vbc.exe
+D:\WebMarathon2\Website\bin\roslyn\VBCSCompiler.exe
+D:\WebMarathon2\Website\bin\roslyn\VBCSCompiler.exe.config
+D:\WebMarathon2\Website\bin\WebApiCore.dll.config
+D:\WebMarathon2\Website\bin\WebApiCore.dll
+D:\WebMarathon2\Website\bin\WebApiCore.pdb
+D:\WebMarathon2\Website\obj\Debug\Website_core.csprojAssemblyReference.cache
+D:\WebMarathon2\Website\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+D:\WebMarathon2\Website\obj\Debug\Website_core.csproj.CopyComplete
+D:\WebMarathon2\Website\obj\Debug\WebApiCore.dll
+D:\WebMarathon2\Website\obj\Debug\WebApiCore.pdb
+D:\VSD\WebMarathon2\Website\bin\ApplicationInsights.config
+D:\VSD\WebMarathon2\Website\bin\roslyn\csc.exe
+D:\VSD\WebMarathon2\Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VSD\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VSD\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VSD\WebMarathon2\Website\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VSD\WebMarathon2\Website\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VSD\WebMarathon2\Website\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VSD\WebMarathon2\Website\bin\roslyn\System.Collections.Immutable.dll
+D:\VSD\WebMarathon2\Website\bin\roslyn\System.Reflection.Metadata.dll
+D:\VSD\WebMarathon2\Website\bin\roslyn\vbc.exe
+D:\VSD\WebMarathon2\Website\bin\roslyn\VBCSCompiler.exe
+D:\VSD\WebMarathon2\Website\bin\roslyn\VBCSCompiler.exe.config
+D:\VSD\WebMarathon2\Website\bin\WebApiCore.dll.config
+D:\VSD\WebMarathon2\Website\bin\WebApiCore.dll
+D:\VSD\WebMarathon2\Website\bin\WebApiCore.pdb
+D:\VSD\WebMarathon2\Website\obj\Debug\Website_core.csproj.AssemblyReference.cache
+D:\VSD\WebMarathon2\Website\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+D:\VSD\WebMarathon2\Website\obj\Debug\Website_core.csproj.CopyComplete
+D:\VSD\WebMarathon2\Website\obj\Debug\WebApiCore.dll
+D:\VSD\WebMarathon2\Website\obj\Debug\WebApiCore.pdb
+D:\VSD\WebMarathon2\Website\bin\BouncyCastle.Crypto.dll
+D:\VSD\WebMarathon2\Website\bin\ICSharpCode.SharpZipLib.dll
+D:\VSD\WebMarathon2\Website\bin\NPOI.dll
+D:\VSD\WebMarathon2\Website\bin\NPOI.OOXML.dll
+D:\VSD\WebMarathon2\Website\bin\NPOI.OpenXml4Net.dll
+D:\VSD\WebMarathon2\Website\bin\NPOI.OpenXmlFormats.dll
+D:\VSD\WebMarathon2\Website\bin\BouncyCastle.Crypto.xml
+D:\VSD\WebMarathon2\Website\bin\ICSharpCode.SharpZipLib.pdb
+D:\VSD\WebMarathon2\Website\bin\ICSharpCode.SharpZipLib.xml
+D:\VSD\WebMarathon2\Website\bin\NPOI.xml
+D:\VSD\WebMarathon2\Website\bin\NPOI.OOXML.xml
+D:\VSD\CCMVietNam\Website\bin\ApplicationInsights.config
+D:\VSD\CCMVietNam\Website\bin\roslyn\csc.exe
+D:\VSD\CCMVietNam\Website\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VSD\CCMVietNam\Website\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VSD\CCMVietNam\Website\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VSD\CCMVietNam\Website\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VSD\CCMVietNam\Website\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VSD\CCMVietNam\Website\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VSD\CCMVietNam\Website\bin\roslyn\System.Collections.Immutable.dll
+D:\VSD\CCMVietNam\Website\bin\roslyn\System.Reflection.Metadata.dll
+D:\VSD\CCMVietNam\Website\bin\roslyn\vbc.exe
+D:\VSD\CCMVietNam\Website\bin\roslyn\VBCSCompiler.exe
+D:\VSD\CCMVietNam\Website\bin\roslyn\VBCSCompiler.exe.config
+D:\VSD\CCMVietNam\Website\bin\WebApiCore.dll.config
+D:\VSD\CCMVietNam\Website\bin\WebApiCore.dll
+D:\VSD\CCMVietNam\Website\bin\WebApiCore.pdb
+D:\VSD\CCMVietNam\Website\bin\BouncyCastle.Crypto.dll
+D:\VSD\CCMVietNam\Website\bin\ICSharpCode.SharpZipLib.dll
+D:\VSD\CCMVietNam\Website\bin\NPOI.dll
+D:\VSD\CCMVietNam\Website\bin\NPOI.OOXML.dll
+D:\VSD\CCMVietNam\Website\bin\NPOI.OpenXml4Net.dll
+D:\VSD\CCMVietNam\Website\bin\NPOI.OpenXmlFormats.dll
+D:\VSD\CCMVietNam\Website\bin\BouncyCastle.Crypto.xml
+D:\VSD\CCMVietNam\Website\bin\ICSharpCode.SharpZipLib.pdb
+D:\VSD\CCMVietNam\Website\bin\ICSharpCode.SharpZipLib.xml
+D:\VSD\CCMVietNam\Website\bin\NPOI.xml
+D:\VSD\CCMVietNam\Website\bin\NPOI.OOXML.xml
+D:\VSD\CCMVietNam\Website\obj\Debug\Website_core.csproj.AssemblyReference.cache
+D:\VSD\CCMVietNam\Website\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+D:\VSD\CCMVietNam\Website\obj\Debug\Website_core.csproj.CopyComplete
+D:\VSD\CCMVietNam\Website\obj\Debug\WebApiCore.dll
+D:\VSD\CCMVietNam\Website\obj\Debug\WebApiCore.pdb
+D:\VSD\DoiNgoai_LaiChau\obj\Debug\WebApiCore.dll
+D:\VSD\DoiNgoai_LaiChau\obj\Debug\WebApiCore.pdb
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\ApplicationInsights.config
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\csc.exe
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\System.Collections.Immutable.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\System.Reflection.Metadata.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\vbc.exe
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\VBCSCompiler.exe
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\roslyn\VBCSCompiler.exe.config
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\WebApiCore.dll.config
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\WebApiCore.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\WebApiCore.pdb
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\BouncyCastle.Crypto.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\ICSharpCode.SharpZipLib.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\NPOI.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\NPOI.OOXML.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\NPOI.OpenXml4Net.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\NPOI.OpenXmlFormats.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\BouncyCastle.Crypto.xml
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\ICSharpCode.SharpZipLib.pdb
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\ICSharpCode.SharpZipLib.xml
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\NPOI.xml
+D:\VSD\DoiNgoai_LaiChau\Website_core\bin\NPOI.OOXML.xml
+D:\VSD\DoiNgoai_LaiChau\Website_core\obj\Debug\Website_core.csproj.AssemblyReference.cache
+D:\VSD\DoiNgoai_LaiChau\Website_core\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+D:\VSD\DoiNgoai_LaiChau\Website_core\obj\Debug\Website_core.csproj.CopyComplete
+D:\VSD\DoiNgoai_LaiChau\Website_core\obj\Debug\WebApiCore.dll
+D:\VSD\DoiNgoai_LaiChau\Website_core\obj\Debug\WebApiCore.pdb
+D:\VSD\WebService\Website_core\bin\ApplicationInsights.config
+D:\VSD\WebService\Website_core\bin\roslyn\csc.exe
+D:\VSD\WebService\Website_core\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\VSD\WebService\Website_core\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\VSD\WebService\Website_core\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\VSD\WebService\Website_core\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\VSD\WebService\Website_core\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\VSD\WebService\Website_core\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\VSD\WebService\Website_core\bin\roslyn\System.Collections.Immutable.dll
+D:\VSD\WebService\Website_core\bin\roslyn\System.Reflection.Metadata.dll
+D:\VSD\WebService\Website_core\bin\roslyn\vbc.exe
+D:\VSD\WebService\Website_core\bin\roslyn\VBCSCompiler.exe
+D:\VSD\WebService\Website_core\bin\roslyn\VBCSCompiler.exe.config
+D:\VSD\WebService\Website_core\bin\WebApiCore.dll.config
+D:\VSD\WebService\Website_core\bin\WebApiCore.dll
+D:\VSD\WebService\Website_core\bin\WebApiCore.pdb
+D:\VSD\WebService\Website_core\bin\BouncyCastle.Crypto.dll
+D:\VSD\WebService\Website_core\bin\ICSharpCode.SharpZipLib.dll
+D:\VSD\WebService\Website_core\bin\NPOI.dll
+D:\VSD\WebService\Website_core\bin\NPOI.OOXML.dll
+D:\VSD\WebService\Website_core\bin\NPOI.OpenXml4Net.dll
+D:\VSD\WebService\Website_core\bin\NPOI.OpenXmlFormats.dll
+D:\VSD\WebService\Website_core\bin\BouncyCastle.Crypto.xml
+D:\VSD\WebService\Website_core\bin\ICSharpCode.SharpZipLib.pdb
+D:\VSD\WebService\Website_core\bin\ICSharpCode.SharpZipLib.xml
+D:\VSD\WebService\Website_core\bin\NPOI.xml
+D:\VSD\WebService\Website_core\bin\NPOI.OOXML.xml
+D:\VSD\WebService\Website_core\obj\Debug\Website_core.csproj.AssemblyReference.cache
+D:\VSD\WebService\Website_core\obj\Debug\Website_core.csproj.CoreCompileInputs.cache
+D:\VSD\WebService\Website_core\obj\Debug\Website_core.csproj.CopyComplete
+D:\VSD\WebService\Website_core\obj\Debug\WebApiCore.dll
+D:\VSD\WebService\Website_core\obj\Debug\WebApiCore.pdb

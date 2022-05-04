@@ -1,0 +1,58 @@
+﻿<div>
+    <div class="modal-header bg-color">
+        <div class="modal-title">
+            <h4> <label class="uppercase">Trả lời hỏi đáp</label></h4>
+        </div>
+    </div>
+    <div class="modal-body form">
+        <div class="form-body">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="form-group form-group-sm {{itemError.ModelState.FName[1]}}">
+                        <label class="control-label">Tiêu đề hỏi đáp:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.FName" ng-disabled="true">
+                        <span class="help-block" ng-show="itemError.ModelState.FName[0] != null">{{itemError.ModelState.FName[0]}}</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group form-group-sm {{itemError.ModelState.NguoiGui[1]}}">
+                        <label class="control-label">Người gửi:</label>
+                        <input type="text" class="form-control input-sm" ng-model="item.NguoiGui" ng-disabled="true">
+                        <span class="help-block" ng-show="itemError.ModelState.NguoiGui[0] != null">{{itemError.ModelState.NguoiGui[0]}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Nội dung câu hỏi:</label>
+                        <textarea rows="2" ng-disabled="true" class="form-control input-sm" ng-model="item.FDescription"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Trả lời:</label>
+                        <textarea rows="2" class="form-control input-sm" ng-model="item.TraLoi"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<pre>{{item | json}}</pre>-->
+    </div>
+    <div class="modal-footer" ng-init="innitModal()">
+        <a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveModal()"><i class="fa fa-save"></i> Lưu </a>
+        <!--<a class="btn btn-sm btn-success btn-outline sbold" ng-click="SaveAndNew()"><i class="fa fa-save"></i> Lưu và thêm </a>-->
+        <a class="btn btn-sm grey-cascade" ng-click="cancelModal()"><i class="fa fa-times-circle"></i> Đóng </a>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn').addClass('btn-sm');
+        $('.form-control').addClass('input-sm');
+    })
+    ComponentsSelect2.init();
+</script>

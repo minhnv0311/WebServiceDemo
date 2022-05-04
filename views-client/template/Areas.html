@@ -1,0 +1,120 @@
+﻿<!-- BEGIN PAGE HEADER-->
+
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a ui-sref="dashboard">Trang chủ</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a ui-sref="formtools">Danh mục chung</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li class="bold">
+            <a ui-sref="formtools">Địa bàn</a>
+
+        </li>
+    </ul>
+
+</div>
+
+<!-- END PAGE HEADER-->
+<div ng-controller="AreasController">
+    <div class="row">
+        <!-- BEGIN PORTLET-->
+        <div class="portlet light">
+
+            <div class="portlet-body form">
+                <div class="col-md-12">
+                    <div class="col-md-4">
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption font-green">
+                                    <i class="icon-folder font-green"></i>
+                                    <span class="caption-subject bold uppercase"> Danh sách địa bàn</span>
+                                </div>
+                                <div class="actions">
+
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <div id="tree_3" class="tree-demo "> </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption font-green">
+                                    <i class="icon-folder font-green"></i>
+                                    <span class="caption-subject bold uppercase"> Cập nhật thông tin</span>
+                                </div>
+                                <div class="actions">
+                                    <a href="javascript:;" class="btn btn-primary input-sm" ng-click="openEditAreaModal()">
+                                        <i class="fa fa-plus-circle"></i>&nbsp; Thêm mới
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <table class="table table-responsive table-bordered" ng-show="areaList.length != 0 && areaList != null">
+                                    <thead>
+                                        <tr>
+                                            <th width="1px">STT</th>
+                                            <th>Tên đơn vị địa bàn</th>
+                                            <th width="1px">#</th>
+                                            <th width="1px">#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr ng-repeat="u in areaList">
+                                            <td width="1px" class="text-center">{{$index + 1}}</td>
+                                            <td><a ng-click="openEditAreaModal(u,'xem')">{{GetMenuName(u)}}</a></td>
+                                            <td width="1px"><a ng-click="openEditAreaModal(u)"><i class="fa fa-edit"></i></a></td>
+                                            <td width="1px"><a ng-click="DeleteArea(u.Id)"><i class="fa fa-close text-danger"></i></a></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function () {
+        //ComponentsDateTimePickers.init();
+        $.fn.select2.defaults.set("theme", "bootstrap");
+
+        var placeholder = "Chọn";
+
+        $(".select2, .select2-multiple").select2({
+            placeholder: placeholder,
+            width: null
+        });
+
+        $(".select2-allow-clear").select2({
+            allowClear: true,
+            placeholder: placeholder,
+            width: null
+        });
+
+        $("button[data-select2-open]").click(function () {
+            $("#" + $(this).data("select2-open")).select2("open");
+        });
+
+
+    });
+
+
+</script>
+<!-- END MAIN CONTENT -->

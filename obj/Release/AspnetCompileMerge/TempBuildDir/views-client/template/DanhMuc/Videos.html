@@ -1,0 +1,114 @@
+﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<style>
+    #myfile {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .article-title {
+        line-height: 1.4;
+        font-size: smaller;
+    }
+
+    .topright {
+        position: absolute;
+        top: 0px;
+        right: 15px;
+    }
+</style>
+<div ng-controller="VideosController">
+    <div class="page-bar">
+        <div class="col-md-7">
+
+            <ul class="page-breadcrumb ">
+                <li>
+                    <a ui-sref="dashboard">Trang chủ</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li>
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.ParentMenu)}}</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="bold">
+                    <a ui-sref="formtools">{{getPageBar( $stateParams.param.FCode)}}</a>
+
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+    <!-- END PAGE HEADER-->
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="portlet light" style="margin-bottom:0">
+                <div class="portlet-title">
+                    <div class="caption">
+                        Album video
+                    </div>
+                </div>
+
+                <div class="form-body form-horizontal">
+                    <ul class="list-group">
+                        <li title="{{grl.FName}}" class="list-group-item" style="cursor:pointer" ng-repeat="grl in GroupLinks" ng-class="{'active': Paging.AlbumId == grl.Id}" ng-click="ChoiceAlbum(grl.Id)">
+                            <i class="fa text-warning" ng-class="{'fa-folder-open' : Paging.AlbumId == grl.Id,'fa-folder' : Paging.AlbumId != grl.Id}"></i>
+                            <span class="sbold" ng-class="{'font-white' : Paging.AlbumId == grl.Id}">{{DisplayTitleAlbum(grl.FName)}}</span>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="portlet light" style="margin-bottom:0">
+                <div class="portlet-title">
+
+                    <div class="caption">
+                        Danh sách video
+                    </div>
+                    <div class="inputs">
+                        <a class="btn btn-sm btn-primary" ng-click="openModal('','Videos')">
+                            <i class="fa fa-plus"></i> &nbsp; Thêm video
+                        </a>
+                    </div>
+                </div>
+
+                <div class="form-body">
+                    <div class="row" ng-show="Paging.List.length == 0 || Paging.List == null">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger">
+                                <strong>Thông báo!</strong> Không có video
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3" ng-repeat="grl in Paging.List">
+                            <div class="card mb-3">
+                                <a data-fancybox="gallery" href="{{grl.Url}}">
+                                    <img class="card-img-top" style="width:100%; height:90px" src="{{grl.Image}}">
+                                    <a class="button btn btn-xs btn-danger rounded-top-right topright" title="Xóa video" ng-click="Delete(grl.Id)">
+                                        <i class="fa fa-trash "></i>
+                                    </a>
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text sbold" style="cursor:pointer" ng-click="openModal(grl.Id,'Videos')">{{DisplayTitle(grl.FName)}}</p>
+                                    <p class="card-text"><small class="text-muted">{{grl.FCreateTime | date :'dd/MM/yyyy HH:mm:ss'}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
