@@ -695,14 +695,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\CCM\CCM_HomeController.cs" />
-    <Compile Include="Controllers\CoQuanXinCapPhepController.cs" />
-    <Compile Include="Controllers\CoSoInController.cs" />
-    <Compile Include="Controllers\DMNgonNguController.cs" />
-    <Compile Include="Controllers\DMPhiDKController.cs" />
-    <Compile Include="Controllers\GeneralInformationController.cs" />
-    <Compile Include="Controllers\IntroductController.cs" />
     <Compile Include="Controllers\News\AdsController.cs" />
     <Compile Include="Controllers\News\CategoriesController.cs" />
     <Compile Include="Controllers\News\CMSBannerController.cs" />
@@ -1179,13 +1172,9 @@
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\Response.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AreasController.cs" />
     <Compile Include="Controllers\AutoIDsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
-    <Compile Include="Controllers\FilesController.cs" />
-    <Compile Include="Controllers\GioiTinhsController.cs" />
-    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\MainMenusController.cs" />
@@ -1193,16 +1182,8 @@
     <Compile Include="Controllers\NotificationsController.cs" />
     <Compile Include="Controllers\OrganizationsController.cs" />
     <Compile Include="Controllers\PermissionsController.cs" />
-    <Compile Include="Controllers\PositionsController.cs" />
-    <Compile Include="Controllers\PriceRaceController.cs" />
-    <Compile Include="Controllers\PrizeController.cs" />
-    <Compile Include="Controllers\QLTaiLieuController.cs" />
-    <Compile Include="Controllers\RaceController.cs" />
-    <Compile Include="Controllers\RaceKitController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\TrangThaisController.cs" />
     <Compile Include="Controllers\UserProfilesController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

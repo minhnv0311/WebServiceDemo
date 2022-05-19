@@ -28,7 +28,11 @@
 
                     <div class="rows-post archive-wrapper">
                         <div class="image-left column entry-thumb">
-                            <a class="thumb-zoom" ng-href="#/{{lang}}/view/{{n.Id}}">
+                            <a class="thumb-zoom" ng-href="#/{{lang}}/view/{{n.Id}}" ng-show="n.FLevel != 2">
+                                <img ng-src="{{n.Image}}" alt="{{n.FName}}" />
+                                <div class="image-overlay"></div>
+                            </a>
+                            <a class="thumb-zoom" href="{{n.FDescription}}" target="_blank" ng-show="n.FLevel == 2">
                                 <img ng-src="{{n.Image}}" alt="{{n.FName}}" />
                                 <div class="image-overlay"></div>
                             </a>
@@ -41,14 +45,20 @@
                             </div><!-- .entry-header.layout1-header -->
                             <div class="post-title-wrap">
                                 <h2 class="h2-title entry-title">
-                                    <a ng-href="#/{{lang}}/view/{{n.Id}}/">
+                                    <a ng-href="#/{{lang}}/view/{{n.Id}}/" ng-show="n.FLevel != 2">
+                                        {{n.FName}}
+                                    </a>
+                                    <a href="{{n.FDescription}}" target="_blank" ng-show="n.FLevel == 2">
                                         {{n.FName}}
                                     </a>
                                 </h2>
                             </div>
                             <div class="entry-content">
                                 <p class="p-content">{{n.SortContent}}</p>
-                                <a class="vmagazine-lite-archive-more button-more" ng-href="#/{{lang}}/view/{{n.Id}}/">
+                                <a class="vmagazine-lite-archive-more button-more" ng-href="#/{{lang}}/view/{{n.Id}}/" ng-show="n.FLevel != 2">
+                                    {{'Read More' | translate}}
+                                </a>
+                                <a class="vmagazine-lite-archive-more button-more" href="{{n.FDescription}}" target="_blank" ng-show="n.FLevel == 2">
                                     {{'Read More' | translate}}
                                 </a>
                             </div><!-- .entry-content -->
