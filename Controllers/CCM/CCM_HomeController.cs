@@ -18,6 +18,59 @@ namespace WebApiCore.Controllers
     {
         private WebApiDataEntities db = new WebApiDataEntities();
 
+        public ListNews GetListNewsFromWebservice2(int pageNumber, int pageSize, string searchKey, string TAG)
+        {
+            try
+            {
+                RestClient clientDB = new RestClient("http://localhost:1108/api/CCM_Home/GetList10BienBan?pageNumber=" + pageNumber + "&pageSize=" + pageSize + "&searchKey=" + searchKey + "&TAG=" + TAG);
+
+                RestRequest requestDB = new RestRequest(Method.GET);
+                IRestResponse res = clientDB.Execute(requestDB);
+                string con = res.Content;
+                var data = JsonConvert.DeserializeObject<ListNews>(con);
+                return data;
+            }
+            catch (System.Exception ex)
+            {
+                ex.ToString();
+                return null;
+            }
+        }
+
+        [HttpGet]
+        [Route("GetList10BienBan")]
+        public IHttpActionResult GetListBienBan(int pageNumber, int pageSize, string searchKey, string TAG)
+        {
+            try
+            {
+                var ListNews = GetListNewsFromWebservice2(pageNumber, pageSize, searchKey, TAG);
+                var respon = new
+                {
+                    list = ListNews.list,
+                    total = ListNews.total
+                };
+                return Ok(respon);
+            }
+            catch (Exception ex)
+            {
+                string branchCode = HttpContext.Current.Request.Headers["x-company"];
+                string language = HttpContext.Current.Request.Headers["x-language"];
+                var data = db.CMS_News.Where(x => x.FInUse == true && (x.Menu == TAG || x.Tags.Contains(TAG)) && x.FLanguage == language
+                     && (x.FName.Contains(searchKey) || x.FDescription.Contains(searchKey) || x.Content.Contains(searchKey) || x.SortContent.Contains(searchKey) || string.IsNullOrEmpty(searchKey)))
+                        .OrderByDescending(x => x.FCreateTime)
+                        .Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
+                var count = db.CMS_News.Where(x => x.FInUse == true && (x.Menu == TAG || x.Tags.Contains(TAG)) && x.FLanguage == language
+                     && (x.FName.Contains(searchKey) || x.FDescription.Contains(searchKey) || x.Content.Contains(searchKey) || x.SortContent.Contains(searchKey) || string.IsNullOrEmpty(searchKey))).Count();
+                var total = 0;
+                if (count > 0) total = (count % pageSize == 0) ? count / pageSize : (count / pageSize + 1);
+                var respon = new
+                {
+                    list = data,
+                    total = total
+                };
+                return Ok(respon);
+            }
+        }
         public List<CMS_News> GetNewsFromWebservice2(string Api)
         {
             try
@@ -35,8 +88,7 @@ namespace WebApiCore.Controllers
                 return null;
             }
         }
-
-        // GET: api/Groups
+        
         [HttpGet]
         [Route("GetTopNews")]
         public IHttpActionResult GetTopNews(string searchKey)
@@ -267,110 +319,17 @@ namespace WebApiCore.Controllers
         }
         public class News_VNE
         {
-            public string _id { get; set; }
-            public string FName { get; set; }
-            public string FDescription { get; set; }
-            public double FCreateTime { get; set; }
-            public string SortContent { get; set; }
-            public string Image { get; set; }
+            public string Title { get; set; }
+            public string Description { get; set; }
+            public string PubDate { get; set; }
+            public string Link { get; set; }
+            public string Img { get; set; }
             public int FLevel { get; set; }
         }
         public class ListNewsVNE
         {
             public bool success { get; set; }
             public List<News_VNE> data { get; set; }
-        }
-
-        public ListNews GetFromVNExpress(int pageNumber, int pageSize)
-        {
-            RestClient clientDB = new RestClient("https://news-nghiepradeon-app.herokuapp.com/api/v1/news");
-
-            RestRequest requestDB = new RestRequest(Method.GET);
-            IRestResponse res = clientDB.Execute(requestDB);
-            string con = res.Content;
-            var dataVNE = JsonConvert.DeserializeObject<ListNewsVNE>(con);
-            var ListNewsVNE = new List<CMS_News>();
-            foreach(var news in dataVNE.data)
-            {
-                CMS_News n = new CMS_News()
-                {
-                    Id = 0,
-                    FName = news.FName,
-                    FDescription = news.FDescription,
-                    FCreateTime = UnixTimeStampToDateTime(news.FCreateTime),
-                    SortContent = news.SortContent,
-                    FLevel = news.FLevel,
-                    Image = news.Image
-                };
-                ListNewsVNE.Add(n);
-            }
-            var data = new ListNews()
-            {
-                list = ListNewsVNE.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(),
-                total = ListNewsVNE.Count()
-            };
-            return (data);
-        }
-        public DateTime UnixTimeStampToDateTime(double unixTimeStamp)
-        {
-            // Unix timestamp is seconds past epoch
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
-            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
-            return dtDateTime;
-        }
-        public ListNews GetListNewsFromWebservice2(int pageNumber, int pageSize, string searchKey, string TAG)
-        {
-            try
-            {
-                RestClient clientDB = new RestClient("http://localhost:1108/api/CCM_Home/GetList10BienBan?pageNumber=" + pageNumber + "&pageSize=" + pageSize + "&searchKey=" + searchKey + "&TAG=" + TAG);
-
-                RestRequest requestDB = new RestRequest(Method.GET);
-                IRestResponse res = clientDB.Execute(requestDB);
-                string con = res.Content;
-                var data = JsonConvert.DeserializeObject<ListNews>(con);
-                return data;
-            }
-            catch (System.Exception ex)
-            {
-                ex.ToString();
-                return null;
-            }
-        }
-
-        [HttpGet]
-        [Route("GetList10BienBan")]
-        public IHttpActionResult GetListBienBan(int pageNumber, int pageSize, string searchKey, string TAG)
-        {
-            try
-            {
-                var ListNews = GetFromVNExpress(pageNumber, pageSize);
-                //var ListNews = GetListNewsFromWebservice2(pageNumber, pageSize, searchKey, TAG);
-                var respon = new
-                {
-                    list = ListNews.list,
-                    total = ListNews.total
-                };
-                return Ok(respon);
-            }
-            catch (Exception ex)
-            {
-                string branchCode = HttpContext.Current.Request.Headers["x-company"];
-                string language = HttpContext.Current.Request.Headers["x-language"];
-                var data = db.CMS_News.Where(x => x.FInUse == true && (x.Menu == TAG || x.Tags.Contains(TAG)) && x.FLanguage == language
-                     && (x.FName.Contains(searchKey) || x.FDescription.Contains(searchKey) || x.Content.Contains(searchKey) || x.SortContent.Contains(searchKey) || string.IsNullOrEmpty(searchKey)))
-                        .OrderByDescending(x => x.FCreateTime)
-                        .Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList();
-                var count = db.CMS_News.Where(x => x.FInUse == true && (x.Menu == TAG || x.Tags.Contains(TAG)) && x.FLanguage == language
-                     && (x.FName.Contains(searchKey) || x.FDescription.Contains(searchKey) || x.Content.Contains(searchKey) || x.SortContent.Contains(searchKey) || string.IsNullOrEmpty(searchKey))).Count();
-                var total = 0;
-                if (count > 0) total = (count % pageSize == 0) ? count / pageSize : (count / pageSize + 1);
-                var respon = new
-                {
-                    list = data,
-                    total = total
-                };
-                return Ok(respon);
-            }
         }
         [HttpGet]
         [Route("GetHotNews")]

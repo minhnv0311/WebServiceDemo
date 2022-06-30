@@ -3,7 +3,7 @@
     $scope.GetTopNews = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetTopNews',
+            url: 'http://localhost:44345/api/CCM_Home/GetTopNews',
             params: { searchKey: '' },
         }).then(function successCallback(response) {
             $scope.ListNews_CCM = response.data.list;
@@ -19,7 +19,7 @@
             if ($scope.First != null || $scope.First != undefined) {
                 $http({
                     method: 'GET',
-                    url: '/api/CCM_Home/GetTags',
+                    url: 'http://localhost:44345/api/CCM_Home/GetTags',
                     params: { code: $scope.First.FCode },
                 }).then(function successCallback(response) {
                     $scope.First_Tags = response.data.list;
@@ -30,7 +30,7 @@
             if ($scope.First_2 != null || $scope.First_2 != undefined) {
                 $http({
                     method: 'GET',
-                    url: '/api/CCM_Home/GetTags',
+                    url: 'http://localhost:44345/api/CCM_Home/GetTags',
                     params: { code: $scope.First_2.FCode },
                 }).then(function successCallback(response) {
                     $scope.First_2_Tags = response.data.list;
@@ -45,7 +45,7 @@
     $scope.GetAllNews = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetAllNews',
+            url: 'http://localhost:44345/api/CCM_Home/GetAllNews',
             params: { searchKey: '' },
         }).then(function successCallback(response) {
             $scope.News_CCM = response.data.list;
@@ -56,7 +56,7 @@
     $scope.GetCDTD = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetCDTD',
+            url: 'http://localhost:44345/api/CCM_Home/GetCDTD',
         }).then(function successCallback(response) {
             $scope.ListNews_GSTD = response.data.list;
             if ($scope.ListNews_GSTD.length > 0) {
@@ -71,7 +71,7 @@
     $scope.GetNewsBienBan = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetNewsBienBan',
+            url: 'http://localhost:44345/api/CCM_Home/GetNewsBienBan',
         }).then(function successCallback(response) {
             $scope.News_BB = response.data.list;
         }, function errorCallback(response) {
@@ -81,7 +81,7 @@
     $scope.GetNewsNCQG = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetNewsNCQG',
+            url: 'http://localhost:44345/api/CCM_Home/GetNewsNCQG',
         }).then(function successCallback(response) {
             $scope.News_NCQG = response.data.list;
         }, function errorCallback(response) {
@@ -91,7 +91,7 @@
     $scope.GetNewsTieuBan = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetNewsTieuBan',
+            url: 'http://localhost:44345/api/CCM_Home/GetNewsTieuBan',
         }).then(function successCallback(response) {
             $scope.News_TB = response.data.list;
         }, function errorCallback(response) {
@@ -101,7 +101,7 @@
     $scope.GetNewsThongBao = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetNewsThongBao',
+            url: 'http://localhost:44345/api/CCM_Home/GetNewsThongBao',
         }).then(function successCallback(response) {
             $scope.News_ThongBao = response.data.list;
         }, function errorCallback(response) {
@@ -111,7 +111,7 @@
     $scope.GetLinks = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetLinks',
+            url: 'http://localhost:44345/api/CCM_Home/GetLinks',
         }).then(function successCallback(response) {
             $scope.Links = response.data.list;
             $scope.MaxLinks = response.data.max;
@@ -121,7 +121,7 @@
         $scope.GetVideoIntro = function () {
             $http({
                 method: 'GET',
-                url: '/api/CCM_Home/GetVideoIntro',
+                url: 'http://localhost:44345/api/CCM_Home/GetVideoIntro',
             }).then(function successCallback(response) {
                 $scope.Video = response.data;
                 var url = $scope.Video.Url.replace(".com/watch?v=", ".com/embed/");
@@ -722,6 +722,90 @@ angular.module('FrontendApp').controller('NewsController', ['$location', '$route
     }
 }]);
 
+angular.module('FrontendApp').controller('NewsOtherController', ['$location', '$routeParams', '$sce', '$q', '$scope', '$rootScope', '$http', '$cookies', function ($location, $routeParams, $sce, $q, $scope, $rootScope, $http, $cookies) {
+    $scope.SearchKey = '';
+    $scope.UserEmail = '';
+    $scope.UserName = '';
+    $scope.UserWebsite = '';
+    $scope.UserComment = '';
+    $scope.$on('$viewContentLoaded', function () {
+        $scope.Link = $routeParams.link;
+        var Branch = $routeParams.branch;
+        if (Branch == 'TTO') {
+            $scope.Link = $sce.trustAsResourceUrl("https://tuoitre.vn/" + $scope.Link);
+        }
+        if (Branch == 'VNE') {
+            $scope.Link = $sce.trustAsResourceUrl("https://vnexpress.net/" + $scope.Link);
+        }
+        $scope.GetHotNews();
+        $scope.date = new Date();
+        $scope.DayInWeek = '';
+        if ($routeParams.language == "us") $scope.SwitchFuctionEN($scope.date.getDay());
+        else $scope.SwitchFuctionVN($scope.date.getDay());
+    });
+    $scope.SwitchFuctionVN = function (sno) {
+        switch (sno) {
+            case 0:
+                $scope.DayInWeek = "Thứ hai";
+                break;
+            case 1:
+                $scope.DayInWeek = "Thứ ba";
+                break;
+            case 2:
+                $scope.DayInWeek = "Thứ tư";
+                break;
+            case 3:
+                $scope.DayInWeek = "Thứ năm";
+                break;
+            case 4:
+                $scope.DayInWeek = "Thứ sáu";
+                break;
+            case 5:
+                $scope.DayInWeek = "Thứ bảy";
+                break;
+            case 6:
+                $scope.DayInWeek = "Chủ nhật";
+                break;
+        }
+    };
+    $scope.SwitchFuctionEN = function (sno) {
+        switch (sno) {
+            case 0:
+                $scope.DayInWeek = "Monday";
+                break;
+            case 1:
+                $scope.DayInWeek = "Tuesday";
+                break;
+            case 2:
+                $scope.DayInWeek = "Wednesday";
+                break;
+            case 3:
+                $scope.DayInWeek = "Thursday";
+                break;
+            case 4:
+                $scope.DayInWeek = "Friday";
+                break;
+            case 5:
+                $scope.DayInWeek = "Saturday";
+                break;
+            case 6:
+                $scope.DayInWeek = "Sunday";
+                break;
+        }
+    };
+    $scope.GetHotNews = function () {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:44345/api/CCM_Home/GetHotNews',
+        }).then(function successCallback(response) {
+            $scope.HotNews = response.data.list;
+        }, function errorCallback(response) {
+            // toastr.warning('Có lỗi trong quá trình tải dữ liệu !', 'Thông báo');
+        });
+    }
+}]);
+
+
 angular.module('FrontendApp').controller('SearchController', ['$location', '$routeParams', '$sce', '$q', '$scope', '$rootScope', '$http', '$cookies', '$window', function ($location, $routeParams, $sce, $q, $scope, $rootScope, $http, $cookies, $window) {
     
     $scope.pageNumber = 1;
@@ -911,7 +995,7 @@ angular.module('FrontendApp').controller('CategoryController', ['$location', '$r
     $scope.GetNews = function () {
         $http({
             method: 'GET',
-            url: '/api/CCM_Home/GetList10BienBan',
+            url: 'http://localhost:44345/api/CCM_Home/GetList10BienBan',
             params: { pageNumber: $scope.pageNumber, pageSize: $scope.pageSize, searchKey: '', TAG: $scope.param },
         }).then(function successCallback(response) {
             $scope.News = response.data.list;

@@ -94,6 +94,10 @@ Frontend.config(['$routeProvider', '$locationProvider', function ($routeProvider
             templateUrl: 'frontend_2/views/ViewNews.html',
             controller: 'NewsController'
         })
+        .when('/:language/view-news/:branch/:link/', {
+            templateUrl: 'frontend_2/views/ViewNews2.html',
+            controller: 'NewsOtherController'
+        })
         .when('/404/', {
             templateUrl: 'frontend_2/views/404.html',
             controller: 'NotFoundController'
