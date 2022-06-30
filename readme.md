@@ -12,18 +12,18 @@
 	+ API lấy báo Tuổi trẻ (sử dụng NodeJS): Trần Xuân Nghiệp
 	+ Cài đặt, thực thi, tổng hợp nguồn báo từ nhiều nơi gửi về cho client: Nguyễn Văn Minh
 	+ Thực thi (impl)/cài đặt: 
-		Môi trường: 
-			Server 1 (Website): AngularJS, 
-			Server 2 (Nguồn báo tự tạo, tổng hợp báo từ các nguồn khác): .NET Framework, 
-			Server 3 (Nguồn báo Tuổi trẻ): NodeJS Framework Express, 
-			Server 4 (Nguồn báo VNExpress): Java Spring,
-		Cài đặt: 
+		- Môi trường: 
+			+ Server 1 (Website): AngularJS, 
+			+ Server 2 (Nguồn báo tự tạo, tổng hợp báo từ các nguồn khác): .NET Framework, 
+			+ Server 3 (Nguồn báo Tuổi trẻ): NodeJS Framework Express, 
+			+ Server 4 (Nguồn báo VNExpress): Java Spring,
+		- Cài đặt: 
 			+ Chạy Server 1 và 2 trên Internet Information Services (Windows) (localhost)
 			+ Deploy server 3 lên Heroku (https://news-nghiepradeon-app.herokuapp.com)
 			+ Deploy server 4 lên Heroku (https://soa2022.herokuapp.com)
-		Công cụ: 
-			Visual Studio 2019
-			Visual Studio Code
-			IntelliJ IDEA 2021.3
-			Postman (test)
-			Database: SQL Server (2019)
+		- Công cụ: 
+			+ Visual Studio 2019
+			+ Visual Studio Code
+			+ IntelliJ IDEA 2021.3
+			+ Postman (test)
+			+ Database: SQL Server (2019)
